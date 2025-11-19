@@ -12,7 +12,8 @@ const Footer = () => {
            <a href="https://www.youtube.com/@mazeas" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-900 transition-colors"><Youtube size={24} /></a>
         </div>
         <p className="text-sm text-neutral-400 text-center">
-          © {new Date().getFullYear()} Damien Mazeas, PhD.
+          © Damien Mazeas<br />
+          Last updated {new Date().toLocaleString('default', { month: 'long' })} {new Date().getFullYear()}
         </p>
       </div>
     </footer>
