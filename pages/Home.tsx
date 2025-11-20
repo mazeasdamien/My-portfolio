@@ -4,7 +4,7 @@ import { FilterType } from '../types';
 import { ArrowUpRight, Download, FileText, Briefcase, GraduationCap, BookOpen, PlayCircle, Wrench, Youtube, Users, Bot, Brain, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SpotlightCard } from '../components/SpotlightCard';
-import { FloatingShapes } from '../components/FloatingShapes';
+import { BoomerangVideo } from '../components/BoomerangVideo';
 
 interface HomeProps {
   filter: FilterType;
@@ -294,7 +294,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
       {filter === 'all' ? (
         <>
           <section className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
-            <FloatingShapes />
+            <BoomerangVideo />
             <div className="order-2 lg:order-1 animate-fade-in-up opacity-0 relative z-10" style={{ animationDelay: '0ms' }}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-8 text-neutral-900">
                 Bridging <br />
@@ -419,8 +419,8 @@ const ResearchFocusSection = () => {
       description: "Moving beyond 2D screens. I build immersive interfaces that provide depth and situational awareness, allowing operators to experience a sense of presence.",
       tags: ["Teleoperation", "VR Interfaces"],
       icon: Bot,
-      color: "text-purple-600",
-      bg: "bg-purple-50",
+      color: "text-[rgb(154,58,137)]",
+      bg: "bg-[rgba(154,58,137,0.1)]",
     },
     {
       title: "Cognitive Augmentation",
@@ -468,7 +468,7 @@ const ResearchFocusSection = () => {
 function getSubtitleStyle(subtitle?: string) {
   const lower = subtitle?.toLowerCase() || '';
   if (lower.includes('teaching')) return { text: 'text-blue-600', border: 'hover:border-blue-300' };
-  if (lower.includes('research')) return { text: 'text-purple-600', border: 'hover:border-purple-300' };
+  if (lower.includes('research')) return { text: 'text-[rgb(154,58,137)]', border: 'hover:border-[rgb(154,58,137)]' };
   if (lower.includes('training')) return { text: 'text-emerald-600', border: 'hover:border-emerald-300' };
   if (lower.includes('projects')) return { text: 'text-amber-600', border: 'hover:border-amber-300' };
   return { text: 'text-neutral-500', border: 'hover:border-neutral-300' };
@@ -489,7 +489,7 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
   const lowerSubtitle = item.subtitle?.toLowerCase() || '';
 
   if (lowerSubtitle.includes('teaching')) spotlightColor = 'rgba(37, 99, 235, 1)'; // blue-600
-  else if (lowerSubtitle.includes('research')) spotlightColor = 'rgba(147, 51, 234, 1)'; // purple-600
+  else if (lowerSubtitle.includes('research')) spotlightColor = 'rgb(154, 58, 137)'; // custom purple
   else if (lowerSubtitle.includes('training')) spotlightColor = 'rgba(5, 150, 105, 1)'; // emerald-600
   else if (lowerSubtitle.includes('projects')) spotlightColor = 'rgba(217, 119, 6, 1)'; // amber-600
 
@@ -536,8 +536,15 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex justify-between items-start mb-4">
-        {showCategory && <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{displayCategory}</span>}
-        <span className={`text-sm font-bold text-neutral-500 font-mono ${!showCategory ? 'ml-auto' : ''}`}>{item.displayDate}</span>
+        <div className="flex gap-2 items-center">
+            {showCategory && <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{displayCategory}</span>}
+            {item.subtitle && (
+                <span className={`text-xs font-bold uppercase tracking-widest ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500'}`}>
+                {item.subtitle}
+                </span>
+            )}
+        </div>
+        <span className="text-sm font-bold text-neutral-500 font-mono ml-auto">{item.displayDate}</span>
       </div>
 
       {item.thumbnail && (
@@ -558,12 +565,6 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
           {isYoutube ? <PlayCircle size={20} /> : <ArrowUpRight size={20} />}
         </div>
       </div>
-
-      {item.subtitle && (
-        <p className={`text-sm font-medium mb-2 ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500'}`}>
-          {item.subtitle}
-        </p>
-      )}
 
       {item.description && (
         <p className="text-sm text-neutral-600 mb-4 line-clamp-3">
