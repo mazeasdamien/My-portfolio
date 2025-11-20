@@ -28,16 +28,16 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
     const lower = dateStr.toLowerCase();
     if (lower.includes('spring')) {
       return {
-        badge: 'bg-emerald-50 text-emerald-700 border-emerald-100',
-        spotlight: 'rgba(16, 185, 129, 1)', // emerald-500
-        arrow: 'text-emerald-600'
+        badge: 'bg-[rgba(98,183,77,0.1)] text-[rgb(98,183,77)] border-[rgba(98,183,77,0.2)]',
+        spotlight: 'rgb(98, 183, 77)', // Green (Training)
+        arrow: 'text-[rgb(98,183,77)]'
       };
     }
     if (lower.includes('fall') || lower.includes('autumn')) {
       return {
-        badge: 'bg-amber-50 text-amber-700 border-amber-100',
-        spotlight: 'rgba(245, 158, 11, 1)', // amber-500
-        arrow: 'text-amber-600'
+        badge: 'bg-[rgba(241,100,32,0.1)] text-[rgb(241,100,32)] border-[rgba(241,100,32,0.2)]',
+        spotlight: 'rgb(241, 100, 32)', // Orange (Projects)
+        arrow: 'text-[rgb(241,100,32)]'
       };
     }
     return {
@@ -103,11 +103,20 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           </a>
         </div>
 
+        {/* Headsets Banner */}
+        <div className="mb-16 animate-fade-in-up opacity-0" style={{ animationDelay: '50ms' }}>
+          <img
+            src="images/headsets.png"
+            alt="VR Headsets"
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
+        </div>
+
         {/* Education Section */}
         <section className="mb-16 animate-fade-in-up opacity-0" style={{ animationDelay: '100ms' }}>
-          <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-8 flex items-center gap-2">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-[rgb(9,172,239)] mb-8 flex items-center gap-2">
             Education
-            <span className="h-px flex-grow bg-blue-100"></span>
+            <span className="h-px flex-grow bg-[rgba(9,172,239,0.2)]"></span>
           </h2>
 
           <div className="space-y-12">
@@ -118,9 +127,9 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Doctor of Philosophy (Ph.D.) in Manufacturing</h3>
-                  <span className="text-xs font-mono font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded mt-1 sm:mt-0">Apr 2024</span>
+                  <span className="text-xs font-mono font-medium text-[rgb(9,172,239)] bg-[rgba(9,172,239,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Apr 2024</span>
                 </div>
-                <div className="text-blue-700 font-medium mb-2">Cranfield University — Centre for Digital and Design Engineering</div>
+                <div className="text-[rgb(9,172,239)] font-medium mb-2">Cranfield University — Centre for Digital and Design Engineering</div>
                 <p className="text-neutral-600 text-sm leading-relaxed mb-1">Thesis: Key principles for assessing and implementing remote inspection with telexistence capability</p>
                 <p className="text-neutral-500 text-sm">Advisors: Prof. John Ahmet Erkoyuncu & Prof. Frédéric Noël</p>
               </div>
@@ -134,9 +143,9 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">M.Sc. in Digital Mock-up and 3D Visualization</h3>
-                  <span className="text-xs font-mono font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded mt-1 sm:mt-0">Sep 2019</span>
+                  <span className="text-xs font-mono font-medium text-[rgb(9,172,239)] bg-[rgba(9,172,239,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Sep 2019</span>
                 </div>
-                <div className="text-blue-700 font-medium mb-2">Arts et Métiers ParisTech — Institut de Chalon</div>
+                <div className="text-[rgb(9,172,239)] font-medium mb-2">Arts et Métiers ParisTech — Institut de Chalon</div>
                 <p className="text-neutral-600 text-sm leading-relaxed mb-1">Thesis: VR application for immersive prototyping for industrial designers</p>
                 <p className="text-neutral-500 text-sm">Advisors: Prof. Sebastian Stadler & Prof. Jean-Rémy Chardonnet</p>
               </div>
@@ -150,9 +159,9 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Computer-Aided Drafting & Design</h3>
-                  <span className="text-xs font-mono font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded mt-1 sm:mt-0">Jul 2017</span>
+                  <span className="text-xs font-mono font-medium text-[rgb(9,172,239)] bg-[rgba(9,172,239,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Jul 2017</span>
                 </div>
-                <div className="text-blue-700 font-medium">University Institute of Technology of Blois and Angoulême</div>
+                <div className="text-[rgb(9,172,239)] font-medium">University Institute of Technology of Blois and Angoulême</div>
                 <p className="text-neutral-500 text-sm">Three-year technical degree</p>
               </div>
             </div>
@@ -161,9 +170,9 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
         {/* Certifications */}
         <section className="mb-16 animate-fade-in-up opacity-0" style={{ animationDelay: '200ms' }}>
-          <h2 className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-6 flex items-center gap-2">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-[rgb(241,100,32)] mb-6 flex items-center gap-2">
             Certifications
-            <span className="h-px flex-grow bg-amber-100"></span>
+            <span className="h-px flex-grow bg-[rgba(241,100,32,0.2)]"></span>
           </h2>
           <div className="group flex gap-4 sm:gap-6">
             <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
@@ -173,18 +182,18 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <h3 className="text-base font-bold text-neutral-900 mb-1">FANUC Robotics Standard Teach Pendant Programming</h3>
               <div className="flex items-center gap-2 text-sm">
                 <span className="text-neutral-600">R30iB+ Controller</span>
-                <span className="text-amber-300">•</span>
-                <span className="bg-amber-50 text-amber-700 px-2 py-0.5 rounded text-xs font-medium">Sep 2021</span>
+                <span className="text-[rgba(241,100,32,0.6)]">•</span>
+                <span className="bg-[rgba(241,100,32,0.1)] text-[rgb(241,100,32)] px-2 py-0.5 rounded text-xs font-medium">Sep 2021</span>
               </div>
             </div>
           </div>
         </section>
 
         {/* Experience Section */}
-        <section className="animate-fade-in-up opacity-0" style={{ animationDelay: '300ms' }}>
-          <h2 className="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-8 flex items-center gap-2">
+        <section className="mb-16 animate-fade-in-up opacity-0" style={{ animationDelay: '300ms' }}>
+          <h2 className="text-xs font-bold uppercase tracking-widest text-[rgb(98,183,77)] mb-8 flex items-center gap-2">
             Experience
-            <span className="h-px flex-grow bg-emerald-100"></span>
+            <span className="h-px flex-grow bg-[rgba(98,183,77,0.2)]"></span>
           </h2>
           <div className="space-y-12">
 
@@ -196,10 +205,10 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Lecturer in Computer Science and Technology</h3>
-                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Sep 2024 - Jun 2025</span>
+                  <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Sep 2024 - Jun 2025</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">Beijing Normal & Hong Kong Baptist University (BNBU) — Zhuhai, China</div>
-                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                <div className="text-[rgb(98,183,77)] font-medium mb-3">Beijing Normal & Hong Kong Baptist University (BNBU) — Zhuhai, China</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-[rgb(98,183,77)]">
                   <li>Designed a Human-Computer Interaction course (14 lectures of 1-hour and 14 labs of 2-hour).</li>
                   <li>Taught undergraduate students (Teaching load: 9 hours per week).</li>
                   <li>Mentored 10 students (4 groups) for their final year projects.</li>
@@ -211,15 +220,15 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             {/* CNRS */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                <img src="images/logos/cnrs.png" alt="CNRS" className="max-w-full max-h-full object-contain" />
+                <img src="images/logos/cnrs.webp" alt="CNRS" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Research Associate</h3>
-                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Oct 2023 - Sep 2024</span>
+                  <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Oct 2023 - Sep 2024</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">CNRS@CREATE — Singapore</div>
-                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                <div className="text-[rgb(98,183,77)] font-medium mb-3">CNRS@CREATE — Singapore</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-[rgb(98,183,77)]">
                   <li>Conducted research on points of view for virtual navigation.</li>
                   <li>Used and deployed eye tracking (Tobii) for Unity 3D frameworks.</li>
                 </ul>
@@ -234,10 +243,10 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Visiting Researcher</h3>
-                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Oct 2022 - Mar 2023</span>
+                  <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Oct 2022 - Mar 2023</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">Grenoble Alpes University - Laboratory G-SCOP — Grenoble, France</div>
-                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                <div className="text-[rgb(98,183,77)] font-medium mb-3">Grenoble Alpes University - Laboratory G-SCOP — Grenoble, France</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-[rgb(98,183,77)]">
                   <li>Conducted research in tele-assistance.</li>
                   <li>Developed an application for remote expert – local worker collaboration on Unity 3D.</li>
                   <li>Operated, programmed, and remote-controlled Universal Robots collaborative robots.</li>
@@ -253,10 +262,10 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Augmented Reality Engineer</h3>
-                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Mar 2020 - Aug 2020</span>
+                  <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Mar 2020 - Aug 2020</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">Safran — Gloucester, UK</div>
-                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                <div className="text-[rgb(98,183,77)] font-medium mb-3">Safran — Gloucester, UK</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-[rgb(98,183,77)]">
                   <li>Analyzed and defined AR use cases to optimize A320 landing gear maintenance (visual inspection, assembly, painting).</li>
                   <li>Developed technical specifications and managed software integration of Diota (now Delmia).</li>
                   <li>Supported implementation by providing on-site technical support and training.</li>
@@ -272,16 +281,31 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Research Assistant</h3>
-                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Feb 2019 - Aug 2019</span>
+                  <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Feb 2019 - Aug 2019</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">TUM CREATE — Singapore</div>
-                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                <div className="text-[rgb(98,183,77)] font-medium mb-3">TUM CREATE — Singapore</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-[rgb(98,183,77)]">
                   <li>Part of the Design for Autonomous Mobility research team led by Dr. Henriette Cornet.</li>
                   <li>Conducted research on the use of VR for industrial designers and user preference in mobility.</li>
                 </ul>
               </div>
             </div>
 
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section className="animate-fade-in-up opacity-0" style={{ animationDelay: '400ms' }}>
+          <h2 className="text-xs font-bold uppercase tracking-widest text-[rgb(154,58,137)] mb-8 flex items-center gap-2">
+            Skills
+            <span className="h-px flex-grow bg-[rgba(154,58,137,0.2)]"></span>
+          </h2>
+          <div className="bg-white border border-neutral-100 rounded-xl p-6 shadow-sm w-1/2 mx-auto">
+            <img
+              src="images/skills.png"
+              alt="Skills Overview"
+              className="w-full h-auto rounded-lg"
+            />
           </div>
         </section>
       </div>
@@ -298,7 +322,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             <div className="order-2 lg:order-1 animate-fade-in-up opacity-0 relative z-10" style={{ animationDelay: '0ms' }}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-8 text-neutral-900">
                 Bridging <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">Physical</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-pink-500">Digital</span> Worlds
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[rgb(98,183,77)] to-[rgb(241,100,32)]">Physical</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[rgb(9,172,239)] to-[rgb(154,58,137)]">Digital</span> Worlds
               </h1>
               <p className="text-xl text-neutral-600 max-w-xl leading-relaxed">
                 Researcher specializing in <strong>XR</strong> and <strong>HCI</strong>.
@@ -331,7 +355,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 href={hasLink ? item.url : undefined}
                 target={hasLink ? "_blank" : undefined}
                 rel={hasLink ? "noreferrer" : undefined}
-                className="block group animate-fade-in-up opacity-0 hover:scale-[1.01] cursor-pointer"
+                className={`block group animate-fade-in-up opacity-0 ${hasLink ? 'hover:scale-[1.01] cursor-pointer' : 'cursor-default hover:shadow-none'}`}
                 innerClassName="flex flex-col sm:flex-row gap-4 p-6"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -366,7 +390,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 target={hasLink ? "_blank" : undefined}
                 rel={hasLink ? "noreferrer" : undefined}
                 spotlightColor={theme.spotlight}
-                className="block group animate-fade-in-up opacity-0 hover:scale-[1.01] cursor-pointer"
+                className={`block group animate-fade-in-up opacity-0 ${hasLink ? 'hover:scale-[1.01] cursor-pointer' : 'cursor-default hover:shadow-none'}`}
                 innerClassName="flex flex-col sm:flex-row gap-6 p-6 items-start sm:items-center"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -411,8 +435,8 @@ const ResearchFocusSection = () => {
       description: "How do we maintain non-verbal cues in virtual spaces? I design navigational frameworks that make remote collaboration feel natural and spatially aware.",
       tags: ["User Studies", "Spatial Computing"],
       icon: Users,
-      color: "text-blue-600",
-      bg: "bg-blue-50",
+      color: "text-[rgb(9,172,239)]",
+      bg: "bg-[rgba(9,172,239,0.1)]",
     },
     {
       title: "Robotic Embodiment",
@@ -427,8 +451,8 @@ const ResearchFocusSection = () => {
       description: "Reducing cognitive load for industrial workers. My work focuses on context-aware AR that delivers the right information at the precise moment it's needed.",
       tags: ["Training", "Maintenance"],
       icon: Brain,
-      color: "text-emerald-600",
-      bg: "bg-emerald-50",
+      color: "text-[rgb(98,183,77)]",
+      bg: "bg-[rgba(98,183,77,0.1)]",
     }
   ];
 
@@ -467,17 +491,18 @@ const ResearchFocusSection = () => {
 
 function getSubtitleStyle(subtitle?: string) {
   const lower = subtitle?.toLowerCase() || '';
-  if (lower.includes('teaching')) return { text: 'text-blue-600', border: 'hover:border-blue-300' };
-  if (lower.includes('research')) return { text: 'text-[rgb(154,58,137)]', border: 'hover:border-[rgb(154,58,137)]' };
-  if (lower.includes('training')) return { text: 'text-emerald-600', border: 'hover:border-emerald-300' };
-  if (lower.includes('projects')) return { text: 'text-amber-600', border: 'hover:border-amber-300' };
-  return { text: 'text-neutral-500', border: 'hover:border-neutral-300' };
+  if (lower.includes('teaching')) return { text: 'text-[rgb(9,172,239)]', border: 'hover:bg-[rgba(9,172,239,0.5)]' };
+  if (lower.includes('research')) return { text: 'text-[rgb(154,58,137)]', border: 'hover:bg-[rgb(154,58,137)]' };
+  if (lower.includes('training')) return { text: 'text-[rgb(98,183,77)]', border: 'hover:bg-[rgba(98,183,77,0.5)]' };
+  if (lower.includes('projects')) return { text: 'text-[rgb(241,100,32)]', border: 'hover:bg-[rgba(241,100,32,0.5)]' };
+  return { text: 'text-neutral-500', border: 'hover:bg-neutral-300' };
 }
 
 const Card: React.FC<{ item: any }> = ({ item }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const isInternal = item.url?.startsWith('/') && !item.url.endsWith('.pdf');
   const isYoutube = !!item.youtubeId;
+  const isClickable = !!(item.url || item.youtubeId);
   const isArduino = item.title?.includes('Arduino');
   const href = isYoutube ? `https://www.youtube.com/watch?v=${item.youtubeId}` : item.url;
   const showCategory = item.category !== 'portfolio';
@@ -485,13 +510,13 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
   const subtitleStyle = getSubtitleStyle(item.subtitle);
 
   // Determine spotlight color based on subtitle/category
-  let spotlightColor = 'rgba(59, 130, 246, 1)'; // Default blue
+  let spotlightColor = 'rgb(9, 172, 239)'; // Default blue
   const lowerSubtitle = item.subtitle?.toLowerCase() || '';
 
-  if (lowerSubtitle.includes('teaching')) spotlightColor = 'rgba(37, 99, 235, 1)'; // blue-600
-  else if (lowerSubtitle.includes('research')) spotlightColor = 'rgb(154, 58, 137)'; // custom purple
-  else if (lowerSubtitle.includes('training')) spotlightColor = 'rgba(5, 150, 105, 1)'; // emerald-600
-  else if (lowerSubtitle.includes('projects')) spotlightColor = 'rgba(217, 119, 6, 1)'; // amber-600
+  if (lowerSubtitle.includes('teaching')) spotlightColor = 'rgb(9, 172, 239)'; // Blue
+  else if (lowerSubtitle.includes('research')) spotlightColor = 'rgb(154, 58, 137)'; // Purple
+  else if (lowerSubtitle.includes('training')) spotlightColor = 'rgb(98, 183, 77)'; // Green
+  else if (lowerSubtitle.includes('projects')) spotlightColor = 'rgb(241, 100, 32)'; // Orange
 
   // Custom logic for Tutorials
   if (isYoutube) spotlightColor = 'rgba(220, 38, 38, 1)'; // red-600
@@ -509,11 +534,24 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
   if (isYoutube) iconColor = 'text-red-600';
   if (isArduino) iconColor = 'text-teal-600';
 
+  // Determine category color and border
+  let categoryColor = 'text-neutral-400';
+  let borderClass = subtitleStyle.border;
+
+  if (isYoutube) {
+    categoryColor = 'text-red-600';
+    borderClass = 'hover:bg-red-600';
+  }
+  if (isArduino) {
+    categoryColor = 'text-teal-600';
+    borderClass = 'hover:bg-teal-600';
+  }
+
   // Determine component and props for SpotlightCard
   let Component: any = 'div';
   let props: any = {};
 
-  if (item.url || item.youtubeId) {
+  if (isClickable) {
     if (isInternal) {
       Component = Link;
       props.to = item.url;
@@ -530,25 +568,25 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       as={Component}
       {...props}
       spotlightColor={spotlightColor}
-      className="block h-full group hover:scale-[1.02] transition-all duration-300"
+      className={`block h-full group transition-all duration-300 ${isClickable ? `hover:scale-[1.01] cursor-pointer ${borderClass}` : 'cursor-default hover:shadow-none'}`}
       innerClassName="flex flex-col p-5 h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex justify-between items-start mb-4">
         <div className="flex gap-2 items-center">
-            {showCategory && <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{displayCategory}</span>}
-            {item.subtitle && (
-                <span className={`text-xs font-bold uppercase tracking-widest ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500'}`}>
-                {item.subtitle}
-                </span>
-            )}
+          {showCategory && <span className={`text-xs font-bold uppercase tracking-widest ${categoryColor}`}>{displayCategory}</span>}
+          {item.subtitle && (
+            <span className={`text-xs font-bold uppercase tracking-widest ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500'}`}>
+              {item.subtitle}
+            </span>
+          )}
         </div>
         <span className="text-sm font-bold text-neutral-500 font-mono ml-auto">{item.displayDate}</span>
       </div>
 
       {item.thumbnail && (
-        <div className="mb-6 aspect-square overflow-hidden rounded-lg bg-neutral-100 relative">
+        <div className="mb-6 aspect-video overflow-hidden rounded-lg bg-neutral-100 relative">
           <img
             src={isHovered && item.hoverThumbnail ? item.hoverThumbnail : item.thumbnail}
             alt={item.title}

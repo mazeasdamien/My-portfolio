@@ -13,7 +13,6 @@ const Header: React.FC<HeaderProps> = ({ activeFilter, onFilterChange }) => {
     const location = useLocation();
 
     const filters: { id: FilterType; label: string }[] = [
-        { id: 'all', label: 'Home' },
         { id: 'cv', label: 'CV' },
         { id: 'publication', label: 'Publications' },
         { id: 'teaching', label: 'Teaching' },

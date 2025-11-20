@@ -26,7 +26,7 @@ export const HCICoursePage = () => (
                 </div>
             </div>
 
-            <blockquote className="border-l-4 border-blue-500 pl-4 italic text-xl text-neutral-500">
+            <blockquote className="border-l-4 border-[rgb(9,172,239)] pl-4 italic text-xl text-neutral-500">
                 "If a picture is worth 1000 words, a prototype is worth 1000 meetings."
                 <footer className="text-sm mt-2 font-bold not-italic">— Tom & David Kelley</footer>
             </blockquote>
@@ -63,9 +63,9 @@ export const HCICoursePage = () => (
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Projects</h3>
                 <div className="space-y-4">
                     {[
-                        { name: 'Unity 3D', desc: 'Design eHMI concepts for autonomous shuttles.', color: 'bg-blue-50' },
-                        { name: 'Quant-UX', desc: 'Mobile app prototyping and A/B testing.', color: 'bg-emerald-50' },
-                        { name: 'ShapesXR', desc: 'Educational VR experience prototyping.', color: 'bg-purple-50' }
+                        { name: 'Unity 3D', desc: 'Design eHMI concepts for autonomous shuttles.', color: 'bg-[rgba(9,172,239,0.1)]' },
+                        { name: 'Quant-UX', desc: 'Mobile app prototyping and A/B testing.', color: 'bg-[rgba(98,183,77,0.1)]' },
+                        { name: 'ShapesXR', desc: 'Educational VR experience prototyping.', color: 'bg-[rgba(154,58,137,0.1)]' }
                     ].map((p) => (
                         <div key={p.name} className={`p-4 rounded-lg ${p.color}`}>
                             <strong className="block text-neutral-900 font-bold mb-1">{p.name}</strong>
@@ -414,7 +414,7 @@ export const ArduinoPage = () => (
             {/* Hardware Section */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                    <h2 className="text-2xl font-bold text-neutral-900 mb-6 border-l-4 border-emerald-500 pl-4">1. Hardware Setup</h2>
+                    <h2 className="text-2xl font-bold text-neutral-900 mb-6 border-l-4 border-[rgb(98,183,77)] pl-4">1. Hardware Setup</h2>
                     <div className="space-y-6">
                         <div>
                             <h4 className="font-bold text-neutral-800 mb-2">Components</h4>
@@ -443,7 +443,7 @@ export const ArduinoPage = () => (
 
             {/* Arduino Code Section */}
             <section>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-8 border-l-4 border-blue-500 pl-4">2. Arduino Code</h2>
+                <h2 className="text-2xl font-bold text-neutral-900 mb-8 border-l-4 border-[rgb(9,172,239)] pl-4">2. Arduino Code</h2>
                 <div className="space-y-8">
 
                     {/* Block 1 */}
@@ -453,7 +453,7 @@ export const ArduinoPage = () => (
                             <span style={{ color: '#00979C' }}>const</span> <span style={{ color: '#00979C' }}>int</span> potPin = A3;<br />
                             <span style={{ color: '#00979C' }}>const</span> <span style={{ color: '#00979C' }}>int</span> ledPin = <span style={{ color: '#00979C' }}>5</span>;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-blue-500 p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(9,172,239)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
                             <p>We start by giving memorable names to the pins. Potentiometer on <strong>A3</strong>, LED on <strong>Pin 5</strong>.</p>
                         </div>
                     </div>
@@ -467,7 +467,7 @@ export const ArduinoPage = () => (
                             &nbsp;&nbsp;<span style={{ color: '#E34C00' }}>pinMode</span>(ledPin, <span style={{ color: '#D34242' }}>OUTPUT</span>);<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-blue-800 p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(9,172,239)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
                             <p><code>setup()</code> runs once. It opens the Serial Port (9600 baud) and configures the LED pin.</p>
                         </div>
                     </div>
@@ -490,7 +490,7 @@ export const ArduinoPage = () => (
                             &nbsp;&nbsp;<span style={{ color: '#E34C00' }}>delay</span>(<span style={{ color: '#00979C' }}>50</span>);<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-orange-500 p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(241,100,32)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
                             <p>Reads the knob value and sends it to Unity. Then checks if Unity sent '1' or '0' to toggle the LED.</p>
                         </div>
                     </div>
@@ -499,7 +499,7 @@ export const ArduinoPage = () => (
 
             {/* Unity Setup Section */}
             <section>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-6 border-l-4 border-purple-500 pl-4">3. Unity Configuration</h2>
+                <h2 className="text-2xl font-bold text-neutral-900 mb-6 border-l-4 border-[rgb(154,58,137)] pl-4">3. Unity Configuration</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
                         <h4 className="font-bold text-neutral-800">Critical Setting</h4>
@@ -526,7 +526,7 @@ export const ArduinoPage = () => (
 
             {/* Unity Code Section */}
             <section>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-8 border-l-4 border-indigo-500 pl-4">4. Unity C# Script</h2>
+                <h2 className="text-2xl font-bold text-neutral-900 mb-8 border-l-4 border-[rgb(154,58,137)] pl-4">4. Unity C# Script</h2>
                 <div className="space-y-8">
 
                     {/* Variables */}
@@ -540,7 +540,7 @@ export const ArduinoPage = () => (
                             <span style={{ color: '#569cd6' }}>private</span> <span style={{ color: '#4ec9b0' }}>SerialPort</span> stream;<br />
                             <span style={{ color: '#569cd6' }}>private</span> <span style={{ color: '#569cd6' }}>bool</span> ledState = <span style={{ color: '#569cd6' }}>false</span>;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-teal-500 p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(98,183,77)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
                             <p>Public variables allow configuration directly in the Inspector (Port Name is crucial!).</p>
                         </div>
                     </div>
@@ -554,7 +554,7 @@ export const ArduinoPage = () => (
                             &nbsp;&nbsp;stream.<span style={{ color: '#dcdcaa' }}>Open</span>();<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-blue-800 p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(9,172,239)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
                             <p>Initializes and opens the connection. <code>ReadTimeout</code> prevents freezing if data stops coming.</p>
                         </div>
                     </div>
@@ -572,7 +572,7 @@ export const ArduinoPage = () => (
                             &nbsp;&nbsp;&#125;<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-orange-500 p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(241,100,32)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
                             <p>Reads data every frame, converts it, and maps the 0-1023 value to 0-360 degrees rotation.</p>
                         </div>
                     </div>
@@ -589,7 +589,7 @@ export const ArduinoPage = () => (
                             &nbsp;&nbsp;<span style={{ color: '#569cd6' }}>else</span> objectMaterial.color = <span style={{ color: '#4ec9b0' }}>Color</span>.white;<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-yellow-500 p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(241,100,32)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
                             <p>Called by UI Button. Sends command to Arduino and updates Unity material color for feedback.</p>
                         </div>
                     </div>
