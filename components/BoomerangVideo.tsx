@@ -42,6 +42,7 @@ export const BoomerangVideo: React.FC = () => {
         autoPlay
         muted
         playsInline
+        loop
         controls={false}
       />
     </div>
