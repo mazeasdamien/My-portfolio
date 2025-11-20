@@ -4,6 +4,7 @@ import { FilterType } from '../types';
 import { ArrowUpRight, Download, FileText, Briefcase, GraduationCap, BookOpen, PlayCircle, Wrench, Youtube, Users, Bot, Brain, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SpotlightCard } from '../components/SpotlightCard';
+import { FloatingShapes } from '../components/FloatingShapes';
 
 interface HomeProps {
   filter: FilterType;
@@ -11,6 +12,8 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
+  const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
+  const [photoOffset, setPhotoOffset] = React.useState({ x: 0, y: 0 });
 
   const filteredData = useMemo(() => {
     if (filter === 'all') return portfolioData;
@@ -43,6 +46,41 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
       arrow: 'text-neutral-400'
     };
   };
+
+  // Mouse tracking for profile photo avoidance
+  React.useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+
+      if (filter === 'all') {
+        const photoElement = document.querySelector('.profile-photo-container');
+        if (photoElement) {
+          const rect = photoElement.getBoundingClientRect();
+          const photoCenterX = rect.left + rect.width / 2;
+          const photoCenterY = rect.top + rect.height / 2;
+
+          const dx = e.clientX - photoCenterX;
+          const dy = e.clientY - photoCenterY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          const maxDistance = 250;
+          const maxOffset = 30;
+
+          if (distance < maxDistance) {
+            const strength = 1 - (distance / maxDistance);
+            const offsetX = -(dx / distance) * maxOffset * strength;
+            const offsetY = -(dy / distance) * maxOffset * strength;
+            setPhotoOffset({ x: offsetX, y: offsetY });
+          } else {
+            setPhotoOffset({ x: 0, y: 0 });
+          }
+        }
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [filter]);
 
   if (isLoading) {
     return (
@@ -255,8 +293,9 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
       {filter === 'all' ? (
         <>
-          <section className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 animate-fade-in-up opacity-0" style={{ animationDelay: '0ms' }}>
+          <section className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
+            <FloatingShapes />
+            <div className="order-2 lg:order-1 animate-fade-in-up opacity-0 relative z-10" style={{ animationDelay: '0ms' }}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-8 text-neutral-900">
                 Bridging <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">Physical</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-pink-500">Digital</span> Worlds
@@ -266,7 +305,14 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 Designing systems that allow humans to inhabit and act within remote environments, not just view them.
               </p>
             </div>
-            <div className="order-1 lg:order-2 relative aspect-square w-80 mx-auto lg:mx-0 animate-fade-in-up opacity-0" style={{ animationDelay: '200ms' }}>
+            <div
+              className="profile-photo-container order-1 lg:order-2 relative aspect-square w-80 mx-auto lg:mx-0 animate-fade-in-up opacity-0 z-10"
+              style={{
+                animationDelay: '200ms',
+                transform: `translate(${photoOffset.x}px, ${photoOffset.y}px)`,
+                transition: 'transform 0.15s ease-out'
+              }}
+            >
               <img src="images/profil.webp" alt="Damien Mazeas" className="w-full h-full object-cover rounded-full shadow-xl" />
             </div>
           </section>
@@ -431,7 +477,7 @@ function getSubtitleStyle(subtitle?: string) {
 const Card: React.FC<{ item: any }> = ({ item }) => {
   const isInternal = item.url?.startsWith('/') && !item.url.endsWith('.pdf');
   const isYoutube = !!item.youtubeId;
-  const isArduino = item.title?.includes('Arduino'); // Robust check for Arduino project
+  const isArduino = item.title?.includes('Arduino');
   const href = isYoutube ? `https://www.youtube.com/watch?v=${item.youtubeId}` : item.url;
   const showCategory = item.category !== 'portfolio';
 
