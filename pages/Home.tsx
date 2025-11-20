@@ -322,22 +322,31 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             <div className="order-2 lg:order-1 animate-fade-in-up opacity-0 relative z-10" style={{ animationDelay: '0ms' }}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-8 text-neutral-900">
                 Bridging <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[rgb(98,183,77)] to-[rgb(241,100,32)]">Physical</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[rgb(9,172,239)] to-[rgb(154,58,137)]">Digital</span> Worlds
+                <span className="text-[rgb(98,183,77)]">Physical</span> & <span className="text-[rgb(9,172,239)]">Digital</span> Worlds
               </h1>
               <p className="text-xl text-neutral-600 max-w-xl leading-relaxed">
-                Researcher specializing in <strong className="text-[rgb(154,58,137)]">XR</strong> and <strong className="text-[rgb(9,172,239)]">HCI</strong>.
+                Researcher specializing in <strong className="text-[rgb(154,58,137)]">XR</strong> and <strong className="text-[rgb(241,100,32)]">HCI</strong>.
                 Designing systems that allow humans to inhabit and act within remote environments, not just view them.
               </p>
             </div>
             <div
-              className="profile-photo-container order-1 lg:order-2 relative aspect-square w-80 mx-auto lg:mx-0 animate-fade-in-up opacity-0 z-10"
+              className="profile-photo-container order-1 lg:order-2 relative aspect-square w-80 mx-auto lg:mx-0 animate-fade-in-up opacity-0 z-10 group"
               style={{
                 animationDelay: '200ms',
                 transform: `translate(${photoOffset.x}px, ${photoOffset.y}px)`,
                 transition: 'transform 0.15s ease-out'
               }}
             >
-              <img src="images/profil.webp" alt="Damien Mazeas" className="w-full h-full object-cover rounded-full shadow-xl" />
+              <img
+                src="images/profil.webp"
+                alt="Damien Mazeas"
+                className="absolute inset-0 w-full h-full object-cover rounded-full shadow-xl"
+              />
+              <img
+                src="images/cat.jpg"
+                alt="Cat"
+                className="absolute inset-0 w-full h-full object-cover rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out"
+              />
             </div>
           </section>
 
@@ -359,7 +368,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 innerClassName="flex flex-col sm:flex-row gap-4 p-6"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="min-w-[100px] text-sm text-neutral-400 font-mono pt-1">{item.displayDate}</div>
+                <div className="min-w-[100px] text-sm text-neutral-400 font-bold font-mono pt-1">{item.displayDate}</div>
                 <div className="flex-grow">
                   <h3 className="text-lg font-bold text-neutral-900 leading-tight mb-2">
                     {item.title}
@@ -605,7 +614,7 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       </div>
 
       {item.description && (
-        <p className="text-sm text-neutral-600 mb-4 line-clamp-3">
+        <p className="text-sm text-neutral-600 mb-4">
           {item.description}
         </p>
       )}
