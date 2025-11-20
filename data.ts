@@ -7,7 +7,6 @@ export const portfolioData: PortfolioItem[] = [
     displayDate: 'Oct 2025',
     youtubeId: 'FDd-eLMpXmE',
     title: 'Blender: Stop objects flying away when you unparent',
-    subtitle: 'YouTube',
     thumbnail: 'images/portfolio/blendertuto1.webp',
   },
   {
@@ -16,7 +15,6 @@ export const portfolioData: PortfolioItem[] = [
     displayDate: 'Sep 2025',
     youtubeId: 'Yl22YEUcAQw',
     title: 'Unity 3D: Quick fix for Unity Scene lag',
-    subtitle: 'YouTube',
     thumbnail: 'images/portfolio/unitytuto1.webp',
   },
   {
@@ -25,7 +23,6 @@ export const portfolioData: PortfolioItem[] = [
     displayDate: 'Sep 2025',
     url: '/project/arduino-unity',
     title: 'Connect your Arduino to Unity 3D',
-    subtitle: 'Interactive Slides',
     thumbnail: 'images/tuto-arduino-unity/arduino.webp',
     mainProject: true
   },
@@ -36,7 +33,7 @@ export const portfolioData: PortfolioItem[] = [
     url: 'pdfs/paper5.pdf',
     period: 'In MDPI Virtual Worlds',
     title: 'Study of Visualization Modalities on Industrial Robot Teleoperation for Inspection in a Virtual Co-Existence Space',
-    authors: 'D Mazeas, B Namoano',
+    authors: '<strong class="text-blue-600">D Mazeas</strong>, B Namoano',
   },
   {
     category: 'teaching',
@@ -70,7 +67,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Human-Computer Interaction Course',
     subtitle: 'Teaching',
     url: '/project/hci-course',
-    thumbnail: 'images/portfolio/hcicouse/hci1.webp',
+    thumbnail: 'images/portfolio/thumbnails/Human-Computer Interaction Course.png',
     mainProject: true
   },
   {
@@ -89,14 +86,14 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Lecturer in Computer Science and Technology at BNBU',
     period: 'BNBU (China) | 10 Months',
   },
-   {
+  {
     category: 'portfolio',
     date: '2024-08-01',
     displayDate: '2024',
     title: 'Expert and Worker Remote Collaboration',
     subtitle: 'Research',
     url: '/project/remote-collab',
-    thumbnail: 'images/portfolio/remotecollab/figure1.webp',
+    thumbnail: 'images/portfolio/thumbnails/Expert and Worker Remote Collaboration.png',
     mainProject: true
   },
   {
@@ -106,7 +103,7 @@ export const portfolioData: PortfolioItem[] = [
     url: 'pdfs/paper4.pdf',
     period: 'In CIRP Design Conference',
     title: 'Designing Immersive Tools for Expert and Worker Remote Collaboration',
-    authors: 'SCM Galvis*, D Mazeas*, F Noel, JA Erkoyuncu (*Equal contribution)',
+    authors: 'SCM Galvis*, <strong class="text-blue-600">D Mazeas*</strong>, F Noel, JA Erkoyuncu (*Equal contribution)',
     mainProject: true,
     subtitle: 'Research Paper'
   },
@@ -118,7 +115,7 @@ export const portfolioData: PortfolioItem[] = [
     period: 'PhD Thesis',
     title: 'Key principles for assessing and implementing remote inspection with telexistence capability',
     subtitle: 'PhD Thesis.',
-    authors: 'D Mazeas',
+    authors: '<strong class="text-blue-600">D Mazeas</strong>',
   },
   {
     category: 'degree',
@@ -128,14 +125,14 @@ export const portfolioData: PortfolioItem[] = [
     title: 'PhD in Manufacturing',
     description: 'Cranfield University (UK) - Centre for Digital and Design Engineering',
   },
-   {
+  {
     category: 'publication',
     date: '2023-05-01',
     displayDate: 'May 2023',
     url: 'pdfs/paper3.pdf',
     period: 'In IEEE VRW',
     title: 'Telexistence-based remote maintenance for marine engineers',
-    authors: 'D Mazeas, JA Erkoyuncu, F Noel',
+    authors: '<strong class="text-blue-600">D Mazeas</strong>, JA Erkoyuncu, F Noel',
   },
   {
     category: 'publication',
@@ -144,7 +141,7 @@ export const portfolioData: PortfolioItem[] = [
     url: 'pdfs/paper2.pdf',
     period: 'In IFIP PLM',
     title: 'A telexistence interface for remote control of a physical industrial robot via data distribution service',
-    authors: 'D Mazeas, JA Erkoyuncu, F Noel',
+    authors: '<strong class="text-blue-600">D Mazeas</strong>, JA Erkoyuncu, F Noel',
   },
   {
     category: 'portfolio',
@@ -153,7 +150,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Telexistence for Remote Marine Maintenance',
     subtitle: 'Research',
     url: '/project/remote-maintenance',
-    thumbnail: 'images/portfolio/telexistencemaintenance/framework.webp',
+    thumbnail: 'images/portfolio/thumbnails/Telexistence for Remote Marine Maintenance.png',
     mainProject: true
   },
   {
@@ -171,7 +168,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'VR Interface for Industrial Robotics',
     subtitle: 'Research',
     url: '/project/telexistence-interface',
-    thumbnail: 'images/portfolio/telexistence/architecture.webp',
+    thumbnail: 'images/portfolio/thumbnails/VR Interface for Industrial Robotics.png',
     mainProject: true
   },
   {
@@ -190,7 +187,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Industrial Robotics & Automation',
     subtitle: 'Training',
     url: '/project/industrial-robotics',
-    thumbnail: 'images/portfolio/fanuc/fanuc.webp',
+    thumbnail: 'images/portfolio/thumbnails/Industrial Robotics & Automation.png',
     mainProject: true
   },
   {
@@ -208,7 +205,7 @@ export const portfolioData: PortfolioItem[] = [
     url: 'pdfs/paper1.pdf',
     period: 'In DESIGN conference',
     title: 'IMPRO: Immersive prototyping in virtual environments for industrial designers',
-    authors: 'S Stadler, H Cornet, D Mazeas*, JR Chardonnet, F Frenkler (*App development, experiment design, data collection, and analysis)',
+    authors: 'S Stadler, H Cornet, <strong class="text-blue-600">D Mazeas*</strong>, JR Chardonnet, F Frenkler (*App development, experiment design, data collection, and analysis)',
   },
   {
     category: 'employment',
@@ -241,7 +238,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'VR Application for Immersive Prototyping',
     subtitle: 'Research',
     url: '/project/vr-prototyping',
-    thumbnail: 'images/portfolio/VRprototyping/method.webp',
+    thumbnail: 'images/portfolio/thumbnails/VR Application for Immersive Prototyping.png',
     mainProject: true
   },
   {
@@ -251,7 +248,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Industrial VR Applications',
     subtitle: 'Projects',
     url: '/project/master-projects',
-    thumbnail: 'images/portfolio/masterprojects/ligneproduction.webp',
+    thumbnail: 'images/portfolio/thumbnails/Industrial VR Applications.png',
     mainProject: true
   },
   {

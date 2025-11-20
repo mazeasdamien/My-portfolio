@@ -3,6 +3,7 @@ import { portfolioData } from '../data';
 import { FilterType } from '../types';
 import { ArrowUpRight, Download, FileText, Briefcase, GraduationCap, BookOpen, PlayCircle, Wrench, Youtube, Users, Bot, Brain, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SpotlightCard } from '../components/SpotlightCard';
 
 interface HomeProps {
   filter: FilterType;
@@ -10,28 +11,44 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
-  
+
   const filteredData = useMemo(() => {
     if (filter === 'all') return portfolioData;
-    if (filter === 'cv') return []; 
+    if (filter === 'cv') return [];
     return portfolioData.filter(item => {
-      if (filter === 'portfolio') return item.category === 'portfolio' || item.category === 'tools'; 
+      if (filter === 'portfolio') return item.category === 'portfolio' || item.category === 'tools';
       return item.category === filter;
     });
   }, [filter]);
 
-  const getSemesterColor = (dateStr: string) => {
+  const getSemesterTheme = (dateStr: string) => {
     const lower = dateStr.toLowerCase();
-    if (lower.includes('spring')) return 'bg-emerald-50 text-emerald-700 border-emerald-100';
-    if (lower.includes('fall') || lower.includes('autumn')) return 'bg-amber-50 text-amber-700 border-amber-100';
-    return 'bg-neutral-50 text-neutral-700 border-neutral-100';
+    if (lower.includes('spring')) {
+      return {
+        badge: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+        spotlight: 'rgba(16, 185, 129, 1)', // emerald-500
+        arrow: 'text-emerald-600'
+      };
+    }
+    if (lower.includes('fall') || lower.includes('autumn')) {
+      return {
+        badge: 'bg-amber-50 text-amber-700 border-amber-100',
+        spotlight: 'rgba(245, 158, 11, 1)', // amber-500
+        arrow: 'text-amber-600'
+      };
+    }
+    return {
+      badge: 'bg-neutral-50 text-neutral-700 border-neutral-100',
+      spotlight: 'rgba(115, 115, 115, 1)', // neutral-500
+      arrow: 'text-neutral-400'
+    };
   };
 
   if (isLoading) {
     return (
       <div className="min-h-screen max-w-7xl mx-auto px-6 py-12 flex flex-col items-center justify-center animate-fade-in">
-         <Loader2 className="animate-spin text-neutral-300 mb-4" size={48} strokeWidth={1} />
-         <span className="text-xs font-medium tracking-widest text-neutral-400 uppercase">Loading</span>
+        <Loader2 className="animate-spin text-neutral-300 mb-4" size={48} strokeWidth={1} />
+        <span className="text-xs font-medium tracking-widest text-neutral-400 uppercase">Loading</span>
       </div>
     );
   }
@@ -41,11 +58,11 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
       <div className="max-w-3xl mx-auto px-6 py-20">
         {/* Header with Download */}
         <div className="flex justify-between items-end mb-16 border-b border-neutral-200 pb-6 animate-fade-in-up opacity-0" style={{ animationDelay: '0ms' }}>
-           <h1 className="text-4xl font-bold tracking-tighter text-neutral-900">Curriculum Vitae</h1>
-           <a href="pdfs/CV2026.pdf" download className="flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors bg-blue-50 px-4 py-2 rounded-full">
-             <Download size={16} /> 
-             <span className="hidden sm:inline">Download PDF</span>
-           </a>
+          <h1 className="text-4xl font-bold tracking-tighter text-neutral-900">Curriculum Vitae</h1>
+          <a href="pdfs/CV2026.pdf" download className="flex items-center gap-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full">
+            <Download size={16} />
+            <span className="hidden sm:inline">Download PDF</span>
+          </a>
         </div>
 
         {/* Education Section */}
@@ -54,11 +71,11 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             Education
             <span className="h-px flex-grow bg-blue-100"></span>
           </h2>
-          
+
           <div className="space-y-12">
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                 <img src="images/logos/cranfield.webp" alt="Cranfield University" className="max-w-full max-h-full object-contain" />
+                <img src="images/logos/cranfield.webp" alt="Cranfield University" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -74,7 +91,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             {/* Arts et Metiers */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                 <img src="images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="max-w-full max-h-full object-contain" />
+                <img src="images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -87,10 +104,10 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               </div>
             </div>
 
-             {/* Bachelor */}
-             <div className="group flex gap-4 sm:gap-6">
+            {/* Bachelor */}
+            <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                 <img src="images/logos/poitiers.webp" alt="University of Poitiers" className="max-w-full max-h-full object-contain" />
+                <img src="images/logos/poitiers.webp" alt="University of Poitiers" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -106,23 +123,23 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
         {/* Certifications */}
         <section className="mb-16 animate-fade-in-up opacity-0" style={{ animationDelay: '200ms' }}>
-           <h2 className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-6 flex items-center gap-2">
-             Certifications
-             <span className="h-px flex-grow bg-amber-100"></span>
-           </h2>
-           <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                 <img src="images/logos/fanuc.webp" alt="FANUC" className="max-w-full max-h-full object-contain" />
+          <h2 className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-6 flex items-center gap-2">
+            Certifications
+            <span className="h-px flex-grow bg-amber-100"></span>
+          </h2>
+          <div className="group flex gap-4 sm:gap-6">
+            <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+              <img src="images/logos/fanuc.webp" alt="FANUC" className="max-w-full max-h-full object-contain" />
+            </div>
+            <div className="flex-grow">
+              <h3 className="text-base font-bold text-neutral-900 mb-1">FANUC Robotics Standard Teach Pendant Programming</h3>
+              <div className="flex items-center gap-2 text-sm">
+                <span className="text-neutral-600">R30iB+ Controller</span>
+                <span className="text-amber-300">•</span>
+                <span className="bg-amber-50 text-amber-700 px-2 py-0.5 rounded text-xs font-medium">Sep 2021</span>
               </div>
-              <div className="flex-grow">
-                <h3 className="text-base font-bold text-neutral-900 mb-1">FANUC Robotics Standard Teach Pendant Programming</h3>
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="text-neutral-600">R30iB+ Controller</span>
-                  <span className="text-amber-300">•</span>
-                  <span className="bg-amber-50 text-amber-700 px-2 py-0.5 rounded text-xs font-medium">Sep 2021</span>
-                </div>
-              </div>
-           </div>
+            </div>
+          </div>
         </section>
 
         {/* Experience Section */}
@@ -132,18 +149,18 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             <span className="h-px flex-grow bg-emerald-100"></span>
           </h2>
           <div className="space-y-12">
-            
+
             {/* BNBU */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                 <img src="images/logos/bnbu.webp" alt="BNBU" className="max-w-full max-h-full object-contain" />
+                <img src="images/logos/bnbu.webp" alt="BNBU" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Lecturer in Computer Science and Technology</h3>
                   <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Sep 2024 - Jun 2025</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">Beijing Normal & Hong Kong Baptist University (BNBU)</div>
+                <div className="text-emerald-700 font-medium mb-3">Beijing Normal & Hong Kong Baptist University (BNBU) — Zhuhai, China</div>
                 <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
                   <li>Designed a Human-Computer Interaction course (14 lectures of 1-hour and 14 labs of 2-hour).</li>
                   <li>Taught undergraduate students (Teaching load: 9 hours per week).</li>
@@ -155,71 +172,71 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* CNRS */}
             <div className="group flex gap-4 sm:gap-6">
-               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                 <img src="images/logos/cnrs.png" alt="CNRS" className="max-w-full max-h-full object-contain" />
-               </div>
-               <div className="flex-grow">
-                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                <img src="images/logos/cnrs.png" alt="CNRS" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="flex-grow">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Research Associate</h3>
                   <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Oct 2023 - Sep 2024</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">CNRS@Create Singapore</div>
+                <div className="text-emerald-700 font-medium mb-3">CNRS@CREATE — Singapore</div>
                 <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
                   <li>Conducted research on points of view for virtual navigation.</li>
-                  <li>Used and deployed eye tracking for Unity 3D frameworks.</li>
+                  <li>Used and deployed eye tracking (Tobii) for Unity 3D frameworks.</li>
                 </ul>
               </div>
             </div>
 
             {/* G-SCOP */}
             <div className="group flex gap-4 sm:gap-6">
-               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                 <img src="images/logos/gscop.webp" alt="G-SCOP" className="max-w-full max-h-full object-contain" />
-               </div>
-               <div className="flex-grow">
-                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                <img src="images/logos/gscop.webp" alt="G-SCOP" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="flex-grow">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Visiting Researcher</h3>
                   <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Oct 2022 - Mar 2023</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">Grenoble Alpes University — Laboratory G-SCOP</div>
+                <div className="text-emerald-700 font-medium mb-3">Grenoble Alpes University - Laboratory G-SCOP — Grenoble, France</div>
                 <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
                   <li>Conducted research in tele-assistance.</li>
                   <li>Developed an application for remote expert – local worker collaboration on Unity 3D.</li>
-                   <li>Operated, programmed, and remote-controlled Universal Robots collaborative robots.</li>
+                  <li>Operated, programmed, and remote-controlled Universal Robots collaborative robots.</li>
                 </ul>
               </div>
             </div>
 
             {/* Safran */}
             <div className="group flex gap-4 sm:gap-6">
-               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                 <img src="images/logos/safran.webp" alt="Safran" className="max-w-full max-h-full object-contain" />
-               </div>
-               <div className="flex-grow">
-                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                <img src="images/logos/safran.webp" alt="Safran" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="flex-grow">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Augmented Reality Engineer</h3>
                   <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Mar 2020 - Aug 2020</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">Safran (International Junior Program V.I.E)</div>
+                <div className="text-emerald-700 font-medium mb-3">Safran — Gloucester, UK</div>
                 <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
                   <li>Analyzed and defined AR use cases to optimize A320 landing gear maintenance (visual inspection, assembly, painting).</li>
                   <li>Developed technical specifications and managed software integration of Diota (now Delmia).</li>
-                   <li>Supported implementation by providing on-site technical support and training.</li>
+                  <li>Supported implementation by providing on-site technical support and training.</li>
                 </ul>
               </div>
             </div>
 
-             {/* TUM */}
+            {/* TUM */}
             <div className="group flex gap-4 sm:gap-6">
-               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
-                 <img src="images/logos/tumcreate.webp" alt="TUMCREATE" className="max-w-full max-h-full object-contain" />
-               </div>
-               <div className="flex-grow">
-                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                <img src="images/logos/tumcreate.webp" alt="TUMCREATE" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="flex-grow">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="text-lg font-bold text-neutral-900">Research Assistant</h3>
                   <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Feb 2019 - Aug 2019</span>
                 </div>
-                <div className="text-emerald-700 font-medium mb-3">TUM CREATE Singapore</div>
+                <div className="text-emerald-700 font-medium mb-3">TUM CREATE — Singapore</div>
                 <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
                   <li>Part of the Design for Autonomous Mobility research team led by Dr. Henriette Cornet.</li>
                   <li>Conducted research on the use of VR for industrial designers and user preference in mobility.</li>
@@ -235,22 +252,22 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12 min-h-screen">
-      
+
       {filter === 'all' ? (
         <>
           <section className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 animate-fade-in-up opacity-0" style={{ animationDelay: '0ms' }}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-8 text-neutral-900">
-                Bridging <br/>
+                Bridging <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">Physical</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-pink-500">Digital</span> Worlds
               </h1>
               <p className="text-xl text-neutral-600 max-w-xl leading-relaxed">
-                Researcher specializing in <strong>XR</strong> and <strong>HCI</strong>. 
+                Researcher specializing in <strong>XR</strong> and <strong>HCI</strong>.
                 Designing systems that allow humans to inhabit and act within remote environments, not just view them.
               </p>
             </div>
             <div className="order-1 lg:order-2 relative aspect-square w-80 mx-auto lg:mx-0 animate-fade-in-up opacity-0" style={{ animationDelay: '200ms' }}>
-                <img src="images/profil.webp" alt="Damien Mazeas" className="w-full h-full object-cover rounded-full shadow-xl" />
+              <img src="images/profil.webp" alt="Damien Mazeas" className="w-full h-full object-cover rounded-full shadow-xl" />
             </div>
           </section>
 
@@ -258,84 +275,78 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
         </>
       ) : filter === 'publication' ? (
         <div className="max-w-4xl mx-auto space-y-4">
-           {filteredData.map((item, index) => {
-               const hasLink = !!item.url;
-               const Wrapper = hasLink ? 'a' : 'div';
-               const wrapperProps = hasLink ? {
-                   href: item.url,
-                   target: "_blank",
-                   rel: "noreferrer",
-                   className: "group flex flex-col sm:flex-row gap-4 p-6 bg-white border border-neutral-100 border-l-4 border-l-blue-500 rounded-xl hover:border-neutral-300 hover:border-l-blue-500 hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer block animate-fade-in-up opacity-0"
-               } : {
-                   className: "flex flex-col sm:flex-row gap-4 p-6 bg-white border border-neutral-100 border-l-4 border-l-blue-500 rounded-xl animate-fade-in-up opacity-0"
-               };
-               
-               // @ts-ignore
-               wrapperProps.style = { animationDelay: `${index * 100}ms` };
+          {filteredData.map((item, index) => {
+            const hasLink = !!item.url;
 
-               return (
-                 // @ts-ignore
-                 <Wrapper key={index} {...wrapperProps}>
-                    <div className="min-w-[100px] text-sm text-neutral-400 font-mono pt-1">{item.displayDate}</div>
-                    <div className="flex-grow">
-                        <h3 className="text-lg font-bold text-neutral-900 leading-tight mb-2">
-                            {item.title}
-                        </h3>
-                        <div className="text-sm text-neutral-600 mb-1" dangerouslySetInnerHTML={{__html: item.authors || ''}}></div>
-                        <div className="text-xs font-medium text-neutral-400 uppercase tracking-wider">{item.period}</div>
-                    </div>
-                    {hasLink && (
-                        <div className="self-start p-2 text-neutral-300 group-hover:text-neutral-900 transition-colors">
-                           <ArrowUpRight size={20} />
-                        </div>
-                    )}
-                 </Wrapper>
-               );
-           })}
+            return (
+              <SpotlightCard
+                key={index}
+                as={hasLink ? 'a' : 'div'}
+                href={hasLink ? item.url : undefined}
+                target={hasLink ? "_blank" : undefined}
+                rel={hasLink ? "noreferrer" : undefined}
+                className="block group animate-fade-in-up opacity-0 hover:scale-[1.01] cursor-pointer"
+                innerClassName="flex flex-col sm:flex-row gap-4 p-6"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="min-w-[100px] text-sm text-neutral-400 font-mono pt-1">{item.displayDate}</div>
+                <div className="flex-grow">
+                  <h3 className="text-lg font-bold text-neutral-900 leading-tight mb-2">
+                    {item.title}
+                  </h3>
+                  <div className="text-sm text-neutral-600 mb-1" dangerouslySetInnerHTML={{ __html: item.authors || '' }}></div>
+                  <div className="text-xs font-medium text-neutral-400 uppercase tracking-wider">{item.period}</div>
+                </div>
+                {hasLink && (
+                  <div className="self-start p-2 text-blue-600 transition-colors">
+                    <ArrowUpRight size={20} />
+                  </div>
+                )}
+              </SpotlightCard>
+            );
+          })}
         </div>
       ) : filter === 'teaching' ? (
-         <div className="max-w-4xl mx-auto space-y-4">
-           {filteredData.map((item, index) => {
-              const hasLink = !!item.url;
-              const Wrapper = hasLink ? 'a' : 'div';
-              const wrapperProps = hasLink ? {
-                  href: item.url,
-                  target: "_blank",
-                  rel: "noreferrer",
-                  className: "group flex flex-col sm:flex-row gap-6 p-6 bg-white border border-neutral-100 rounded-xl hover:border-neutral-300 hover:shadow-md hover:scale-[1.01] transition-all items-start sm:items-center cursor-pointer block animate-fade-in-up opacity-0"
-              } : {
-                  className: "flex flex-col sm:flex-row gap-6 p-6 bg-white border border-neutral-100 rounded-xl items-start sm:items-center animate-fade-in-up opacity-0"
-              };
+        <div className="max-w-4xl mx-auto space-y-4">
+          {filteredData.map((item, index) => {
+            const hasLink = !!item.url;
+            const theme = getSemesterTheme(item.displayDate);
 
-              // @ts-ignore
-              wrapperProps.style = { animationDelay: `${index * 100}ms` };
-
-              return (
-                // @ts-ignore
-                <Wrapper key={index} {...wrapperProps}>
-                    <div className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${getSemesterColor(item.displayDate)} whitespace-nowrap`}>
-                        {item.displayDate}
-                    </div>
-                    <div className="flex-grow">
-                         <h3 className="text-lg font-bold text-neutral-900">{item.title}</h3>
-                         <div className="text-sm text-neutral-600 mt-1">{item.description}</div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <div className="text-sm font-medium text-neutral-400 whitespace-nowrap">
-                          {item.period}
-                      </div>
-                      {hasLink && <ArrowUpRight size={20} className="text-neutral-300 group-hover:text-neutral-900 transition-colors" />}
-                    </div>
-                </Wrapper>
-              );
-           })}
+            return (
+              <SpotlightCard
+                key={index}
+                as={hasLink ? 'a' : 'div'}
+                href={hasLink ? item.url : undefined}
+                target={hasLink ? "_blank" : undefined}
+                rel={hasLink ? "noreferrer" : undefined}
+                spotlightColor={theme.spotlight}
+                className="block group animate-fade-in-up opacity-0 hover:scale-[1.01] cursor-pointer"
+                innerClassName="flex flex-col sm:flex-row gap-6 p-6 items-start sm:items-center"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${theme.badge} whitespace-nowrap`}>
+                  {item.displayDate}
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-lg font-bold text-neutral-900">{item.title}</h3>
+                  <div className="text-sm text-neutral-600 mt-1">{item.description}</div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="text-sm font-medium text-neutral-400 whitespace-nowrap">
+                    {item.period}
+                  </div>
+                  {hasLink && <ArrowUpRight size={20} className={theme.arrow} />}
+                </div>
+              </SpotlightCard>
+            );
+          })}
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredData.map((item, index) => (
-            <div 
-              key={`${item.title}-${index}`} 
-              className="h-full animate-fade-in-up opacity-0" 
+            <div
+              key={`${item.title}-${index}`}
+              className="h-full animate-fade-in-up opacity-0"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <Card item={item} />
@@ -352,7 +363,7 @@ const ResearchFocusSection = () => {
     {
       title: "Social XR & Co-presence",
       description: "How do we maintain non-verbal cues in virtual spaces? I design navigational frameworks that make remote collaboration feel natural and spatially aware.",
-      tags: ["User Studies", "Unity"],
+      tags: ["User Studies", "Spatial Computing"],
       icon: Users,
       color: "text-blue-600",
       bg: "bg-blue-50",
@@ -380,15 +391,15 @@ const ResearchFocusSection = () => {
       <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-500 mb-8 border-b border-neutral-200 pb-2 animate-fade-in-up opacity-0" style={{ animationDelay: '300ms' }}>Research Focus</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {researchAreas.map((area, index) => (
-          <article 
-            key={area.title} 
+          <article
+            key={area.title}
             className="group p-8 bg-white border border-neutral-100 rounded-2xl hover:border-neutral-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col animate-fade-in-up opacity-0"
             style={{ animationDelay: `${400 + (index * 100)}ms` }}
           >
             <div className={`w-12 h-12 ${area.bg} rounded-xl flex items-center justify-center mb-6 transition-transform duration-300`}>
               <area.icon className={`${area.color}`} size={24} />
             </div>
-            
+
             <h3 className="text-xl font-bold text-neutral-900 mb-4">{area.title}</h3>
             <p className="text-neutral-600 leading-relaxed mb-8 flex-grow">
               {area.description}
@@ -418,61 +429,92 @@ function getSubtitleStyle(subtitle?: string) {
 }
 
 const Card: React.FC<{ item: any }> = ({ item }) => {
-  const Icon = getIconForCategory(item.category);
-  
-  // Determine if it's an internal router link or external href
   const isInternal = item.url?.startsWith('/') && !item.url.endsWith('.pdf');
   const isYoutube = !!item.youtubeId;
+  const isArduino = item.title?.includes('Arduino'); // Robust check for Arduino project
   const href = isYoutube ? `https://www.youtube.com/watch?v=${item.youtubeId}` : item.url;
   const showCategory = item.category !== 'portfolio';
-  
+
   const subtitleStyle = getSubtitleStyle(item.subtitle);
-  
-  // Only apply special border color for portfolio items (which have subtitle style)
-  const borderColor = item.category === 'portfolio' ? subtitleStyle.border : 'hover:border-neutral-300';
 
-  const CardContent = (
-    <article className={`group h-full flex flex-col bg-white p-6 border border-neutral-100 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-[1.02] ${borderColor}`}>
-       <div className="flex justify-between items-start mb-4">
-         {showCategory && <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{item.category}</span>}
-         <span className={`text-sm font-bold text-neutral-500 font-mono ${!showCategory ? 'ml-auto' : ''}`}>{item.displayDate}</span>
-       </div>
+  // Determine spotlight color based on subtitle/category
+  let spotlightColor = 'rgba(59, 130, 246, 1)'; // Default blue
+  const lowerSubtitle = item.subtitle?.toLowerCase() || '';
 
-       {item.thumbnail && (
-         <div className="mb-6 aspect-video overflow-hidden rounded-lg bg-neutral-100">
-           <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover" />
-         </div>
-       )}
+  if (lowerSubtitle.includes('teaching')) spotlightColor = 'rgba(37, 99, 235, 1)'; // blue-600
+  else if (lowerSubtitle.includes('research')) spotlightColor = 'rgba(147, 51, 234, 1)'; // purple-600
+  else if (lowerSubtitle.includes('training')) spotlightColor = 'rgba(5, 150, 105, 1)'; // emerald-600
+  else if (lowerSubtitle.includes('projects')) spotlightColor = 'rgba(217, 119, 6, 1)'; // amber-600
 
-       <h3 className="text-lg font-bold leading-tight text-neutral-900 mb-2">
-         {item.title}
-       </h3>
-       
-       {item.subtitle && (
-         <p className={`text-sm font-medium mb-4 ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500'}`}>
-           {item.subtitle}
-         </p>
-       )}
-       
-       {item.authors && <p className="text-xs text-neutral-400 mt-auto line-clamp-2">{item.authors}</p>}
-       {item.period && !item.authors && <p className="text-xs text-neutral-400 mt-auto">{item.period}</p>}
-       
-       <div className="mt-4 pt-4 border-t border-neutral-100 flex items-center justify-end text-neutral-300 group-hover:text-neutral-900 transition-colors">
-          {isYoutube ? <PlayCircle size={20} /> : <ArrowUpRight size={20} />}
-       </div>
-    </article>
-  );
+  // Custom logic for Tutorials
+  if (isYoutube) spotlightColor = 'rgba(220, 38, 38, 1)'; // red-600
+  if (isArduino) spotlightColor = 'rgba(13, 148, 136, 1)'; // teal-600
 
-  if (!item.url && !item.youtubeId) return CardContent;
+  // Determine display category
+  let displayCategory = item.category;
+  if (item.category === 'tutorial') {
+    if (isYoutube) displayCategory = 'YOUTUBE';
+    if (isArduino) displayCategory = 'PAGE';
+  }
 
-  if (isInternal) {
-    return <Link to={item.url} className="block h-full">{CardContent}</Link>;
+  // Determine icon color
+  let iconColor = subtitleStyle.text;
+  if (isYoutube) iconColor = 'text-red-600';
+  if (isArduino) iconColor = 'text-teal-600';
+
+  // Determine component and props for SpotlightCard
+  let Component: any = 'div';
+  let props: any = {};
+
+  if (item.url || item.youtubeId) {
+    if (isInternal) {
+      Component = Link;
+      props.to = item.url;
+    } else {
+      Component = 'a';
+      props.href = href;
+      props.target = '_blank';
+      props.rel = "noopener noreferrer";
+    }
   }
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="block h-full">
-      {CardContent}
-    </a>
+    <SpotlightCard
+      as={Component}
+      {...props}
+      spotlightColor={spotlightColor}
+      className="block h-full group hover:scale-[1.02] transition-all duration-300"
+      innerClassName="flex flex-col p-5 h-full"
+    >
+      <div className="flex justify-between items-start mb-4">
+        {showCategory && <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{displayCategory}</span>}
+        <span className={`text-sm font-bold text-neutral-500 font-mono ${!showCategory ? 'ml-auto' : ''}`}>{item.displayDate}</span>
+      </div>
+
+      {item.thumbnail && (
+        <div className="mb-6 aspect-video overflow-hidden rounded-lg bg-neutral-100">
+          <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover" />
+        </div>
+      )}
+
+      <div className="flex justify-between items-start gap-2 mb-2">
+        <h3 className="text-lg font-bold leading-tight text-neutral-900">
+          {item.title}
+        </h3>
+        <div className={`${iconColor} flex-shrink-0 mt-0.5`}>
+          {isYoutube ? <PlayCircle size={20} /> : <ArrowUpRight size={20} />}
+        </div>
+      </div>
+
+      {item.subtitle && (
+        <p className={`text-sm font-medium mb-4 ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500'}`}>
+          {item.subtitle}
+        </p>
+      )}
+
+      {item.authors && <p className="text-xs text-neutral-400 mt-auto line-clamp-2">{item.authors}</p>}
+      {item.period && !item.authors && <p className="text-xs text-neutral-400 mt-auto">{item.period}</p>}
+    </SpotlightCard>
   );
 };
 

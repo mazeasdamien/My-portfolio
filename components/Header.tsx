@@ -31,8 +31,8 @@ const Header: React.FC<HeaderProps> = ({ activeFilter, onFilterChange }) => {
   return (
     <header className="sticky top-0 z-50 bg-neutral-50/90 backdrop-blur-md border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           onClick={() => handleFilterClick('all')}
           className="text-3xl font-bold tracking-tighter text-neutral-900 hover:text-neutral-600 transition-colors"
         >
@@ -44,18 +44,17 @@ const Header: React.FC<HeaderProps> = ({ activeFilter, onFilterChange }) => {
             <button
               key={filter.id}
               onClick={() => handleFilterClick(filter.id)}
-              className={`px-3 py-1 text-sm font-medium rounded-full transition-all duration-200 ${
-                activeFilter === filter.id
+              className={`px-3 py-1 text-sm font-medium rounded-full transition-all duration-200 ${activeFilter === filter.id
                   ? 'bg-neutral-900 text-white'
                   : 'text-neutral-500 hover:bg-neutral-200 hover:text-neutral-900'
-              }`}
+                }`}
             >
               {filter.label}
             </button>
           ))}
         </nav>
 
-        <a 
+        <a
           href="mailto:damien.mazeas@icloud.com"
           className="hidden md:flex items-center gap-2 text-sm font-medium text-neutral-900 hover:opacity-60 transition-opacity"
         >

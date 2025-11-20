@@ -2,42 +2,42 @@ import React, { useState } from 'react';
 import { Maximize2 } from 'lucide-react';
 
 export const ZoomableImage: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className }) => {
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <>
-      <div 
-        className={`relative group cursor-zoom-in overflow-hidden bg-neutral-100 ${className}`}
-        onClick={() => setIsOpen(true)}
-      >
-        <img 
-          src={src} 
-          alt={alt} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-        />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-          <Maximize2 className="text-white drop-shadow-md" />
-        </div>
-      </div>
+    return (
+        <>
+            <div
+                className={`relative group cursor-zoom-in overflow-hidden bg-neutral-100 ${className}`}
+                onClick={() => setIsOpen(true)}
+            >
+                <img
+                    src={src}
+                    alt={alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <Maximize2 className="text-white drop-shadow-md" />
+                </div>
+            </div>
 
-      {isOpen && (
-        <div 
-          className="fixed inset-0 z-[100] bg-white/95 flex items-center justify-center p-4 cursor-zoom-out"
-          onClick={() => setIsOpen(false)}
-        >
-          <img src={src} alt={alt} className="max-w-full max-h-full shadow-2xl" />
-        </div>
-      )}
-    </>
-  );
+            {isOpen && (
+                <div
+                    className="fixed inset-0 z-[100] bg-white/95 flex items-center justify-center p-4 cursor-zoom-out"
+                    onClick={() => setIsOpen(false)}
+                >
+                    <img src={src} alt={alt} className="max-w-full max-h-full shadow-2xl" />
+                </div>
+            )}
+        </>
+    );
 };
 
 export const VideoPlayer: React.FC<{ src: string; className?: string }> = ({ src, className }) => {
     return (
         <div className={`bg-black ${className}`}>
-            <video 
-                src={src} 
-                controls 
+            <video
+                src={src}
+                controls
                 className="w-full h-full object-contain"
                 playsInline
             />
