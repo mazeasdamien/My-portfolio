@@ -325,7 +325,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[rgb(98,183,77)] to-[rgb(241,100,32)]">Physical</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[rgb(9,172,239)] to-[rgb(154,58,137)]">Digital</span> Worlds
               </h1>
               <p className="text-xl text-neutral-600 max-w-xl leading-relaxed">
-                Researcher specializing in <strong>XR</strong> and <strong>HCI</strong>.
+                Researcher specializing in <strong className="text-[rgb(154,58,137)]">XR</strong> and <strong className="text-[rgb(9,172,239)]">HCI</strong>.
                 Designing systems that allow humans to inhabit and act within remote environments, not just view them.
               </p>
             </div>
@@ -477,7 +477,7 @@ const ResearchFocusSection = () => {
 
             <div className="flex flex-wrap gap-2 mt-auto">
               {area.tags.map(tag => (
-                <span key={tag} className="px-2.5 py-1 bg-neutral-100 text-neutral-600 text-xs font-medium rounded-full border border-neutral-200">
+                <span key={tag} className={`px-2.5 py-1 ${area.bg} ${area.color} text-xs font-medium rounded-full border border-transparent`}>
                   {tag}
                 </span>
               ))}
