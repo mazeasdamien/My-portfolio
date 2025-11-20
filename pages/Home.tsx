@@ -56,35 +56,50 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           </h2>
           
           <div className="space-y-12">
-            <div className="group">
-              <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                <h3 className="text-lg font-bold text-neutral-900">Doctor of Philosophy (Ph.D.) in Manufacturing</h3>
-                <span className="text-xs font-mono font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded mt-1 sm:mt-0">Apr 2024</span>
+            <div className="group flex gap-4 sm:gap-6">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                 <img src="images/logos/cranfield.webp" alt="Cranfield University" className="max-w-full max-h-full object-contain" />
               </div>
-              <div className="text-blue-700 font-medium mb-2">Cranfield University — Centre for Digital and Design Engineering</div>
-              <p className="text-neutral-600 text-sm leading-relaxed mb-1">Thesis: Key principles for assessing and implementing remote inspection with telexistence capability</p>
-              <p className="text-neutral-500 text-sm">Advisors: Prof. John Ahmet Erkoyuncu & Prof. Frédéric Noël</p>
+              <div className="flex-grow">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                  <h3 className="text-lg font-bold text-neutral-900">Doctor of Philosophy (Ph.D.) in Manufacturing</h3>
+                  <span className="text-xs font-mono font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded mt-1 sm:mt-0">Apr 2024</span>
+                </div>
+                <div className="text-blue-700 font-medium mb-2">Cranfield University — Centre for Digital and Design Engineering</div>
+                <p className="text-neutral-600 text-sm leading-relaxed mb-1">Thesis: Key principles for assessing and implementing remote inspection with telexistence capability</p>
+                <p className="text-neutral-500 text-sm">Advisors: Prof. John Ahmet Erkoyuncu & Prof. Frédéric Noël</p>
+              </div>
             </div>
 
             {/* Arts et Metiers */}
-            <div className="group">
-              <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                <h3 className="text-lg font-bold text-neutral-900">M.Sc. in Digital Mock-up and 3D Visualization</h3>
-                <span className="text-xs font-mono font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded mt-1 sm:mt-0">Sep 2019</span>
+            <div className="group flex gap-4 sm:gap-6">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                 <img src="images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="max-w-full max-h-full object-contain" />
               </div>
-              <div className="text-blue-700 font-medium mb-2">Arts et Métiers ParisTech — Institut de Chalon</div>
-              <p className="text-neutral-600 text-sm leading-relaxed mb-1">Thesis: VR application for immersive prototyping for industrial designers</p>
-              <p className="text-neutral-500 text-sm">Advisors: Prof. Sebastian Stadler & Prof. Jean-Rémy Chardonnet</p>
+              <div className="flex-grow">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                  <h3 className="text-lg font-bold text-neutral-900">M.Sc. in Digital Mock-up and 3D Visualization</h3>
+                  <span className="text-xs font-mono font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded mt-1 sm:mt-0">Sep 2019</span>
+                </div>
+                <div className="text-blue-700 font-medium mb-2">Arts et Métiers ParisTech — Institut de Chalon</div>
+                <p className="text-neutral-600 text-sm leading-relaxed mb-1">Thesis: VR application for immersive prototyping for industrial designers</p>
+                <p className="text-neutral-500 text-sm">Advisors: Prof. Sebastian Stadler & Prof. Jean-Rémy Chardonnet</p>
+              </div>
             </div>
 
              {/* Bachelor */}
-             <div className="group">
-              <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                <h3 className="text-lg font-bold text-neutral-900">Computer-Aided Drafting & Design</h3>
-                <span className="text-xs font-mono font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded mt-1 sm:mt-0">Jul 2017</span>
+             <div className="group flex gap-4 sm:gap-6">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                 <img src="images/logos/poitiers.webp" alt="University of Poitiers" className="max-w-full max-h-full object-contain" />
               </div>
-              <div className="text-blue-700 font-medium">University Institute of Technology of Blois and Angoulême</div>
-              <p className="text-neutral-500 text-sm">Three-year technical degree</p>
+              <div className="flex-grow">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                  <h3 className="text-lg font-bold text-neutral-900">Computer-Aided Drafting & Design</h3>
+                  <span className="text-xs font-mono font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded mt-1 sm:mt-0">Jul 2017</span>
+                </div>
+                <div className="text-blue-700 font-medium">University Institute of Technology of Blois and Angoulême</div>
+                <p className="text-neutral-500 text-sm">Three-year technical degree</p>
+              </div>
             </div>
           </div>
         </section>
@@ -95,12 +110,17 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
              Certifications
              <span className="h-px flex-grow bg-amber-100"></span>
            </h2>
-           <div>
-              <h3 className="text-base font-bold text-neutral-900 mb-1">FANUC Robotics Standard Teach Pendant Programming</h3>
-              <div className="flex items-center gap-2 text-sm">
-                <span className="text-neutral-600">R30iB+ Controller</span>
-                <span className="text-amber-300">•</span>
-                <span className="bg-amber-50 text-amber-700 px-2 py-0.5 rounded text-xs font-medium">Sep 2021</span>
+           <div className="group flex gap-4 sm:gap-6">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                 <img src="images/logos/fanuc.webp" alt="FANUC" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-base font-bold text-neutral-900 mb-1">FANUC Robotics Standard Teach Pendant Programming</h3>
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="text-neutral-600">R30iB+ Controller</span>
+                  <span className="text-amber-300">•</span>
+                  <span className="bg-amber-50 text-amber-700 px-2 py-0.5 rounded text-xs font-medium">Sep 2021</span>
+                </div>
               </div>
            </div>
         </section>
@@ -114,72 +134,97 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           <div className="space-y-12">
             
             {/* BNBU */}
-            <div>
-              <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                <h3 className="text-lg font-bold text-neutral-900">Lecturer in Computer Science and Technology</h3>
-                <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Sep 2024 - Jun 2025</span>
+            <div className="group flex gap-4 sm:gap-6">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                 <img src="images/logos/bnbu.webp" alt="BNBU" className="max-w-full max-h-full object-contain" />
               </div>
-              <div className="text-emerald-700 font-medium mb-3">Beijing Normal & Hong Kong Baptist University (BNBU)</div>
-              <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
-                <li>Designed a Human-Computer Interaction course (14 lectures of 1-hour and 14 labs of 2-hour).</li>
-                <li>Taught undergraduate students (Teaching load: 9 hours per week).</li>
-                <li>Mentored 10 students (4 groups) for their final year projects.</li>
-                <li>Conducted research in virtual co-existence spaces.</li>
-              </ul>
+              <div className="flex-grow">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                  <h3 className="text-lg font-bold text-neutral-900">Lecturer in Computer Science and Technology</h3>
+                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Sep 2024 - Jun 2025</span>
+                </div>
+                <div className="text-emerald-700 font-medium mb-3">Beijing Normal & Hong Kong Baptist University (BNBU)</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                  <li>Designed a Human-Computer Interaction course (14 lectures of 1-hour and 14 labs of 2-hour).</li>
+                  <li>Taught undergraduate students (Teaching load: 9 hours per week).</li>
+                  <li>Mentored 10 students (4 groups) for their final year projects.</li>
+                  <li>Conducted research in virtual co-existence spaces.</li>
+                </ul>
+              </div>
             </div>
 
             {/* CNRS */}
-            <div>
-               <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                <h3 className="text-lg font-bold text-neutral-900">Research Associate</h3>
-                <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Oct 2023 - Sep 2024</span>
+            <div className="group flex gap-4 sm:gap-6">
+               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                 <img src="images/logos/cnrs.png" alt="CNRS" className="max-w-full max-h-full object-contain" />
+               </div>
+               <div className="flex-grow">
+                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                  <h3 className="text-lg font-bold text-neutral-900">Research Associate</h3>
+                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Oct 2023 - Sep 2024</span>
+                </div>
+                <div className="text-emerald-700 font-medium mb-3">CNRS@Create Singapore</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                  <li>Conducted research on points of view for virtual navigation.</li>
+                  <li>Used and deployed eye tracking for Unity 3D frameworks.</li>
+                </ul>
               </div>
-              <div className="text-emerald-700 font-medium mb-3">CNRS@Create Singapore</div>
-              <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
-                <li>Conducted research on points of view for virtual navigation.</li>
-                <li>Used and deployed eye tracking for Unity 3D frameworks.</li>
-              </ul>
             </div>
 
             {/* G-SCOP */}
-            <div>
-               <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                <h3 className="text-lg font-bold text-neutral-900">Visiting Researcher</h3>
-                <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Oct 2022 - Mar 2023</span>
+            <div className="group flex gap-4 sm:gap-6">
+               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                 <img src="images/logos/gscop.webp" alt="G-SCOP" className="max-w-full max-h-full object-contain" />
+               </div>
+               <div className="flex-grow">
+                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                  <h3 className="text-lg font-bold text-neutral-900">Visiting Researcher</h3>
+                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Oct 2022 - Mar 2023</span>
+                </div>
+                <div className="text-emerald-700 font-medium mb-3">Grenoble Alpes University — Laboratory G-SCOP</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                  <li>Conducted research in tele-assistance.</li>
+                  <li>Developed an application for remote expert – local worker collaboration on Unity 3D.</li>
+                   <li>Operated, programmed, and remote-controlled Universal Robots collaborative robots.</li>
+                </ul>
               </div>
-              <div className="text-emerald-700 font-medium mb-3">Grenoble Alpes University — Laboratory G-SCOP</div>
-              <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
-                <li>Conducted research in tele-assistance.</li>
-                <li>Developed an application for remote expert – local worker collaboration on Unity 3D.</li>
-                 <li>Operated, programmed, and remote-controlled Universal Robots collaborative robots.</li>
-              </ul>
             </div>
 
             {/* Safran */}
-            <div>
-               <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                <h3 className="text-lg font-bold text-neutral-900">Augmented Reality Engineer</h3>
-                <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Mar 2020 - Aug 2020</span>
+            <div className="group flex gap-4 sm:gap-6">
+               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                 <img src="images/logos/safran.webp" alt="Safran" className="max-w-full max-h-full object-contain" />
+               </div>
+               <div className="flex-grow">
+                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                  <h3 className="text-lg font-bold text-neutral-900">Augmented Reality Engineer</h3>
+                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Mar 2020 - Aug 2020</span>
+                </div>
+                <div className="text-emerald-700 font-medium mb-3">Safran (International Junior Program V.I.E)</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                  <li>Analyzed and defined AR use cases to optimize A320 landing gear maintenance (visual inspection, assembly, painting).</li>
+                  <li>Developed technical specifications and managed software integration of Diota (now Delmia).</li>
+                   <li>Supported implementation by providing on-site technical support and training.</li>
+                </ul>
               </div>
-              <div className="text-emerald-700 font-medium mb-3">Safran (International Junior Program V.I.E)</div>
-              <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
-                <li>Analyzed and defined AR use cases to optimize A320 landing gear maintenance (visual inspection, assembly, painting).</li>
-                <li>Developed technical specifications and managed software integration of Diota (now Delmia).</li>
-                 <li>Supported implementation by providing on-site technical support and training.</li>
-              </ul>
             </div>
 
              {/* TUM */}
-            <div>
-               <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                <h3 className="text-lg font-bold text-neutral-900">Research Assistant</h3>
-                <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Feb 2019 - Aug 2019</span>
+            <div className="group flex gap-4 sm:gap-6">
+               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+                 <img src="images/logos/tumcreate.webp" alt="TUMCREATE" className="max-w-full max-h-full object-contain" />
+               </div>
+               <div className="flex-grow">
+                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                  <h3 className="text-lg font-bold text-neutral-900">Research Assistant</h3>
+                  <span className="text-xs font-mono font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded mt-1 sm:mt-0">Feb 2019 - Aug 2019</span>
+                </div>
+                <div className="text-emerald-700 font-medium mb-3">TUM CREATE Singapore</div>
+                <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
+                  <li>Part of the Design for Autonomous Mobility research team led by Dr. Henriette Cornet.</li>
+                  <li>Conducted research on the use of VR for industrial designers and user preference in mobility.</li>
+                </ul>
               </div>
-              <div className="text-emerald-700 font-medium mb-3">TUM CREATE Singapore</div>
-              <ul className="list-disc pl-4 space-y-1 text-sm text-neutral-600 marker:text-emerald-400">
-                <li>Part of the Design for Autonomous Mobility research team led by Dr. Henriette Cornet.</li>
-                <li>Conducted research on the use of VR for industrial designers and user preference in mobility.</li>
-              </ul>
             </div>
 
           </div>
@@ -205,7 +250,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               </p>
             </div>
             <div className="order-1 lg:order-2 relative aspect-square w-80 mx-auto lg:mx-0 animate-fade-in-up opacity-0" style={{ animationDelay: '200ms' }}>
-                <img src="images/profil.webp" alt="Damien Mazeas" className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-700 shadow-xl" />
+                <img src="images/profil.webp" alt="Damien Mazeas" className="w-full h-full object-cover rounded-full shadow-xl" />
             </div>
           </section>
 
@@ -220,9 +265,9 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                    href: item.url,
                    target: "_blank",
                    rel: "noreferrer",
-                   className: "group flex flex-col sm:flex-row gap-4 p-6 bg-white border border-neutral-100 rounded-xl hover:border-neutral-300 hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer block animate-fade-in-up opacity-0"
+                   className: "group flex flex-col sm:flex-row gap-4 p-6 bg-white border border-neutral-100 border-l-4 border-l-blue-500 rounded-xl hover:border-neutral-300 hover:border-l-blue-500 hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer block animate-fade-in-up opacity-0"
                } : {
-                   className: "flex flex-col sm:flex-row gap-4 p-6 bg-white border border-neutral-100 rounded-xl animate-fade-in-up opacity-0"
+                   className: "flex flex-col sm:flex-row gap-4 p-6 bg-white border border-neutral-100 border-l-4 border-l-blue-500 rounded-xl animate-fade-in-up opacity-0"
                };
                
                // @ts-ignore
