@@ -11,6 +11,7 @@ export interface PortfolioItem {
   youtubeId?: string;
   logo?: string;
   thumbnail?: string;
+  hoverThumbnail?: string;
   icon?: string;
   authors?: string;
   mainProject?: boolean;

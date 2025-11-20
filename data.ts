@@ -68,6 +68,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Teaching',
     url: '/project/hci-course',
     thumbnail: 'images/portfolio/thumbnails/Human-Computer Interaction Course.png',
+    hoverThumbnail: 'images/portfolio/thumbnails/Human-Computer Interaction Course hover.png',
     mainProject: true
   },
   {
@@ -94,6 +95,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Research',
     url: '/project/remote-collab',
     thumbnail: 'images/portfolio/thumbnails/Expert and Worker Remote Collaboration.png',
+    hoverThumbnail: 'images/portfolio/thumbnails/Expert and Worker Remote Collaboration hover.png',
     mainProject: true
   },
   {
@@ -151,6 +153,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Research',
     url: '/project/remote-maintenance',
     thumbnail: 'images/portfolio/thumbnails/Telexistence for Remote Marine Maintenance.png',
+    hoverThumbnail: 'images/portfolio/thumbnails/Telexistence for Remote Marine Maintenance hover.png',
     mainProject: true
   },
   {
@@ -169,6 +172,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Research',
     url: '/project/telexistence-interface',
     thumbnail: 'images/portfolio/thumbnails/VR Interface for Industrial Robotics.png',
+    hoverThumbnail: 'images/portfolio/thumbnails/VR Interface for Industrial Robotics hover.png',
     mainProject: true
   },
   {
@@ -188,6 +192,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Training',
     url: '/project/industrial-robotics',
     thumbnail: 'images/portfolio/thumbnails/Industrial Robotics & Automation.png',
+    hoverThumbnail: 'images/portfolio/thumbnails/Industrial Robotics & Automation hover.png',
     mainProject: true
   },
   {
@@ -239,6 +244,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Research',
     url: '/project/vr-prototyping',
     thumbnail: 'images/portfolio/thumbnails/VR Application for Immersive Prototyping.png',
+    hoverThumbnail: 'images/portfolio/thumbnails/VR Application for Immersive Prototyping hover.png',
     mainProject: true
   },
   {
@@ -249,6 +255,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Projects',
     url: '/project/master-projects',
     thumbnail: 'images/portfolio/thumbnails/Industrial VR Applications.png',
+    hoverThumbnail: 'images/portfolio/thumbnails/Industrial VR Applications hover.png',
     mainProject: true
   },
   {

@@ -388,7 +388,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           })}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredData.map((item, index) => (
             <div
               key={`${item.title}-${index}`}
@@ -475,6 +475,7 @@ function getSubtitleStyle(subtitle?: string) {
 }
 
 const Card: React.FC<{ item: any }> = ({ item }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
   const isInternal = item.url?.startsWith('/') && !item.url.endsWith('.pdf');
   const isYoutube = !!item.youtubeId;
   const isArduino = item.title?.includes('Arduino');
@@ -531,6 +532,8 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       spotlightColor={spotlightColor}
       className="block h-full group hover:scale-[1.02] transition-all duration-300"
       innerClassName="flex flex-col p-5 h-full"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex justify-between items-start mb-4">
         {showCategory && <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{displayCategory}</span>}
@@ -538,8 +541,12 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       </div>
 
       {item.thumbnail && (
-        <div className="mb-6 aspect-video overflow-hidden rounded-lg bg-neutral-100">
-          <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover" />
+        <div className="mb-6 aspect-square overflow-hidden rounded-lg bg-neutral-100 relative">
+          <img
+            src={isHovered && item.hoverThumbnail ? item.hoverThumbnail : item.thumbnail}
+            alt={item.title}
+            className="w-full h-full object-cover transition-opacity duration-300"
+          />
         </div>
       )}
 
@@ -553,8 +560,14 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       </div>
 
       {item.subtitle && (
-        <p className={`text-sm font-medium mb-4 ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500'}`}>
+        <p className={`text-sm font-medium mb-2 ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500'}`}>
           {item.subtitle}
+        </p>
+      )}
+
+      {item.description && (
+        <p className="text-sm text-neutral-600 mb-4 line-clamp-3">
+          {item.description}
         </p>
       )}
 
