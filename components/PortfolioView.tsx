@@ -58,14 +58,14 @@ export default function PortfolioView() {
             </div>
 
             {/* 2. Status Bar (Top) */}
-            <header className="relative z-50 px-8 py-4">
+            <header className="relative z-50 px-8">
             </header>
 
             {/* 3. Main Content Area */}
-            <main className="relative z-10 flex flex-col items-center justify-start h-full pt-12 pb-20">
+            <main className="relative z-10 flex flex-col items-center justify-end h-full pb-20">
 
                 {/* App Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10 p-8 perspective-1000">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 md:gap-x-8 md:gap-y-10 px-4 md:px-8 pb-8 pt-0 perspective-1000">
                     {appsData.map((app) => (
                         <GlassIcon
                             key={app.id}
@@ -79,52 +79,36 @@ export default function PortfolioView() {
             </main>
 
             {/* 4. Dynamic Info Dock / Tooltip */}
-            <AnimatePresence>
-                {hoveredId && (() => {
+            <AnimatePresence mode="wait">
+                {hoveredId ? (() => {
                     const app = appsData.find(a => a.id === hoveredId);
                     if (!app) return null;
 
                     return (
                         <motion.div
-                            key="popup"
-                            initial={{ y: 40, scale: 0.95 }}
-                            animate={{ y: 0, scale: 1 }}
-                            exit={{ y: 20, scale: 0.95 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            className="fixed bottom-12 left-0 right-0 mx-auto w-full max-w-lg z-50 px-4 md:px-0"
+                            key="popup-project"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.2 }}
+                            className="fixed top-48 md:top-32 left-0 right-0 mx-auto w-full max-w-4xl z-50 px-4 md:px-0"
                         >
                             {/* Backdrop blur layer - always visible during animation */}
                             <div className="absolute inset-0 rounded-[2rem] backdrop-blur-xl border border-white/30 shadow-2xl" />
 
                             {/* Content layer - fades in */}
                             <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.15 }}
                                 className="relative overflow-hidden rounded-[2rem] bg-white/20"
                             >
                                 {/* Lighting effect on the glass panel */}
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
 
-                                <div className="relative px-8 py-6 flex items-center gap-6">
-                                    {/* Hover Image preview */}
-                                    <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl border border-white/10 shadow-inner bg-black/20">
-                                        <img
-                                            src={app.hoverImageUrl}
-                                            className="h-full w-full object-cover"
-                                            alt=""
-                                        />
-                                    </div>
-
+                                <div className="relative px-6 py-6 md:px-16 md:py-12 flex items-center gap-6">
                                     <div className="flex flex-col items-start text-left">
-                                        <span className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-1">
-                                            {app.category}
-                                        </span>
-                                        <h3 className="text-xl font-semibold text-white mb-1 tracking-wide shadow-black/50 drop-shadow-md">
+                                        <h3 className="text-2xl md:text-4xl font-semibold text-white mb-2 tracking-wide shadow-black/50 drop-shadow-md">
                                             {app.title}
                                         </h3>
-                                        <p className="text-sm text-white/80 leading-relaxed">
+                                        <p className="text-sm md:text-xl text-white/80 leading-relaxed">
                                             {app.description}
                                         </p>
                                     </div>
@@ -132,7 +116,33 @@ export default function PortfolioView() {
                             </motion.div>
                         </motion.div>
                     );
-                })()}
+                })() : (
+                    <motion.div
+                        key="popup-default"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed top-48 md:top-32 left-0 right-0 mx-auto w-full max-w-4xl z-50 px-4 md:px-0"
+                    >
+                        {/* Backdrop blur layer */}
+                        <div className="absolute inset-0 rounded-[2rem] backdrop-blur-xl border border-white/30 shadow-2xl" />
+
+                        {/* Content layer */}
+                        <motion.div
+                            className="relative overflow-hidden rounded-[2rem] bg-white/20"
+                        >
+                            {/* Lighting effect */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+
+                            <div className="relative px-6 py-6 md:px-16 md:py-12 flex items-center justify-center">
+                                <h3 className="text-2xl md:text-4xl font-semibold text-white tracking-wide shadow-black/50 drop-shadow-md">
+                                    Selected Projects
+                                </h3>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
             </AnimatePresence>
         </div>
     );

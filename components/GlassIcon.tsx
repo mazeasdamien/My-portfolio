@@ -71,11 +71,11 @@ export const GlassIcon: React.FC<GlassIconProps> = ({ data, isHovered, onHover }
                     hover: { scale: 1.15 }
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative w-24 h-24 md:w-32 md:h-32 rounded-[2rem] cursor-pointer select-none z-20"
+                className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-[14.4rem] md:h-[14.4rem] rounded-[1rem] cursor-pointer select-none z-20"
             >
                 {/* Shadow Layer (Dynamic) */}
                 <motion.div
-                    className="absolute inset-0 rounded-[2rem] bg-black/40 blur-xl"
+                    className="absolute inset-0 rounded-[1rem] bg-black/40 blur-xl"
                     variants={{
                         rest: { opacity: 0, scale: 0.8, y: 10 },
                         hover: { opacity: 0.6, scale: 1.2, y: 20 } // Shadow drops and expands on lift
@@ -84,13 +84,13 @@ export const GlassIcon: React.FC<GlassIconProps> = ({ data, isHovered, onHover }
                 />
 
                 {/* Glass Border / Housing */}
-                <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/10 border border-white/20 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] backdrop-blur-sm group-hover:border-purple-400/40 transition-all duration-300">
+                <div className="relative w-full h-full rounded-[1rem] overflow-hidden bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/10 border border-white/20 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] backdrop-blur-sm group-hover:border-purple-400/40 transition-all duration-300">
 
                     {/* Image Content */}
                     <img
-                        src={data.imageUrl}
+                        src={isHovered && data.hoverImageUrl ? data.hoverImageUrl : data.imageUrl}
                         alt={data.title}
-                        className={`w-full h-full object-cover opacity-85 group-hover:opacity-95 transition-opacity duration-300 ${data.title === 'Industrial VR Applications' ? 'p-1' : ''}`}
+                        className={`w-full h-full object-cover opacity-85 group-hover:opacity-95 transition-opacity duration-300`}
                     />
 
                     {/* Color tint overlay for integration */}
@@ -100,7 +100,7 @@ export const GlassIcon: React.FC<GlassIconProps> = ({ data, isHovered, onHover }
                     <div className="absolute inset-0 bg-gradient-to-tr from-purple-300/20 via-transparent to-blue-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                     {/* Inner Glow on Hover */}
-                    <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(168,85,247,0.15)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[2rem]" />
+                    <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(168,85,247,0.15)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[1rem]" />
                 </div>
             </motion.div>
 
