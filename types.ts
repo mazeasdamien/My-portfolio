@@ -18,3 +18,14 @@ export interface PortfolioItem {
 }
 
 export type FilterType = 'all' | 'cv' | 'publication' | 'teaching' | 'tutorial' | 'portfolio';
+
+export interface AppIconData {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  imageUrl: string;
+  hoverImageUrl: string;
+  iconLabel: string;
+  link: string;
+}

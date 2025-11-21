@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { SpotlightCard } from '../components/SpotlightCard';
 import { BoomerangVideo } from '../components/BoomerangVideo';
 
+import PortfolioView from '../components/PortfolioView';
+
 interface HomeProps {
   filter: FilterType;
   isLoading: boolean;
@@ -91,13 +93,17 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
     );
   }
 
+  if (filter === 'portfolio') {
+    return <PortfolioView />;
+  }
+
   if (filter === 'cv') {
     return (
       <div className="max-w-3xl mx-auto px-6 py-20">
         {/* Header with Download */}
-        <div className="flex justify-between items-end mb-16 border-b border-neutral-200 pb-6 animate-fade-in-up opacity-0" style={{ animationDelay: '0ms' }}>
-          <h1 className="text-4xl font-bold tracking-tighter text-neutral-900">Curriculum Vitae</h1>
-          <a href="pdfs/CV2026.pdf" download className="flex items-center gap-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full">
+        <div className="flex justify-between items-end mb-16 border-b border-neutral-200 dark:border-neutral-800 pb-6 animate-fade-in-up opacity-0" style={{ animationDelay: '0ms' }}>
+          <h1 className="text-4xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-100">Curriculum Vitae</h1>
+          <a href="pdfs/CV2026.pdf" download className="flex items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-700 px-4 py-2 rounded-full">
             <Download size={16} />
             <span className="hidden sm:inline">Download PDF</span>
           </a>
@@ -121,48 +127,48 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
           <div className="space-y-12">
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/cranfield.webp" alt="Cranfield University" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                  <h3 className="text-lg font-bold text-neutral-900">Doctor of Philosophy (Ph.D.) in Manufacturing</h3>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100 dark:text-neutral-100">Doctor of Philosophy (Ph.D.) in Manufacturing</h3>
                   <span className="text-xs font-mono font-medium text-[rgb(9,172,239)] bg-[rgba(9,172,239,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Apr 2024</span>
                 </div>
                 <div className="text-[rgb(9,172,239)] font-medium mb-2">Cranfield University — Centre for Digital and Design Engineering</div>
-                <p className="text-neutral-600 text-sm leading-relaxed mb-1">Thesis: Key principles for assessing and implementing remote inspection with telexistence capability</p>
-                <p className="text-neutral-500 text-sm">Advisors: Prof. John Ahmet Erkoyuncu & Prof. Frédéric Noël</p>
+                <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mb-1">Thesis: Key principles for assessing and implementing remote inspection with telexistence capability</p>
+                <p className="text-neutral-500 dark:text-neutral-400 text-sm">Advisors: Prof. John Ahmet Erkoyuncu & Prof. Frédéric Noël</p>
               </div>
             </div>
 
             {/* Arts et Metiers */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                  <h3 className="text-lg font-bold text-neutral-900">M.Sc. in Digital Mock-up and 3D Visualization</h3>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">M.Sc. in Digital Mock-up and 3D Visualization</h3>
                   <span className="text-xs font-mono font-medium text-[rgb(9,172,239)] bg-[rgba(9,172,239,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Sep 2019</span>
                 </div>
                 <div className="text-[rgb(9,172,239)] font-medium mb-2">Arts et Métiers ParisTech — Institut de Chalon</div>
-                <p className="text-neutral-600 text-sm leading-relaxed mb-1">Thesis: VR application for immersive prototyping for industrial designers</p>
-                <p className="text-neutral-500 text-sm">Advisors: Prof. Sebastian Stadler & Prof. Jean-Rémy Chardonnet</p>
+                <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mb-1">Thesis: VR application for immersive prototyping for industrial designers</p>
+                <p className="text-neutral-500 dark:text-neutral-400 text-sm">Advisors: Prof. Sebastian Stadler & Prof. Jean-Rémy Chardonnet</p>
               </div>
             </div>
 
             {/* Bachelor */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/poitiers.webp" alt="University of Poitiers" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                  <h3 className="text-lg font-bold text-neutral-900">Computer-Aided Drafting & Design</h3>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">Computer-Aided Drafting & Design</h3>
                   <span className="text-xs font-mono font-medium text-[rgb(9,172,239)] bg-[rgba(9,172,239,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Jul 2017</span>
                 </div>
                 <div className="text-[rgb(9,172,239)] font-medium">University Institute of Technology of Blois and Angoulême</div>
-                <p className="text-neutral-500 text-sm">Three-year technical degree</p>
+                <p className="text-neutral-500 dark:text-neutral-400 text-sm">Three-year technical degree</p>
               </div>
             </div>
           </div>
@@ -175,7 +181,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             <span className="h-px flex-grow bg-[rgba(241,100,32,0.2)]"></span>
           </h2>
           <div className="group flex gap-4 sm:gap-6">
-            <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+            <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
               <img src="images/logos/fanuc.webp" alt="FANUC" className="max-w-full max-h-full object-contain" />
             </div>
             <div className="flex-grow">
@@ -199,12 +205,12 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* BNBU */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/bnbu.webp" alt="BNBU" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                  <h3 className="text-lg font-bold text-neutral-900">Lecturer in Computer Science and Technology</h3>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">Lecturer in Computer Science and Technology</h3>
                   <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Sep 2024 - Jun 2025</span>
                 </div>
                 <div className="text-[rgb(98,183,77)] font-medium mb-3">Beijing Normal & Hong Kong Baptist University (BNBU) — Zhuhai, China</div>
@@ -219,12 +225,12 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* CNRS */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/cnrs.webp" alt="CNRS" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                  <h3 className="text-lg font-bold text-neutral-900">Research Associate</h3>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">Research Associate</h3>
                   <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Oct 2023 - Sep 2024</span>
                 </div>
                 <div className="text-[rgb(98,183,77)] font-medium mb-3">CNRS@CREATE — Singapore</div>
@@ -237,12 +243,12 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* G-SCOP */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/gscop.webp" alt="G-SCOP" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                  <h3 className="text-lg font-bold text-neutral-900">Visiting Researcher</h3>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">Visiting Researcher</h3>
                   <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Oct 2022 - Mar 2023</span>
                 </div>
                 <div className="text-[rgb(98,183,77)] font-medium mb-3">Grenoble Alpes University - Laboratory G-SCOP — Grenoble, France</div>
@@ -256,12 +262,12 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* Safran */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/safran.webp" alt="Safran" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                  <h3 className="text-lg font-bold text-neutral-900">Augmented Reality Engineer</h3>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">Augmented Reality Engineer</h3>
                   <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Mar 2020 - Aug 2020</span>
                 </div>
                 <div className="text-[rgb(98,183,77)] font-medium mb-3">Safran — Gloucester, UK</div>
@@ -275,12 +281,12 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* TUM */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white border border-neutral-100 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/tumcreate.webp" alt="TUMCREATE" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                  <h3 className="text-lg font-bold text-neutral-900">Research Assistant</h3>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">Research Assistant</h3>
                   <span className="text-xs font-mono font-medium text-[rgb(98,183,77)] bg-[rgba(98,183,77,0.1)] px-2 py-1 rounded mt-1 sm:mt-0">Feb 2019 - Aug 2019</span>
                 </div>
                 <div className="text-[rgb(98,183,77)] font-medium mb-3">TUM CREATE — Singapore</div>
@@ -300,7 +306,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             Skills
             <span className="h-px flex-grow bg-[rgba(154,58,137,0.2)]"></span>
           </h2>
-          <div className="bg-white border border-neutral-100 rounded-xl p-6 shadow-sm w-1/2 mx-auto">
+          <div className="bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-xl p-6 shadow-sm w-1/2 mx-auto">
             <img
               src="images/skills.png"
               alt="Skills Overview"
@@ -320,12 +326,12 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           <section className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
             <BoomerangVideo />
             <div className="order-2 lg:order-1 animate-fade-in-up opacity-0 relative z-10" style={{ animationDelay: '0ms' }}>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-8 text-neutral-900">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-8 text-neutral-900 dark:text-neutral-100">
                 Bridging <br />
-                <span className="text-[rgb(98,183,77)]">Physical</span> & <span className="text-[rgb(9,172,239)]">Digital</span> Worlds
+                <span className="text-[rgb(98,183,77)] dark:text-[rgb(110,200,90)]">Physical</span> & <span className="text-[rgb(9,172,239)] dark:text-[rgb(56,189,248)]">Digital</span> Worlds
               </h1>
-              <p className="text-xl text-neutral-600 max-w-xl leading-relaxed">
-                Researcher specializing in <strong className="text-[rgb(154,58,137)]">XR</strong> and <strong className="text-[rgb(241,100,32)]">HCI</strong>.
+              <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-xl leading-relaxed">
+                Researcher specializing in <strong className="text-[rgb(154,58,137)] dark:text-[rgb(192,132,252)]">XR</strong> and <strong className="text-[rgb(241,100,32)] dark:text-[rgb(251,146,60)]">HCI</strong>.
                 Designing systems that allow humans to inhabit and act within remote environments, not just view them.
               </p>
             </div>
@@ -368,16 +374,16 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 innerClassName="flex flex-col sm:flex-row gap-4 p-6"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="min-w-[100px] text-sm text-neutral-400 font-bold font-mono pt-1">{item.displayDate}</div>
+                <div className="min-w-[100px] text-sm text-neutral-400 dark:text-neutral-500 font-mono pt-1">{item.displayDate}</div>
                 <div className="flex-grow">
-                  <h3 className="text-lg font-bold text-neutral-900 leading-tight mb-2">
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100 leading-tight mb-2">
                     {item.title}
                   </h3>
-                  <div className="text-sm text-neutral-600 mb-1" dangerouslySetInnerHTML={{ __html: item.authors || '' }}></div>
-                  <div className="text-xs font-medium text-neutral-400 uppercase tracking-wider">{item.period}</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-300 mb-1" dangerouslySetInnerHTML={{ __html: item.authors || '' }}></div>
+                  <div className="text-xs font-medium text-neutral-400 dark:text-neutral-500 uppercase tracking-wider">{item.period}</div>
                 </div>
                 {hasLink && (
-                  <div className="self-start p-2 text-blue-600 transition-colors">
+                  <div className="self-start p-2 text-[rgb(9,172,239)] transition-colors">
                     <ArrowUpRight size={20} />
                   </div>
                 )}
@@ -407,11 +413,11 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                   {item.displayDate}
                 </div>
                 <div className="flex-grow">
-                  <h3 className="text-lg font-bold text-neutral-900">{item.title}</h3>
-                  <div className="text-sm text-neutral-600 mt-1">{item.description}</div>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">{item.title}</h3>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-300 mt-1">{item.description}</div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="text-sm font-medium text-neutral-400 whitespace-nowrap">
+                  <div className="text-sm font-medium text-neutral-400 dark:text-neutral-500 whitespace-nowrap">
                     {item.period}
                   </div>
                   {hasLink && <ArrowUpRight size={20} className={theme.arrow} />}
@@ -467,20 +473,20 @@ const ResearchFocusSection = () => {
 
   return (
     <section className="mb-24">
-      <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-500 mb-8 border-b border-neutral-200 pb-2 animate-fade-in-up opacity-0" style={{ animationDelay: '300ms' }}>Research Focus</h2>
+      <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-8 border-b border-neutral-200 dark:border-neutral-800 pb-2 animate-fade-in-up opacity-0" style={{ animationDelay: '300ms' }}>Research Focus</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {researchAreas.map((area, index) => (
           <article
             key={area.title}
-            className="group p-8 bg-white border border-neutral-100 rounded-2xl hover:border-neutral-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col animate-fade-in-up opacity-0"
+            className="group p-8 bg-white dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 rounded-2xl hover:border-neutral-300 dark:hover:border-neutral-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col animate-fade-in-up opacity-0"
             style={{ animationDelay: `${400 + (index * 100)}ms` }}
           >
             <div className={`w-12 h-12 ${area.bg} rounded-xl flex items-center justify-center mb-6 transition-transform duration-300`}>
               <area.icon className={`${area.color}`} size={24} />
             </div>
 
-            <h3 className="text-xl font-bold text-neutral-900 mb-4">{area.title}</h3>
-            <p className="text-neutral-600 leading-relaxed mb-8 flex-grow">
+            <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">{area.title}</h3>
+            <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-8 flex-grow">
               {area.description}
             </p>
 
@@ -586,12 +592,12 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
         <div className="flex gap-2 items-center">
           {showCategory && <span className={`text-xs font-bold uppercase tracking-widest ${categoryColor}`}>{displayCategory}</span>}
           {item.subtitle && (
-            <span className={`text-xs font-bold uppercase tracking-widest ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500'}`}>
+            <span className={`text-xs font-bold uppercase tracking-widest ${item.category === 'portfolio' ? subtitleStyle.text : 'text-neutral-500 dark:text-neutral-400'}`}>
               {item.subtitle}
             </span>
           )}
         </div>
-        <span className="text-sm font-bold text-neutral-500 font-mono ml-auto">{item.displayDate}</span>
+        <span className="text-sm font-bold text-neutral-500 dark:text-neutral-400 font-mono ml-auto">{item.displayDate}</span>
       </div>
 
       {item.thumbnail && (
@@ -605,7 +611,7 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       )}
 
       <div className="flex justify-between items-start gap-2 mb-2">
-        <h3 className="text-lg font-bold leading-tight text-neutral-900">
+        <h3 className="text-lg font-bold leading-tight text-neutral-900 dark:text-neutral-100">
           {item.title}
         </h3>
         <div className={`${iconColor} flex-shrink-0 mt-0.5`}>
@@ -614,13 +620,13 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       </div>
 
       {item.description && (
-        <p className="text-sm text-neutral-600 mb-4">
+        <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4">
           {item.description}
         </p>
       )}
 
-      {item.authors && <p className="text-xs text-neutral-400 mt-auto line-clamp-2">{item.authors}</p>}
-      {item.period && !item.authors && <p className="text-xs text-neutral-400 mt-auto">{item.period}</p>}
+      {item.authors && <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-auto line-clamp-2">{item.authors}</p>}
+      {item.period && !item.authors && <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-auto">{item.period}</p>}
     </SpotlightCard>
   );
 };

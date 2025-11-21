@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
@@ -29,6 +30,7 @@
               700: '#404040',
               800: '#262626',
               900: '#171717',
+              950: '#0a0a0a',
             }
           },
           keyframes: {
@@ -79,7 +81,7 @@
   </style>
 </head>
 
-<body class="bg-neutral-50 text-neutral-900">
+<body>
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

@@ -42,7 +42,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             // Outer container: acts as the border. Default color neutral-200.
-            className={`relative rounded-xl bg-neutral-200 p-[1px] transition-all duration-300 hover:shadow-md ${className}`}
+            className={`relative rounded-xl bg-neutral-200 dark:bg-neutral-700 p-[1px] transition-all duration-300 hover:shadow-md ${className}`}
             {...props}
         >
             {/* Gradient Glow Layer - sits on top of the bg-neutral-200 but behind the content */}
@@ -55,7 +55,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
             />
 
             {/* Content Container - the actual "card" background */}
-            <div className={`relative h-full w-full bg-white rounded-[11px] ${innerClassName}`}>
+            <div className={`relative h-full w-full bg-white dark:bg-neutral-900 rounded-[11px] ${innerClassName}`}>
                 {children}
             </div>
         </Component>
