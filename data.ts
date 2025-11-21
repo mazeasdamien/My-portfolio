@@ -194,7 +194,7 @@ export const portfolioData: PortfolioItem[] = [
     displayDate: '2021',
     title: 'Industrial Robotics & Automation',
     subtitle: 'Training',
-    description: 'I took a certification covering FANUC robot programming, and I experimented with the FANUC SDK and Unity 3D.',
+    description: 'Earned certification in FANUC robot programming and developed applications using the FANUC SDK and Unity 3D.',
     url: '/project/industrial-robotics',
     thumbnail: 'images/portfolio/thumbnails/Industrial-Robotics-&-Automation.webp',
     hoverThumbnail: 'images/portfolio/thumbnails/Industrial Robotics & Automation hover.webp',

@@ -109,14 +109,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           </a>
         </div>
 
-        {/* Headsets Banner */}
-        <div className="mb-16 animate-fade-in-up opacity-0" style={{ animationDelay: '50ms' }}>
-          <img
-            src="images/headsets.png"
-            alt="VR Headsets"
-            className="w-full h-auto rounded-xl shadow-sm"
-          />
-        </div>
+
 
         {/* Education Section */}
         <section className="mb-16 animate-fade-in-up opacity-0" style={{ animationDelay: '100ms' }}>
@@ -478,7 +471,7 @@ const ResearchFocusSection = () => {
         {researchAreas.map((area, index) => (
           <article
             key={area.title}
-            className="group p-8 bg-white dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 rounded-2xl hover:border-neutral-300 dark:hover:border-neutral-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col animate-fade-in-up opacity-0"
+            className="group p-8 bg-gradient-to-br from-white/90 to-white/50 dark:from-neutral-900/60 dark:to-neutral-900/20 backdrop-blur-xl border border-white/20 dark:border-neutral-700/30 rounded-2xl hover:border-neutral-300/50 dark:hover:border-neutral-500/50 hover:shadow-xl hover:shadow-neutral-200/20 dark:hover:shadow-neutral-900/50 hover:-translate-y-1 transition-all duration-300 flex flex-col animate-fade-in-up opacity-0"
             style={{ animationDelay: `${400 + (index * 100)}ms` }}
           >
             <div className={`w-12 h-12 ${area.bg} rounded-xl flex items-center justify-center mb-6 transition-transform duration-300`}>

@@ -84,20 +84,20 @@ export const GlassIcon: React.FC<GlassIconProps> = ({ data, isHovered, onHover }
                 />
 
                 {/* Glass Border / Housing */}
-                <div className="relative w-full h-full rounded-[1rem] overflow-hidden bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/10 border border-white/20 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] backdrop-blur-sm group-hover:border-purple-400/40 transition-all duration-300">
+                <div className="relative w-full h-full rounded-[1rem] overflow-hidden bg-white/10 dark:bg-neutral-800/30 border border-neutral-200/50 dark:border-neutral-700/50 shadow-sm backdrop-blur-sm group-hover:border-purple-400/40 transition-all duration-300">
 
                     {/* Image Content */}
                     <img
                         src={isHovered && data.hoverImageUrl ? data.hoverImageUrl : data.imageUrl}
                         alt={data.title}
-                        className={`w-full h-full object-cover opacity-85 group-hover:opacity-95 transition-opacity duration-300`}
+                        className={`w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300`}
                     />
 
                     {/* Color tint overlay for integration */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10 mix-blend-overlay pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-neutral-500/5 via-transparent to-neutral-500/5 mix-blend-overlay pointer-events-none" />
 
                     {/* Specular Highlight (Sheen) */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-purple-300/20 via-transparent to-blue-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                     {/* Inner Glow on Hover */}
                     <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(168,85,247,0.15)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[1rem]" />
@@ -106,8 +106,7 @@ export const GlassIcon: React.FC<GlassIconProps> = ({ data, isHovered, onHover }
 
             {/* Simple Title Label (Always visible, but fades slightly when another is hovered) */}
             <motion.span
-                className={`text-sm font-medium tracking-wide text-white text-center w-32 truncate pointer-events-none transition-all duration-300 ${isHovered ? 'opacity-0 translate-y-2' : 'opacity-80'}`}
-                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
+                className={`text-sm font-semibold tracking-wide text-neutral-600 dark:text-neutral-300 text-center w-32 truncate pointer-events-none transition-all duration-300 ${isHovered ? 'opacity-0 translate-y-2' : 'opacity-100'}`}
             >
                 {data.iconLabel}
             </motion.span>

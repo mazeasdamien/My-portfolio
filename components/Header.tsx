@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FilterType } from '../types';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { DarkModeToggle } from './DarkModeToggle';
 
 interface HeaderProps {
@@ -12,7 +12,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ activeFilter, onFilterChange }) => {
     const navigate = useNavigate();
     const location = useLocation();
-    const [currentTime, setCurrentTime] = useState(new Date());
 
     const filters: { id: FilterType; label: string }[] = [
         { id: 'cv', label: 'CV' },
@@ -27,23 +26,6 @@ const Header: React.FC<HeaderProps> = ({ activeFilter, onFilterChange }) => {
         if (location.pathname !== '/') {
             navigate('/');
         }
-    };
-
-    // Update time every second for real-time display
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentTime(new Date());
-        }, 1000);
-        return () => clearInterval(timer);
-    }, []);
-
-    const formatTime = (date: Date) => {
-        return new Intl.DateTimeFormat('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-            timeZone: 'Europe/Paris',
-            hour12: true
-        }).format(date);
     };
 
     return (
@@ -76,14 +58,6 @@ const Header: React.FC<HeaderProps> = ({ activeFilter, onFilterChange }) => {
                 </nav>
 
                 <div className="flex items-center gap-4">
-                    <div className="hidden lg:flex items-center gap-2 text-xs font-medium text-neutral-600 dark:text-neutral-400">
-                        <span>{formatTime(currentTime)}</span>
-                        <div className="flex items-center gap-1">
-                            <MapPin size={12} />
-                            <span>France</span>
-                        </div>
-                    </div>
-
                     <a
                         href="mailto:damien.mazeas@icloud.com"
                         className="hidden md:flex items-center gap-2 text-sm font-medium text-neutral-900 dark:text-neutral-100 hover:opacity-60 transition-opacity"
