@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Maximize2 } from 'lucide-react';
 
 export const ZoomableImage: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className }) => {
     const [isOpen, setIsOpen] = useState(false);
 
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
+
     return (
         <>
             <div
-                className={`relative group cursor-zoom-in overflow-hidden bg-neutral-100 ${className}`}
+                className={`relative group cursor-zoom-in overflow-hidden bg-neutral-100 dark:bg-neutral-900 ${className}`}
                 onClick={() => setIsOpen(true)}
             >
                 <img
@@ -22,10 +33,19 @@ export const ZoomableImage: React.FC<{ src: string; alt: string; className?: str
 
             {isOpen && (
                 <div
-                    className="fixed inset-0 z-[100] bg-white/95 flex items-center justify-center p-4 cursor-zoom-out"
+                    className="fixed inset-0 z-[100] bg-white/95 dark:bg-neutral-950/95 flex items-center justify-center p-4 cursor-zoom-out backdrop-blur-sm"
                     onClick={() => setIsOpen(false)}
                 >
-                    <img src={src} alt={alt} className="max-w-full max-h-full shadow-2xl" />
+                    <img
+                        src={src}
+                        alt={alt}
+                        className="max-w-7xl max-h-[90vh] w-full h-auto object-contain shadow-2xl rounded-lg"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            // Optional: toggle close if clicking image itself
+                            // setIsOpen(false);
+                        }}
+                    />
                 </div>
             )}
         </>
@@ -37,9 +57,11 @@ export const VideoPlayer: React.FC<{ src: string; className?: string }> = ({ src
         <div className={`bg-black ${className}`}>
             <video
                 src={src}
-                controls
-                className="w-full h-full object-contain"
+                autoPlay
+                loop
+                muted
                 playsInline
+                className="w-full h-full object-contain"
             />
         </div>
     )

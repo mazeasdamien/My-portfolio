@@ -56,7 +56,7 @@ function App() {
     <DarkModeProvider>
       <HashRouter>
         <ScrollToTop />
-        <div className="flex flex-col min-h-screen font-sans selection:bg-neutral-900 dark:selection:bg-neutral-100 selection:text-white dark:selection:text-neutral-900 relative bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
+        <div className="flex flex-col min-h-screen font-sans selection:bg-neutral-900 dark:selection:bg-neutral-100 selection:text-white dark:selection:text-neutral-900 relative bg-neutral-100 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
           {/* Global Interactive Gradient Blob */}
           <div
             className="fixed inset-0 overflow-hidden pointer-events-none"

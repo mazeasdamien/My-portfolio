@@ -7,7 +7,7 @@ import { FileText, ExternalLink, Github, Monitor } from 'lucide-react';
 export const HCICoursePage = () => (
     <ProjectLayout title="Human-Computer Interaction" subtitle="Course Design • BNBU • 2025">
         <div className="lg:col-span-7 flex flex-col gap-8">
-            <div className="prose prose-neutral max-w-none text-lg text-neutral-600">
+            <div className="prose prose-neutral dark:prose-invert max-w-none text-lg text-neutral-600 dark:text-neutral-400">
                 <p>
                     I created this 14-week course consisting of weekly 1-hour lectures and 2-hour practical lab sessions.
                     It aims to develop an understanding of how users interact with technology and how effective design enhances user experience.
@@ -19,20 +19,20 @@ export const HCICoursePage = () => (
             </div>
 
             <div className="grid grid-cols-1 gap-4">
-                <img src="images/portfolio/hcicourse/hci1.webp" alt="HCI Course Hero" className="w-full aspect-video object-cover rounded-lg shadow-sm" />
+                <ZoomableImage src="images/portfolio/hcicourse/hci1.webp" alt="HCI Course Hero" className="w-full max-h-[500px] aspect-video object-cover rounded-lg shadow-sm" />
                 <div className="grid grid-cols-2 gap-4">
-                    <img src="images/portfolio/hcicourse/hci3.webp" alt="User Studies" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
-                    <img src="images/portfolio/hcicourse/hci4.webp" alt="Ergonomics" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
+                    <ZoomableImage src="images/portfolio/hcicourse/hci3.webp" alt="User Studies" className="w-full aspect-square max-h-[300px] object-cover rounded-lg shadow-sm" />
+                    <ZoomableImage src="images/portfolio/hcicourse/hci4.webp" alt="Ergonomics" className="w-full aspect-square max-h-[300px] object-cover rounded-lg shadow-sm" />
                 </div>
             </div>
 
-            <blockquote className="border-l-4 border-[rgb(9,172,239)] pl-4 italic text-xl text-neutral-500">
+            <blockquote className="border-l-4 border-[rgb(9,172,239)] pl-4 italic text-xl text-neutral-500 dark:text-neutral-400">
                 "If a picture is worth 1000 words, a prototype is worth 1000 meetings."
-                <footer className="text-sm mt-2 font-bold not-italic">— Tom & David Kelley</footer>
+                <footer className="text-sm mt-2 font-bold not-italic text-neutral-700 dark:text-neutral-300">— Tom & David Kelley</footer>
             </blockquote>
 
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/HCI.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white rounded-lg hover:bg-neutral-700 transition-colors">
+                <a href="pdfs/HCI.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors">
                     <FileText size={18} /> View Full Syllabus
                 </a>
             </div>
@@ -40,8 +40,8 @@ export const HCICoursePage = () => (
 
         <div className="lg:col-span-5 space-y-12">
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Course Modules</h3>
-                <ul className="space-y-4 text-neutral-600 text-sm">
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Course Modules</h3>
+                <ul className="space-y-4 text-neutral-600 dark:text-neutral-400 text-sm">
                     {[
                         ['Introduction to HCI', 'Core goals, definitions, evolution.'],
                         ['Prototyping', 'Low-fidelity vs High-fidelity methods.'],
@@ -54,42 +54,42 @@ export const HCICoursePage = () => (
                         ['Human-AI Interaction', 'Design principles, XAI.'],
                         ['Human-Robot Interaction', 'Trust, safety, and HRI concepts.']
                     ].map(([topic, desc]) => (
-                        <li key={topic}><strong className="text-neutral-900">{topic}:</strong> {desc}</li>
+                        <li key={topic}><strong className="text-neutral-900 dark:text-neutral-200">{topic}:</strong> {desc}</li>
                     ))}
                 </ul>
             </div>
 
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Projects</h3>
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Projects</h3>
                 <div className="space-y-4">
                     {[
-                        { name: 'Unity 3D', desc: 'Design eHMI concepts for autonomous shuttles.', color: 'bg-[rgba(9,172,239,0.1)]' },
-                        { name: 'Quant-UX', desc: 'Mobile app prototyping and A/B testing.', color: 'bg-[rgba(98,183,77,0.1)]' },
-                        { name: 'ShapesXR', desc: 'Educational VR experience prototyping.', color: 'bg-[rgba(154,58,137,0.1)]' }
+                        { name: 'Unity 3D', desc: 'Design eHMI concepts for autonomous shuttles.', color: 'bg-[rgba(9,172,239,0.1)] dark:bg-[rgba(9,172,239,0.2)]' },
+                        { name: 'Quant-UX', desc: 'Mobile app prototyping and A/B testing.', color: 'bg-[rgba(98,183,77,0.1)] dark:bg-[rgba(98,183,77,0.2)]' },
+                        { name: 'ShapesXR', desc: 'Educational VR experience prototyping.', color: 'bg-[rgba(154,58,137,0.1)] dark:bg-[rgba(154,58,137,0.2)]' }
                     ].map((p) => (
                         <div key={p.name} className={`p-4 rounded-lg ${p.color}`}>
-                            <strong className="block text-neutral-900 font-bold mb-1">{p.name}</strong>
-                            <span className="text-sm text-neutral-600">{p.desc}</span>
+                            <strong className="block text-neutral-900 dark:text-neutral-100 font-bold mb-1">{p.name}</strong>
+                            <span className="text-sm text-neutral-600 dark:text-neutral-300">{p.desc}</span>
                         </div>
                     ))}
                 </div>
             </div>
 
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Assessment</h3>
-                <ul className="space-y-4 text-neutral-600 text-sm">
-                    <li><strong className="text-neutral-900">Exams (30%):</strong> Quizzes and a final exam covering lecture content.</li>
-                    <li><strong className="text-neutral-900">Labs Submissions (10%):</strong> Individual software learning assignments.</li>
-                    <li><strong className="text-neutral-900">HCI Project Reports (60%):</strong> Three group project reports, one for each lab rotation (20% each).</li>
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Assessment</h3>
+                <ul className="space-y-4 text-neutral-600 dark:text-neutral-400 text-sm">
+                    <li><strong className="text-neutral-900 dark:text-neutral-200">Exams (30%):</strong> Quizzes and a final exam covering lecture content.</li>
+                    <li><strong className="text-neutral-900 dark:text-neutral-200">Labs Submissions (10%):</strong> Individual software learning assignments.</li>
+                    <li><strong className="text-neutral-900 dark:text-neutral-200">HCI Project Reports (60%):</strong> Three group project reports, one for each lab rotation (20% each).</li>
                 </ul>
             </div>
 
-            <div className="bg-neutral-50 p-6 rounded-xl border border-neutral-100">
-                <h3 className="text-xs font-bold uppercase text-neutral-400 mb-4">Key Details</h3>
+            <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-100 dark:border-neutral-800">
+                <h3 className="text-xs font-bold uppercase text-neutral-400 dark:text-neutral-500 mb-4">Key Details</h3>
                 <dl className="space-y-3 text-sm">
-                    <div><dt className="font-bold text-neutral-900">Role</dt><dd className="text-neutral-600">Course Creator & Instructor</dd></div>
-                    <div><dt className="font-bold text-neutral-900">Tools</dt><dd className="text-neutral-600">Unity, Quant-UX, ShapesXR</dd></div>
-                    <div><dt className="font-bold text-neutral-900">Highlights</dt><dd className="text-neutral-600">3-Rotation Lab System</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Role</dt><dd className="text-neutral-600 dark:text-neutral-400">Course Creator & Instructor</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Tools</dt><dd className="text-neutral-600 dark:text-neutral-400">Unity, Quant-UX, ShapesXR</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Highlights</dt><dd className="text-neutral-600 dark:text-neutral-400">3-Rotation Lab System</dd></div>
                 </dl>
             </div>
         </div>
@@ -99,57 +99,57 @@ export const HCICoursePage = () => (
 export const RemoteMaintenancePage = () => (
     <ProjectLayout title="Telexistence for Remote Marine Maintenance" subtitle="Vision • PhD Research • 2023">
         <div className="lg:col-span-7 flex flex-col gap-8">
-            <p className="text-lg text-neutral-600 leading-relaxed">
+            <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 Maintenance of a vessel's machinery space is critical but often hazardous. Current remote solutions are limited in capability.
                 This project investigates <strong>telexistence</strong> as a high-presence solution, allowing marine engineers to conduct complex inspections
                 and repairs from a safe, remote location as if they were physically present. We propose a scalable framework to evaluate this technology
                 aiming to improve safety, efficiency, and reduce operational costs.
             </p>
 
-            <ZoomableImage src="images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full rounded-lg border border-neutral-100" />
+            <ZoomableImage src="images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
 
             <div className="grid grid-cols-2 gap-4">
                 <VideoPlayer src="videos/vrteleoperation2.mp4" className="aspect-video rounded-lg" />
-                <ZoomableImage src="images/portfolio/telexistencemaintenance/elements.webp" alt="Elements" className="aspect-video rounded-lg bg-white object-contain" />
+                <ZoomableImage src="images/portfolio/telexistencemaintenance/elements.webp" alt="Elements" className="aspect-video max-h-[300px] rounded-lg bg-white dark:bg-neutral-800 object-contain" />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-                <ZoomableImage src="images/portfolio/telexistencemaintenance/levels.webp" alt="Maintenance Levels" className="aspect-video rounded-lg bg-white object-contain" />
+                <ZoomableImage src="images/portfolio/telexistencemaintenance/levels.webp" alt="Maintenance Levels" className="aspect-video max-h-[300px] rounded-lg bg-white dark:bg-neutral-800 object-contain" />
                 {/* Fallback/Additional Content if needed, or just span full width if levels is detailed */}
             </div>
 
-            <blockquote className="border-l-4 border-neutral-300 pl-4 italic text-xl text-neutral-500">
+            <blockquote className="border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 italic text-xl text-neutral-500 dark:text-neutral-400">
                 What are the opportunities and challenges of deploying telexistence capabilities for remote marine maintenance?
             </blockquote>
 
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/paper3.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 text-white text-sm font-medium rounded-lg hover:bg-neutral-700"><FileText size={16} /> Publication</a>
-                <a href="https://github.com/mazeasdamien/Inverse-Kinematics-Universal-Robot-Unity" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-200"><Github size={16} /> GitHub</a>
-                <a href="https://mazeasdamien.github.io/Unity-Universal-Robots-UR8-UR15/" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-200"><Monitor size={16} /> WebGL Demo</a>
+                <a href="pdfs/paper3.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
+                <a href="https://github.com/mazeasdamien/Inverse-Kinematics-Universal-Robot-Unity" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><Github size={16} /> GitHub</a>
+                <a href="https://mazeasdamien.github.io/Unity-Universal-Robots-UR8-UR15/" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><Monitor size={16} /> WebGL Demo</a>
             </div>
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Research Method</h3>
-                <p className="text-sm text-neutral-600 leading-relaxed mb-6">
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Research Method</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
                     We gathered context from expert marine engineers to understand current challenges. Based on this, we designed a realistic maintenance scenario (engine inspection).
                     An experimental protocol compared our telexistence solution (VR HMD + Digital Twin) against traditional direct teleoperation.
                 </p>
                 <VideoPlayer src="videos/ur16e.mp4" className="aspect-video rounded-lg" />
             </div>
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Contribution</h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Contribution</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                     I designed and developed the telexistence framework, integrating a physical UR16e collaborative robot with Unity 3D via DDS.
                     A key component was developing a custom <strong>C# Inverse Kinematics (IK)</strong> solution for the UR16e, enabling intuitive control from the VR HMD.
                 </p>
             </div>
-            <div className="bg-neutral-50 p-6 rounded-xl border border-neutral-100">
-                <h3 className="text-xs font-bold uppercase text-neutral-400 mb-4">Metadata</h3>
+            <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-100 dark:border-neutral-800">
+                <h3 className="text-xs font-bold uppercase text-neutral-400 dark:text-neutral-500 mb-4">Metadata</h3>
                 <dl className="space-y-3 text-sm">
-                    <div><dt className="font-bold text-neutral-900">Type</dt><dd className="text-neutral-600">PhD Research</dd></div>
-                    <div><dt className="font-bold text-neutral-900">Location</dt><dd className="text-neutral-600">Cranfield University & DSTL</dd></div>
-                    <div><dt className="font-bold text-neutral-900">Published</dt><dd className="text-neutral-600">IEEE VRW 2023</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Type</dt><dd className="text-neutral-600 dark:text-neutral-400">PhD Research</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Location</dt><dd className="text-neutral-600 dark:text-neutral-400">Cranfield University & DSTL</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Published</dt><dd className="text-neutral-600 dark:text-neutral-400">IEEE VRW 2023</dd></div>
                 </dl>
             </div>
         </div>
@@ -159,54 +159,54 @@ export const RemoteMaintenancePage = () => (
 export const TelexistenceInterfacePage = () => (
     <ProjectLayout title="VR Interface for Industrial Robotics" subtitle="PhD Research • 2022">
         <div className="lg:col-span-7 flex flex-col gap-8">
-            <p className="text-lg text-neutral-600">
+            <p className="text-lg text-neutral-600 dark:text-neutral-400">
                 Current HMI controllers for industrial robots are often complex and non-intuitive.
                 This project proposes a digital-twin-based framework with a VR interface to reduce complexity.
                 Using DDS for real-time sensor data, the system allows for intuitive remote manipulation of a FANUC robot.
             </p>
-            <ZoomableImage src="images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="rounded-lg border border-neutral-100" />
+            <ZoomableImage src="images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
 
             <div className="grid grid-cols-2 gap-4">
-                <ZoomableImage src="images/portfolio/telexistence/ui1.webp" alt="UI Elements" className="aspect-square object-contain bg-neutral-900 rounded-lg" />
-                <ZoomableImage src="images/portfolio/telexistence/ui2.webp" alt="Interaction Methods" className="aspect-square object-contain bg-neutral-900 rounded-lg" />
+                <ZoomableImage src="images/portfolio/telexistence/ui1.webp" alt="UI Elements" className="aspect-square max-h-[300px] object-contain bg-neutral-900 rounded-lg" />
+                <ZoomableImage src="images/portfolio/telexistence/ui2.webp" alt="Interaction Methods" className="aspect-square max-h-[300px] object-contain bg-neutral-900 rounded-lg" />
             </div>
             <div className="grid grid-cols-2 gap-4">
-                <ZoomableImage src="images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square object-contain bg-white rounded-lg border border-neutral-100" />
-                <ZoomableImage src="images/portfolio/telexistence/ui4.webp" alt="Point Cloud" className="aspect-square object-contain bg-neutral-900 rounded-lg" />
+                <ZoomableImage src="images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square max-h-[300px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                <ZoomableImage src="images/portfolio/telexistence/ui4.webp" alt="Point Cloud" className="aspect-square max-h-[300px] object-contain bg-neutral-900 rounded-lg" />
             </div>
 
             <VideoPlayer src="videos/Fanuc industrial robot controlled in VR.mp4" className="aspect-video rounded-lg" />
 
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/paper2.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 text-white text-sm font-medium rounded-lg hover:bg-neutral-700"><FileText size={16} /> Publication</a>
+                <a href="pdfs/paper2.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
             </div>
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Implementation</h3>
-                <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Implementation</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
                     The framework connects a VR HMD to a physical FANUC M-20iA robot.
                     Architecture components:
                 </p>
-                <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-600 mb-6">
+                <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-600 dark:text-neutral-400 mb-6">
                     <li><strong>C#.NET Gateway:</strong> Collects sensor data from Azure Kinect & Robot Controller.</li>
                     <li><strong>Unity 3D App:</strong> Immersive UI for the operator.</li>
                     <li><strong>DDS (RTI Connext):</strong> Real-time data backbone replacing ROS.</li>
                 </ul>
 
-                <h4 className="text-xs font-bold uppercase text-neutral-400 mb-4">Data Structure & Coordinates</h4>
+                <h4 className="text-xs font-bold uppercase text-neutral-400 dark:text-neutral-500 mb-4">Data Structure & Coordinates</h4>
                 <div className="grid grid-cols-2 gap-2">
-                    <ZoomableImage src="images/portfolio/telexistence/coor.webp" alt="Coordinates" className="aspect-square object-contain bg-white rounded-lg border border-neutral-100" />
-                    <ZoomableImage src="images/portfolio/telexistence/datastructure.webp" alt="Data Structure" className="aspect-square object-contain bg-white rounded-lg border border-neutral-100" />
-                    <ZoomableImage src="images/portfolio/telexistence/robot.webp" alt="Robot Data" className="col-span-2 aspect-video object-contain bg-white rounded-lg border border-neutral-100" />
+                    <ZoomableImage src="images/portfolio/telexistence/coor.webp" alt="Coordinates" className="aspect-square max-h-[300px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                    <ZoomableImage src="images/portfolio/telexistence/datastructure.webp" alt="Data Structure" className="aspect-square max-h-[300px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                    <ZoomableImage src="images/portfolio/telexistence/robot.webp" alt="Robot Data" className="col-span-2 aspect-video max-h-[400px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
                 </div>
             </div>
-            <div className="bg-neutral-50 p-6 rounded-xl border border-neutral-100">
-                <h3 className="text-xs font-bold uppercase text-neutral-400 mb-4">Highlights</h3>
+            <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-100 dark:border-neutral-800">
+                <h3 className="text-xs font-bold uppercase text-neutral-400 dark:text-neutral-500 mb-4">Highlights</h3>
                 <dl className="space-y-3 text-sm">
-                    <div><dt className="font-bold text-neutral-900">Innovation</dt><dd className="text-neutral-600">Physical Robot Integration (Not just Sim)</dd></div>
-                    <div><dt className="font-bold text-neutral-900">Protocol</dt><dd className="text-neutral-600">DDS (Non-ROS Framework)</dd></div>
-                    <div><dt className="font-bold text-neutral-900">Feature</dt><dd className="text-neutral-600">Real-time Digital Twin</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Innovation</dt><dd className="text-neutral-600 dark:text-neutral-400">Physical Robot Integration (Not just Sim)</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Protocol</dt><dd className="text-neutral-600 dark:text-neutral-400">DDS (Non-ROS Framework)</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Feature</dt><dd className="text-neutral-600 dark:text-neutral-400">Real-time Digital Twin</dd></div>
                 </dl>
             </div>
         </div>
@@ -216,24 +216,24 @@ export const TelexistenceInterfacePage = () => (
 export const RemoteCollabPage = () => (
     <ProjectLayout title="Expert and Worker Remote Collaboration" subtitle="Research Vision • 2024">
         <div className="lg:col-span-7 flex flex-col gap-8">
-            <p className="text-lg text-neutral-600">
+            <p className="text-lg text-neutral-600 dark:text-neutral-400">
                 Existing AR solutions often encumber workers with devices. This paper presents a telexistence framework
                 integrating a collaborative robot (cobot), projector, and VR to eliminate worker wearables while enhancing expert presence.
             </p>
-            <ZoomableImage src="images/portfolio/remotecollab/figure1.webp" alt="Setup" className="rounded-lg" />
+            <ZoomableImage src="images/portfolio/remotecollab/figure1.webp" alt="Setup" className="w-full max-h-[500px] object-contain rounded-lg bg-white dark:bg-neutral-800" />
 
             <div className="aspect-video rounded-lg overflow-hidden">
                 <YoutubeEmbed id="pjlTcweo_lg" />
             </div>
 
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/paper4.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 text-white text-sm font-medium rounded-lg hover:bg-neutral-700"><FileText size={16} /> Publication</a>
+                <a href="pdfs/paper4.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
             </div>
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">System Overview</h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">System Overview</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                     <strong>R-Robotics Application:</strong> Built in Unity using Netcode.
                     <br /><br />
                     <strong>Worker Space:</strong> Universal Robot UR16e + Projector.
@@ -243,20 +243,20 @@ export const RemoteCollabPage = () => (
             </div>
 
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Contributions & Limitations</h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Contributions & Limitations</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                     This work validates a telexistence-based remote guidance system that eliminates the need for local workers to wear devices.
                     <br /><br />
                     <strong>Limitations:</strong> Manual calibration of the drawing area, limited workspace of the UR16e cobot (900mm), and observed high cognitive workload on the expert.
                 </p>
             </div>
 
-            <div className="bg-neutral-50 p-6 rounded-xl border border-neutral-100">
-                <h3 className="text-xs font-bold uppercase text-neutral-400 mb-4">Project Data</h3>
+            <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-100 dark:border-neutral-800">
+                <h3 className="text-xs font-bold uppercase text-neutral-400 dark:text-neutral-500 mb-4">Project Data</h3>
                 <dl className="space-y-3 text-sm">
-                    <div><dt className="font-bold text-neutral-900">Innovation</dt><dd className="text-neutral-600">Cobot-projected AR guidance without worker wearables</dd></div>
-                    <div><dt className="font-bold text-neutral-900">Tools</dt><dd className="text-neutral-600">Unity, RoboDK, URScript</dd></div>
-                    <div><dt className="font-bold text-neutral-900">Partners</dt><dd className="text-neutral-600">Cranfield University, DSTL, INP</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Innovation</dt><dd className="text-neutral-600 dark:text-neutral-400">Cobot-projected AR guidance without worker wearables</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Tools</dt><dd className="text-neutral-600 dark:text-neutral-400">Unity, RoboDK, URScript</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Partners</dt><dd className="text-neutral-600 dark:text-neutral-400">Cranfield University, DSTL, INP</dd></div>
                 </dl>
             </div>
         </div>
@@ -266,11 +266,11 @@ export const RemoteCollabPage = () => (
 export const VRPrototypingPage = () => (
     <ProjectLayout title="VR Application for Immersive Prototyping" subtitle="Master Thesis • 2019">
         <div className="lg:col-span-7 flex flex-col gap-8">
-            <p className="text-lg text-neutral-600">
+            <p className="text-lg text-neutral-600 dark:text-neutral-400">
                 "ImPro" envisions VR not just as visualization, but as a creation tool.
                 This research investigates how immersive environments enhance early-stage design, improving scale perception compared to desktop CAD.
             </p>
-            <ZoomableImage src="images/portfolio/VRprototyping/method.webp" alt="Method" className="rounded-lg bg-neutral-50 p-4" />
+            <ZoomableImage src="images/portfolio/VRprototyping/method.webp" alt="Method" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
 
             <div className="grid grid-cols-4 gap-2">
                 {['p1', 'p2', 'p3', 'p4'].map(img => (
@@ -278,32 +278,32 @@ export const VRPrototypingPage = () => (
                 ))}
             </div>
 
-            <ZoomableImage src="images/portfolio/VRprototyping/usercreation.webp" alt="User Creation" className="rounded-lg bg-neutral-50 p-4" />
+            <ZoomableImage src="images/portfolio/VRprototyping/usercreation.webp" alt="User Creation" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
 
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/paper1.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 text-white text-sm font-medium rounded-lg hover:bg-neutral-700"><FileText size={16} /> Publication</a>
-                <a href="pdfs/master thesis damien mazeas.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-200"><FileText size={16} /> Thesis</a>
+                <a href="pdfs/paper1.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
+                <a href="pdfs/master thesis damien mazeas.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><FileText size={16} /> Thesis</a>
             </div>
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Research Findings</h3>
-                <p className="text-sm text-neutral-600 leading-relaxed mb-6">
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Research Findings</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
                     Comparative analysis against Google Blocks and Gravity Sketch.
                     ImPro achieved a System Usability Scale (SUS) score of 77.3.
                     Demonstrated improved proportion understanding vs Desktop CAD.
                 </p>
-                <ZoomableImage src="images/portfolio/VRprototyping/user.webp" alt="User Analysis" className="rounded-lg mb-4 border border-neutral-100" />
+                <ZoomableImage src="images/portfolio/VRprototyping/user.webp" alt="User Analysis" className="rounded-lg mb-4 border border-neutral-100 dark:border-neutral-800 max-h-[400px] object-contain" />
                 <div className="grid grid-cols-1 gap-4">
-                    <ZoomableImage src="images/portfolio/VRprototyping/table 1.webp" alt="Table 1" className="rounded-lg border border-neutral-100" />
-                    <ZoomableImage src="images/portfolio/VRprototyping/table 2.webp" alt="Table 2" className="rounded-lg border border-neutral-100" />
+                    <ZoomableImage src="images/portfolio/VRprototyping/table 1.webp" alt="Table 1" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                    <ZoomableImage src="images/portfolio/VRprototyping/table 2.webp" alt="Table 2" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
                 </div>
             </div>
-            <div className="bg-neutral-50 p-6 rounded-xl border border-neutral-100">
-                <h3 className="text-xs font-bold uppercase text-neutral-400 mb-4">Context</h3>
+            <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-100 dark:border-neutral-800">
+                <h3 className="text-xs font-bold uppercase text-neutral-400 dark:text-neutral-500 mb-4">Context</h3>
                 <dl className="space-y-3 text-sm">
-                    <div><dt className="font-bold text-neutral-900">Location</dt><dd className="text-neutral-600">TUMCREATE (Singapore) / Arts et Métiers</dd></div>
-                    <div><dt className="font-bold text-neutral-900">Venue</dt><dd className="text-neutral-600">DESIGN 2020 Conference</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Location</dt><dd className="text-neutral-600 dark:text-neutral-400">TUMCREATE (Singapore) / Arts et Métiers</dd></div>
+                    <div><dt className="font-bold text-neutral-900 dark:text-neutral-200">Venue</dt><dd className="text-neutral-600 dark:text-neutral-400">DESIGN 2020 Conference</dd></div>
                 </dl>
             </div>
         </div>
@@ -313,21 +313,21 @@ export const VRPrototypingPage = () => (
 export const IndustrialRoboticsPage = () => (
     <ProjectLayout title="Industrial Robotics & Automation" subtitle="Professional Training • 2021">
         <div className="lg:col-span-7 flex flex-col gap-8">
-            <p className="text-lg text-neutral-600">
+            <p className="text-lg text-neutral-600 dark:text-neutral-400">
                 Hands-on experience with industrial robotics, specifically the FANUC 6-axis robot.
                 The core of this training was achieving certification in <strong>Teach Pendant Programming</strong>,
                 which involves using a handheld control unit to manually guide the robot, define waypoints, and write logical sequences.
             </p>
             <VideoPlayer src="videos/fanucpickandplace.mp4" className="aspect-video rounded-lg" />
 
-            <p className="text-neutral-600 leading-relaxed">
+            <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 I also co-authored a technical article for <strong>Maintenance and Engineering</strong>, discussing how emerging technologies
                 like Digital Twins, IoT, and Telexistence can be leveraged to support industrial asset management.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2 md:col-span-1">
-                    <ZoomableImage src="images/portfolio/fanuc/fanuc.webp" alt="Fanuc Robot" className="aspect-[3/4] rounded-lg object-contain bg-white" />
+                    <ZoomableImage src="images/portfolio/fanuc/fanuc.webp" alt="Fanuc Robot" className="aspect-[3/4] max-h-[500px] rounded-lg object-contain bg-white dark:bg-neutral-800" />
                 </div>
                 <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
                     <VideoPlayer src="videos/roboguideunity.mp4" className="aspect-video rounded-lg" />
@@ -336,14 +336,14 @@ export const IndustrialRoboticsPage = () => (
             </div>
 
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/certificate fanuc.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 text-white text-sm font-medium rounded-lg hover:bg-neutral-700"><FileText size={16} /> Certificate</a>
-                <a href="https://www.maintenanceandengineering.com/2021/06/16/emerging-technologies-to-support-asset-management/" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-200"><ExternalLink size={16} /> Technical Article</a>
+                <a href="pdfs/certificate fanuc.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Certificate</a>
+                <a href="https://www.maintenanceandengineering.com/2021/06/16/emerging-technologies-to-support-asset-management/" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><ExternalLink size={16} /> Technical Article</a>
             </div>
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Skills Acquired</h3>
-                <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-600">
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Skills Acquired</h3>
+                <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
                     <li>FANUC Teach Pendant Operation (Programming & Operation)</li>
                     <li>Waypoints & Logic Programming</li>
                     <li>Digital Twin Integration (Roboguide to Unity)</li>
@@ -352,8 +352,8 @@ export const IndustrialRoboticsPage = () => (
             </div>
 
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 pb-2 mb-6">Digital Twin + R&D</h3>
-                <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Digital Twin + R&D</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
                     Beyond standard operation, I explored connecting <strong>FANUC Roboguide</strong> to Unity 3D for rich interactive training simulations.
                     Further research involved mobile robotics with <strong>Turtlebot 2</strong> and Azure Kinect controlled via HoloLens 2.
                 </p>
@@ -367,32 +367,32 @@ export const MasterProjectsPage = () => (
         <div className="col-span-full grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex flex-col gap-6">
                 <div>
-                    <h2 className="text-2xl font-bold mb-2 text-neutral-900">Virtual Process Training</h2>
-                    <span className="text-sm text-neutral-500 uppercase tracking-wider">Gerresheimer • Production Line</span>
+                    <h2 className="text-2xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">Virtual Process Training</h2>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">Gerresheimer • Production Line</span>
                 </div>
-                <p className="text-neutral-600">
+                <p className="text-neutral-600 dark:text-neutral-400">
                     Enables novice operators to learn complex startup sequences for glass bulb manufacturing without risking real equipment.
                     By digitizing the training, operators practice "muscle memory" in a safe environment.
                 </p>
                 <VideoPlayer src="videos/production-line.mp4" className="aspect-video rounded-lg" />
                 <div className="grid grid-cols-2 gap-2">
-                    <ZoomableImage src="images/portfolio/masterprojects/ligneproduction.webp" alt="Prod Line" className="aspect-square rounded-lg" />
-                    <ZoomableImage src="images/portfolio/masterprojects/flacon.webp" alt="Glass Vial" className="aspect-square rounded-lg" />
+                    <ZoomableImage src="images/portfolio/masterprojects/ligneproduction.webp" alt="Prod Line" className="aspect-square max-h-[250px] object-cover rounded-lg" />
+                    <ZoomableImage src="images/portfolio/masterprojects/flacon.webp" alt="Glass Vial" className="aspect-square max-h-[250px] object-cover rounded-lg" />
                 </div>
             </div>
             <div className="flex flex-col gap-6">
                 <div>
-                    <h2 className="text-2xl font-bold mb-2 text-neutral-900">Mould Animation VR</h2>
-                    <span className="text-sm text-neutral-500 uppercase tracking-wider">MMI • Mechanics Visualization</span>
+                    <h2 className="text-2xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">Mould Animation VR</h2>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">MMI • Mechanics Visualization</span>
                 </div>
-                <p className="text-neutral-600">
+                <p className="text-neutral-600 dark:text-neutral-400">
                     Visualizes industrial mould mechanics in VR. Interactively open/close moulds, view fluid flows, and perform cross-section cuts.
                     Replaces static technical drawings with immersive validation.
                 </p>
                 <VideoPlayer src="videos/moulding.mp4" className="aspect-video rounded-lg" />
                 <div className="grid grid-cols-2 gap-2">
-                    <ZoomableImage src="images/portfolio/masterprojects/moulebis.webp" alt="Mould" className="aspect-square rounded-lg" />
-                    <ZoomableImage src="images/portfolio/masterprojects/moule.webp" alt="Fluid" className="aspect-square rounded-lg" />
+                    <ZoomableImage src="images/portfolio/masterprojects/moulebis.webp" alt="Mould" className="aspect-square max-h-[250px] object-cover rounded-lg" />
+                    <ZoomableImage src="images/portfolio/masterprojects/moule.webp" alt="Fluid" className="aspect-square max-h-[250px] object-cover rounded-lg" />
                 </div>
             </div>
         </div>
@@ -404,7 +404,7 @@ export const ArduinoPage = () => (
         <div className="col-span-full space-y-16 max-w-5xl mx-auto">
 
             {/* Introduction */}
-            <div className="prose prose-neutral max-w-none text-lg text-neutral-600">
+            <div className="prose prose-neutral dark:prose-invert max-w-none text-lg text-neutral-600 dark:text-neutral-400">
                 <p>
                     Bridging Physical & Digital Worlds: An Interactive Demo with Arduino & Unity.
                     This guide covers the hardware setup, the Arduino C++ code, and the Unity C# implementation.
@@ -414,11 +414,11 @@ export const ArduinoPage = () => (
             {/* Hardware Section */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                    <h2 className="text-2xl font-bold text-neutral-900 mb-6 border-l-4 border-[rgb(98,183,77)] pl-4">1. Hardware Setup</h2>
+                    <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6 border-l-4 border-[rgb(98,183,77)] pl-4">1. Hardware Setup</h2>
                     <div className="space-y-6">
                         <div>
-                            <h4 className="font-bold text-neutral-800 mb-2">Components</h4>
-                            <ul className="list-disc pl-5 space-y-1 text-neutral-600">
+                            <h4 className="font-bold text-neutral-800 dark:text-neutral-200 mb-2">Components</h4>
+                            <ul className="list-disc pl-5 space-y-1 text-neutral-600 dark:text-neutral-400">
                                 <li><strong>Arduino Uno:</strong> The 'brain' of the operation.</li>
                                 <li><strong>Potentiometer:</strong> Input sensor (variable knob).</li>
                                 <li><strong>LED:</strong> Output (simple light).</li>
@@ -427,8 +427,8 @@ export const ArduinoPage = () => (
                             </ul>
                         </div>
                         <div>
-                            <h4 className="font-bold text-neutral-800 mb-2">Wiring Diagram</h4>
-                            <div className="text-sm text-neutral-600 space-y-2">
+                            <h4 className="font-bold text-neutral-800 dark:text-neutral-200 mb-2">Wiring Diagram</h4>
+                            <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
                                 <p><strong>Potentiometer:</strong><br />Outer Pins → 5V & GND<br />Middle Pin → A3</p>
                                 <p><strong>LED:</strong><br />Long leg → Pin 5<br />Short leg → Resistor → GND</p>
                             </div>
@@ -437,44 +437,44 @@ export const ArduinoPage = () => (
                 </div>
                 <div className="space-y-4">
                     <ZoomableImage src="images/tuto-arduino-unity/arduino2.webp" alt="Arduino Components" className="rounded-lg shadow-sm aspect-video" />
-                    <ZoomableImage src="images/tuto-arduino-unity/schema.webp" alt="Wiring Schematic" className="rounded-lg shadow-sm bg-white p-2 border border-neutral-100 aspect-video" />
+                    <ZoomableImage src="images/tuto-arduino-unity/schema.webp" alt="Wiring Schematic" className="rounded-lg shadow-sm bg-white dark:bg-neutral-800 p-2 border border-neutral-100 dark:border-neutral-800 aspect-video" />
                 </div>
             </section>
 
             {/* Arduino Code Section */}
             <section>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-8 border-l-4 border-[rgb(9,172,239)] pl-4">2. Arduino Code</h2>
+                <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 border-l-4 border-[rgb(9,172,239)] pl-4">2. Arduino Code</h2>
                 <div className="space-y-8">
 
                     {/* Block 1 */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 min-w-0">
+                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 dark:border-neutral-600 min-w-0 shadow-md">
                             <span style={{ color: '#8e8e8e' }}>// 1. Define the pins</span><br />
                             <span style={{ color: '#00979C' }}>const</span> <span style={{ color: '#00979C' }}>int</span> potPin = A3;<br />
                             <span style={{ color: '#00979C' }}>const</span> <span style={{ color: '#00979C' }}>int</span> ledPin = <span style={{ color: '#00979C' }}>5</span>;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(9,172,239)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 dark:bg-neutral-900 border-l-4 border-[rgb(9,172,239)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 dark:text-neutral-400 min-w-0">
                             <p>We start by giving memorable names to the pins. Potentiometer on <strong>A3</strong>, LED on <strong>Pin 5</strong>.</p>
                         </div>
                     </div>
 
                     {/* Block 2 */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 min-w-0">
+                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 dark:border-neutral-600 min-w-0 shadow-md">
                             <span style={{ color: '#8e8e8e' }}>// 2. Setup (runs once)</span><br />
                             <span style={{ color: '#00979C' }}>void</span> <span style={{ color: '#E34C00' }}>setup</span>() &#123;<br />
                             &nbsp;&nbsp;<span style={{ color: '#E34C00' }}>Serial.begin</span>(<span style={{ color: '#00979C' }}>9600</span>);<br />
                             &nbsp;&nbsp;<span style={{ color: '#E34C00' }}>pinMode</span>(ledPin, <span style={{ color: '#D34242' }}>OUTPUT</span>);<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(9,172,239)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 dark:bg-neutral-900 border-l-4 border-[rgb(9,172,239)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 dark:text-neutral-400 min-w-0">
                             <p><code>setup()</code> runs once. It opens the Serial Port (9600 baud) and configures the LED pin.</p>
                         </div>
                     </div>
 
                     {/* Block 3 */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 min-w-0">
+                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 dark:border-neutral-600 min-w-0 shadow-md">
                             <span style={{ color: '#8e8e8e' }}>// 3. Loop (runs forever)</span><br />
                             <span style={{ color: '#00979C' }}>void</span> <span style={{ color: '#E34C00' }}>loop</span>() &#123;<br />
                             &nbsp;&nbsp;<span style={{ color: '#8e8e8e' }}>// --- SENDING DATA ---</span><br />
@@ -490,7 +490,7 @@ export const ArduinoPage = () => (
                             &nbsp;&nbsp;<span style={{ color: '#E34C00' }}>delay</span>(<span style={{ color: '#00979C' }}>50</span>);<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(241,100,32)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 dark:bg-neutral-900 border-l-4 border-[rgb(241,100,32)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 dark:text-neutral-400 min-w-0">
                             <p>Reads the knob value and sends it to Unity. Then checks if Unity sent '1' or '0' to toggle the LED.</p>
                         </div>
                     </div>
@@ -499,19 +499,19 @@ export const ArduinoPage = () => (
 
             {/* Unity Setup Section */}
             <section>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-6 border-l-4 border-[rgb(154,58,137)] pl-4">3. Unity Configuration</h2>
+                <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6 border-l-4 border-[rgb(154,58,137)] pl-4">3. Unity Configuration</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
-                        <h4 className="font-bold text-neutral-800">Critical Setting</h4>
-                        <p className="text-neutral-600 text-sm">
+                        <h4 className="font-bold text-neutral-800 dark:text-neutral-200">Critical Setting</h4>
+                        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                             To access serial ports, you MUST change the API Compatibility Level.
                         </p>
-                        <div className="bg-amber-50 p-4 rounded-lg border border-amber-200 text-amber-800 text-sm">
+                        <div className="bg-amber-50 dark:bg-amber-950/30 p-4 rounded-lg border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 text-sm">
                             <strong>File &gt; Build Profiles &gt; Player Settings</strong><br />
                             Other Settings &gt; Api Compatibility Level: <strong>.NET Framework</strong>
                         </div>
-                        <h4 className="font-bold text-neutral-800 mt-6">Scene Components</h4>
-                        <ul className="list-disc pl-5 text-sm text-neutral-600 space-y-1">
+                        <h4 className="font-bold text-neutral-800 dark:text-neutral-200 mt-6">Scene Components</h4>
+                        <ul className="list-disc pl-5 text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
                             <li>Ghost/Cube character to rotate.</li>
                             <li>Empty GameObject "ArduinoManager".</li>
                             <li>UI Button to toggle LED.</li>
@@ -526,12 +526,12 @@ export const ArduinoPage = () => (
 
             {/* Unity Code Section */}
             <section>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-8 border-l-4 border-[rgb(154,58,137)] pl-4">4. Unity C# Script</h2>
+                <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 border-l-4 border-[rgb(154,58,137)] pl-4">4. Unity C# Script</h2>
                 <div className="space-y-8">
 
                     {/* Variables */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 min-w-0">
+                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 dark:border-neutral-600 min-w-0 shadow-md">
                             <span style={{ color: '#57a64a' }}>// 1. Define variables</span><br />
                             <span style={{ color: '#569cd6' }}>public</span> <span style={{ color: '#569cd6' }}>string</span> portName = <span style={{ color: '#d69d85' }}>"COM3"</span>;<br />
                             <span style={{ color: '#569cd6' }}>public</span> <span style={{ color: '#569cd6' }}>int</span> baudRate = <span style={{ color: '#b5cea8' }}>9600</span>;<br /><br />
@@ -540,28 +540,28 @@ export const ArduinoPage = () => (
                             <span style={{ color: '#569cd6' }}>private</span> <span style={{ color: '#4ec9b0' }}>SerialPort</span> stream;<br />
                             <span style={{ color: '#569cd6' }}>private</span> <span style={{ color: '#569cd6' }}>bool</span> ledState = <span style={{ color: '#569cd6' }}>false</span>;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(98,183,77)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 dark:bg-neutral-900 border-l-4 border-[rgb(98,183,77)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 dark:text-neutral-400 min-w-0">
                             <p>Public variables allow configuration directly in the Inspector (Port Name is crucial!).</p>
                         </div>
                     </div>
 
                     {/* Start */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 min-w-0">
+                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 dark:border-neutral-600 min-w-0 shadow-md">
                             <span style={{ color: '#569cd6' }}>void</span> <span style={{ color: '#dcdcaa' }}>Start</span>() &#123;<br />
                             &nbsp;&nbsp;stream = <span style={{ color: '#569cd6' }}>new</span> <span style={{ color: '#4ec9b0' }}>SerialPort</span>(portName, baudRate);<br />
                             &nbsp;&nbsp;stream.ReadTimeout = <span style={{ color: '#b5cea8' }}>50</span>;<br />
                             &nbsp;&nbsp;stream.<span style={{ color: '#dcdcaa' }}>Open</span>();<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(9,172,239)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 dark:bg-neutral-900 border-l-4 border-[rgb(9,172,239)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 dark:text-neutral-400 min-w-0">
                             <p>Initializes and opens the connection. <code>ReadTimeout</code> prevents freezing if data stops coming.</p>
                         </div>
                     </div>
 
                     {/* Update */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 min-w-0">
+                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 dark:border-neutral-600 min-w-0 shadow-md">
                             <span style={{ color: '#569cd6' }}>void</span> <span style={{ color: '#dcdcaa' }}>Update</span>() &#123;<br />
                             &nbsp;&nbsp;<span style={{ color: '#569cd6' }}>string</span> dataString = stream.<span style={{ color: '#dcdcaa' }}>ReadLine</span>();<br />
                             &nbsp;&nbsp;<span style={{ color: '#569cd6' }}>if</span> (<span style={{ color: '#569cd6' }}>int</span>.<span style={{ color: '#dcdcaa' }}>TryParse</span>(dataString, <span style={{ color: '#569cd6' }}>out</span> <span style={{ color: '#569cd6' }}>int</span> potValue))<br />
@@ -572,14 +572,14 @@ export const ArduinoPage = () => (
                             &nbsp;&nbsp;&#125;<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(241,100,32)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 dark:bg-neutral-900 border-l-4 border-[rgb(241,100,32)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 dark:text-neutral-400 min-w-0">
                             <p>Reads data every frame, converts it, and maps the 0-1023 value to 0-360 degrees rotation.</p>
                         </div>
                     </div>
 
                     {/* Button Function */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 min-w-0">
+                        <div className="lg:col-span-3 bg-[#2a2d32] p-4 rounded-lg font-mono text-sm text-[#f0f0f0] overflow-x-auto border border-neutral-700 dark:border-neutral-600 min-w-0 shadow-md">
                             <span style={{ color: '#569cd6' }}>public</span> <span style={{ color: '#569cd6' }}>void</span> <span style={{ color: '#dcdcaa' }}>ToggleLEDAndColor</span>() &#123;<br />
                             &nbsp;&nbsp;ledState = !ledState;<br />
                             &nbsp;&nbsp;<span style={{ color: '#569cd6' }}>string</span> command = ledState ? <span style={{ color: '#d69d85' }}>"1"</span> : <span style={{ color: '#d69d85' }}>"0"</span>;<br />
@@ -589,7 +589,7 @@ export const ArduinoPage = () => (
                             &nbsp;&nbsp;<span style={{ color: '#569cd6' }}>else</span> objectMaterial.color = <span style={{ color: '#4ec9b0' }}>Color</span>.white;<br />
                             &#125;
                         </div>
-                        <div className="lg:col-span-2 bg-neutral-50 border-l-4 border-[rgb(241,100,32)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 min-w-0">
+                        <div className="lg:col-span-2 bg-neutral-50 dark:bg-neutral-900 border-l-4 border-[rgb(241,100,32)] p-4 rounded-r-lg flex flex-col justify-center text-sm text-neutral-600 dark:text-neutral-400 min-w-0">
                             <p>Called by UI Button. Sends command to Arduino and updates Unity material color for feedback.</p>
                         </div>
                     </div>
@@ -598,18 +598,44 @@ export const ArduinoPage = () => (
             </section>
 
             {/* Troubleshooting */}
-            <section className="bg-neutral-50 rounded-xl p-8 border border-neutral-200">
-                <h2 className="text-xl font-bold text-neutral-900 mb-6">Troubleshooting Checklist ✅</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <ul className="space-y-3 text-neutral-700">
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Is the Arduino plugged in?</li>
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Is the <strong>Port Name</strong> correct? (Check Device Manager/Arduino IDE).</li>
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Is <strong>Baud Rate</strong> 9600 in both scripts?</li>
-                    </ul>
-                    <ul className="space-y-3 text-neutral-700">
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Did you set <strong>Api Compatibility Level</strong> to .NET Framework?</li>
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Is the serial monitor closed in Arduino IDE? (Unity needs exclusive access).</li>
-                    </ul>
+            <section className="bg-neutral-50 dark:bg-neutral-900 rounded-xl p-8 border border-neutral-200 dark:border-neutral-800">
+                <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">Troubleshooting Checklist ✅</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-neutral-700 dark:text-neutral-300">
+                    <div className="space-y-4">
+                         <h4 className="font-bold text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">1. Hardware & Connection</h4>
+                         <ul className="space-y-3">
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Plugged In?</strong> Ensure the Arduino is connected via USB. The green "ON" LED should be lit.</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Correct Port?</strong> Check "Device Manager" (Windows) or Arduino IDE for the correct COM port (e.g., COM3, COM4). Update the Unity script variable <code>portName</code>.</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Wiring Check:</strong> Verify the potentiometer is powered (5V/GND) and the signal pin goes to <strong>A3</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h4 className="font-bold text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">2. Software & Code</h4>
+                        <ul className="space-y-3">
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Api Compatibility:</strong> In Unity <em>Player Settings</em>, set "Api Compatibility Level" to <strong>.NET Framework</strong>.</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Close Serial Monitor:</strong> Unity cannot connect if the Arduino IDE Serial Monitor is open. Close it before pressing Play in Unity.</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Baud Rate:</strong> Ensure both Arduino code and Unity script use <strong>9600</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
