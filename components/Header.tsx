@@ -60,12 +60,12 @@ const Header: React.FC<HeaderProps> = ({ activeFilter, onFilterChange }) => {
                     <DarkModeToggle />
                 </div>
 
-                <nav className="flex flex-wrap justify-center gap-x-1 gap-y-2">
+                <nav className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible w-full md:w-auto justify-start md:justify-center gap-2 px-6 -mx-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [scrollbar-width:none] [-ms-overflow-style:none]">
                     {filters.map((filter) => (
                         <button
                             key={filter.id}
                             onClick={() => handleFilterClick(filter.id)}
-                            className={`px-3 py-1 text-sm font-medium rounded-full transition-all duration-200 ${activeFilter === filter.id
+                            className={`px-3 py-1 text-sm font-medium whitespace-nowrap rounded-full transition-all duration-200 ${activeFilter === filter.id
                                 ? 'bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900'
                                 : 'text-neutral-500 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100'
                                 }`}
