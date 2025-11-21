@@ -185,9 +185,9 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <img src="images/logos/fanuc.webp" alt="FANUC" className="max-w-full max-h-full object-contain" />
             </div>
             <div className="flex-grow">
-              <h3 className="text-base font-bold text-neutral-900 mb-1">FANUC Robotics Standard Teach Pendant Programming</h3>
+              <h3 className="text-base font-bold text-neutral-900 dark:text-neutral-100 mb-1">FANUC Robotics Standard Teach Pendant Programming</h3>
               <div className="flex items-center gap-2 text-sm">
-                <span className="text-neutral-600">R30iB+ Controller</span>
+                <span className="text-neutral-600 dark:text-neutral-400">R30iB+ Controller</span>
                 <span className="text-[rgba(241,100,32,0.6)]">•</span>
                 <span className="bg-[rgba(241,100,32,0.1)] text-[rgb(241,100,32)] px-2 py-0.5 rounded text-xs font-medium">Sep 2021</span>
               </div>
