@@ -29,6 +29,8 @@ export default function PortfolioView() {
     return (
         <div className="relative w-full h-screen overflow-hidden text-neutral-900 dark:text-neutral-100 selection:bg-neutral-200 dark:selection:bg-neutral-800">
 
+
+
             {/* 2. Status Bar (Top) */}
             <header className="relative z-50 px-8">
             </header>

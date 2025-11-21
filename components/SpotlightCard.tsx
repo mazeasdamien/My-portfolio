@@ -41,21 +41,21 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            // Outer container: acts as the border. Default color neutral-200.
-            className={`relative rounded-xl bg-neutral-200 dark:bg-neutral-700 p-[1px] transition-all duration-300 hover:shadow-md ${className}`}
+            // Liquid Glass Style
+            className={`relative rounded-xl border border-neutral-200/50 dark:border-neutral-700/50 bg-gradient-to-br from-neutral-50/90 to-neutral-50/50 dark:from-neutral-900/60 dark:to-neutral-900/20 backdrop-blur-md transition-all duration-300 shadow-sm hover:shadow-xl overflow-hidden ${className}`}
             {...props}
         >
-            {/* Gradient Glow Layer - sits on top of the bg-neutral-200 but behind the content */}
+            {/* Gradient Glow Layer */}
             <div
-                className="pointer-events-none absolute inset-0 rounded-xl transition-opacity duration-300"
+                className="pointer-events-none absolute inset-0 transition-opacity duration-300"
                 style={{
                     opacity,
-                    background: `radial-gradient(1000px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 60%)`,
+                    background: `radial-gradient(800px circle at ${position.x}px ${position.y}px, ${spotlightColor}15, transparent 40%)`,
                 }}
             />
 
-            {/* Content Container - the actual "card" background */}
-            <div className={`relative h-full w-full bg-white dark:bg-neutral-900 rounded-[11px] ${innerClassName}`}>
+            {/* Content Container */}
+            <div className={`relative h-full w-full ${innerClassName}`}>
                 {children}
             </div>
         </Component>

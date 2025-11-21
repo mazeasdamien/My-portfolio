@@ -32,20 +32,23 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
       return {
         badge: 'bg-[rgba(98,183,77,0.1)] text-[rgb(98,183,77)] border-[rgba(98,183,77,0.2)]',
         spotlight: 'rgb(98, 183, 77)', // Green (Training)
-        arrow: 'text-[rgb(98,183,77)]'
+        arrow: 'text-[rgb(98,183,77)]',
+        border: 'hover:border-2 hover:border-[rgb(98,183,77)] dark:hover:border-[rgb(98,183,77)]'
       };
     }
     if (lower.includes('fall') || lower.includes('autumn')) {
       return {
         badge: 'bg-[rgba(241,100,32,0.1)] text-[rgb(241,100,32)] border-[rgba(241,100,32,0.2)]',
         spotlight: 'rgb(241, 100, 32)', // Orange (Projects)
-        arrow: 'text-[rgb(241,100,32)]'
+        arrow: 'text-[rgb(241,100,32)]',
+        border: 'hover:border-2 hover:border-[rgb(241,100,32)] dark:hover:border-[rgb(241,100,32)]'
       };
     }
     return {
       badge: 'bg-neutral-50 text-neutral-700 border-neutral-100',
       spotlight: 'rgba(115, 115, 115, 1)', // neutral-500
-      arrow: 'text-neutral-400'
+      arrow: 'text-neutral-400',
+      border: 'hover:border-2 hover:border-neutral-300 dark:hover:border-neutral-500'
     };
   };
 
@@ -120,7 +123,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
           <div className="space-y-12">
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/cranfield.webp" alt="Cranfield University" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
@@ -136,7 +139,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* Arts et Metiers */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
@@ -152,7 +155,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* Bachelor */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/poitiers.webp" alt="University of Poitiers" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
@@ -174,7 +177,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             <span className="h-px flex-grow bg-[rgba(241,100,32,0.2)]"></span>
           </h2>
           <div className="group flex gap-4 sm:gap-6">
-            <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
+            <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
               <img src="images/logos/fanuc.webp" alt="FANUC" className="max-w-full max-h-full object-contain" />
             </div>
             <div className="flex-grow">
@@ -198,7 +201,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* BNBU */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/bnbu.webp" alt="BNBU" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
@@ -218,7 +221,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* CNRS */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/cnrs.webp" alt="CNRS" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
@@ -236,7 +239,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* G-SCOP */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/gscop.webp" alt="G-SCOP" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
@@ -255,7 +258,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* Safran */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/safran.webp" alt="Safran" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
@@ -274,7 +277,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
             {/* TUM */}
             <div className="group flex gap-4 sm:gap-6">
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
                 <img src="images/logos/tumcreate.webp" alt="TUMCREATE" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
@@ -299,7 +302,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             Skills
             <span className="h-px flex-grow bg-[rgba(154,58,137,0.2)]"></span>
           </h2>
-          <div className="bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-xl p-6 shadow-sm w-1/2 mx-auto">
+          <div className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-xl p-6 shadow-sm w-1/2 mx-auto">
             <img
               src="images/skills.png"
               alt="Skills Overview"
@@ -319,6 +322,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           <section className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
             <BoomerangVideo />
             <div className="order-2 lg:order-1 animate-fade-in-up opacity-0 relative z-10" style={{ animationDelay: '0ms' }}>
+
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-8 text-neutral-900 dark:text-neutral-100">
                 Bridging <br />
                 <span className="text-[rgb(98,183,77)] dark:text-[rgb(110,200,90)]">Physical</span> & <span className="text-[rgb(9,172,239)] dark:text-[rgb(56,189,248)]">Digital</span> Worlds
@@ -336,6 +340,9 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 transition: 'transform 0.15s ease-out'
               }}
             >
+              {/* Profile Halo */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(98,183,77,0.2)] to-[rgba(9,172,239,0.2)] blur-[60px] -z-10 rounded-full pointer-events-none scale-125 opacity-70 dark:opacity-50" />
+
               <img
                 src="images/profil.webp"
                 alt="Damien Mazeas"
@@ -363,7 +370,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 href={hasLink ? item.url : undefined}
                 target={hasLink ? "_blank" : undefined}
                 rel={hasLink ? "noreferrer" : undefined}
-                className={`block group animate-fade-in-up opacity-0 ${hasLink ? 'hover:scale-[1.01] cursor-pointer' : 'cursor-default hover:shadow-none'}`}
+                className={`block group animate-fade-in-up opacity-0 ${hasLink ? 'hover:scale-[1.01] cursor-pointer hover:border-2 hover:border-[rgb(9,172,239)] dark:hover:border-[rgb(9,172,239)]' : 'cursor-default hover:shadow-none'}`}
                 innerClassName="flex flex-col sm:flex-row gap-4 p-6"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -398,7 +405,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 target={hasLink ? "_blank" : undefined}
                 rel={hasLink ? "noreferrer" : undefined}
                 spotlightColor={theme.spotlight}
-                className={`block group animate-fade-in-up opacity-0 ${hasLink ? 'hover:scale-[1.01] cursor-pointer' : 'cursor-default hover:shadow-none'}`}
+                className={`block group animate-fade-in-up opacity-0 ${hasLink ? `hover:scale-[1.01] cursor-pointer ${theme.border}` : 'cursor-default hover:shadow-none'}`}
                 innerClassName="flex flex-col sm:flex-row gap-6 p-6 items-start sm:items-center"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -445,6 +452,7 @@ const ResearchFocusSection = () => {
       icon: Users,
       color: "text-[rgb(9,172,239)]",
       bg: "bg-[rgba(9,172,239,0.1)]",
+      border: "hover:border-[rgb(9,172,239)] dark:hover:border-[rgb(9,172,239)]"
     },
     {
       title: "Robotic Embodiment",
@@ -453,6 +461,7 @@ const ResearchFocusSection = () => {
       icon: Bot,
       color: "text-[rgb(154,58,137)]",
       bg: "bg-[rgba(154,58,137,0.1)]",
+      border: "hover:border-[rgb(154,58,137)] dark:hover:border-[rgb(154,58,137)]"
     },
     {
       title: "Cognitive Augmentation",
@@ -461,6 +470,7 @@ const ResearchFocusSection = () => {
       icon: Brain,
       color: "text-[rgb(98,183,77)]",
       bg: "bg-[rgba(98,183,77,0.1)]",
+      border: "hover:border-[rgb(98,183,77)] dark:hover:border-[rgb(98,183,77)]"
     }
   ];
 
@@ -471,7 +481,7 @@ const ResearchFocusSection = () => {
         {researchAreas.map((area, index) => (
           <article
             key={area.title}
-            className="group p-8 bg-gradient-to-br from-white/90 to-white/50 dark:from-neutral-900/60 dark:to-neutral-900/20 backdrop-blur-xl border border-white/20 dark:border-neutral-700/30 rounded-2xl hover:border-neutral-300/50 dark:hover:border-neutral-500/50 hover:shadow-xl hover:shadow-neutral-200/20 dark:hover:shadow-neutral-900/50 hover:-translate-y-1 transition-all duration-300 flex flex-col animate-fade-in-up opacity-0"
+            className={`group p-8 bg-gradient-to-br from-neutral-50/90 to-neutral-50/50 dark:from-neutral-900/60 dark:to-neutral-900/20 backdrop-blur-xl border border-white/20 dark:border-neutral-700/30 rounded-2xl hover:border-2 ${area.border} hover:shadow-xl hover:shadow-neutral-200/20 dark:hover:shadow-neutral-900/50 hover:-translate-y-1 transition-all duration-300 flex flex-col animate-fade-in-up opacity-0`}
             style={{ animationDelay: `${400 + (index * 100)}ms` }}
           >
             <div className={`w-12 h-12 ${area.bg} rounded-xl flex items-center justify-center mb-6 transition-transform duration-300`}>
@@ -499,11 +509,11 @@ const ResearchFocusSection = () => {
 
 function getSubtitleStyle(subtitle?: string) {
   const lower = subtitle?.toLowerCase() || '';
-  if (lower.includes('teaching')) return { text: 'text-[rgb(9,172,239)]', border: 'hover:bg-[rgba(9,172,239,0.5)]' };
-  if (lower.includes('research')) return { text: 'text-[rgb(154,58,137)]', border: 'hover:bg-[rgb(154,58,137)]' };
-  if (lower.includes('training')) return { text: 'text-[rgb(98,183,77)]', border: 'hover:bg-[rgba(98,183,77,0.5)]' };
-  if (lower.includes('projects')) return { text: 'text-[rgb(241,100,32)]', border: 'hover:bg-[rgba(241,100,32,0.5)]' };
-  return { text: 'text-neutral-500', border: 'hover:bg-neutral-300' };
+  if (lower.includes('teaching')) return { text: 'text-[rgb(9,172,239)]', border: 'hover:border-2 hover:border-[rgb(9,172,239)] dark:hover:border-[rgb(9,172,239)]' };
+  if (lower.includes('research')) return { text: 'text-[rgb(154,58,137)]', border: 'hover:border-2 hover:border-[rgb(154,58,137)] dark:hover:border-[rgb(154,58,137)]' };
+  if (lower.includes('training')) return { text: 'text-[rgb(98,183,77)]', border: 'hover:border-2 hover:border-[rgb(98,183,77)] dark:hover:border-[rgb(98,183,77)]' };
+  if (lower.includes('projects')) return { text: 'text-[rgb(241,100,32)]', border: 'hover:border-2 hover:border-[rgb(241,100,32)] dark:hover:border-[rgb(241,100,32)]' };
+  return { text: 'text-neutral-500', border: 'hover:border-2 hover:border-neutral-300 dark:hover:border-neutral-500' };
 }
 
 const Card: React.FC<{ item: any }> = ({ item }) => {
@@ -548,11 +558,11 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
 
   if (isYoutube) {
     categoryColor = 'text-red-600';
-    borderClass = 'hover:bg-red-600';
+    borderClass = 'hover:border-2 hover:border-red-600 dark:hover:border-red-600';
   }
   if (isArduino) {
     categoryColor = 'text-teal-600';
-    borderClass = 'hover:bg-teal-600';
+    borderClass = 'hover:border-2 hover:border-teal-600 dark:hover:border-teal-600';
   }
 
   // Determine component and props for SpotlightCard
@@ -594,7 +604,7 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       </div>
 
       {item.thumbnail && (
-        <div className="mb-6 aspect-video overflow-hidden rounded-lg bg-white relative">
+        <div className="mb-6 aspect-video overflow-hidden rounded-lg bg-neutral-50 relative">
           <img
             src={isHovered && item.hoverThumbnail ? item.hoverThumbnail : item.thumbnail}
             alt={item.title}

@@ -57,6 +57,11 @@ function App() {
       <HashRouter>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen font-sans selection:bg-neutral-900 dark:selection:bg-neutral-100 selection:text-white dark:selection:text-neutral-900 relative bg-neutral-100 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
+          {/* Global Modern Halo Effect */}
+          <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
+            <div className="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] bg-gradient-to-br from-[rgba(98,183,77,0.15)] via-[rgba(9,172,239,0.15)] to-[rgba(154,58,137,0.15)] blur-[120px] opacity-70 dark:opacity-50" />
+          </div>
+
           {/* Global Interactive Gradient Blob */}
           <div
             className="fixed inset-0 overflow-hidden pointer-events-none"

@@ -98,7 +98,7 @@ export const RemoteMaintenancePage = () => (
                 aiming to improve safety, efficiency, and reduce operational costs.
             </p>
 
-            <img src="images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+            <img src="images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full max-h-[500px] object-contain bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
 
             <VideoPlayer src="videos/vrteleoperation2.mp4" className="aspect-video rounded-lg" />
 
@@ -152,12 +152,12 @@ export const TelexistenceInterfacePage = () => (
             </p>
             <VideoPlayer src="videos/Fanuc industrial robot controlled in VR.mp4" className="aspect-video rounded-lg" />
 
-            <img src="images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+            <img src="images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="w-full max-h-[500px] object-contain bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
 
             <div className="grid grid-cols-4 gap-4">
                 <img src="images/portfolio/telexistence/ui1.webp" alt="UI Elements" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
                 <img src="images/portfolio/telexistence/ui2.webp" alt="Interaction Methods" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
-                <img src="images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square max-h-[200px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                <img src="images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square max-h-[200px] object-contain bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
                 <img src="images/portfolio/telexistence/ui4.webp" alt="Point Cloud" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
             </div>
         </div>
@@ -206,7 +206,7 @@ export const RemoteCollabPage = () => (
                 Existing AR solutions often encumber workers with devices. This paper presents a telexistence framework
                 integrating a collaborative robot (cobot), projector, and VR to eliminate worker wearables while enhancing expert presence.
             </p>
-            <ZoomableImage src="images/portfolio/remotecollab/figure1.webp" alt="Setup" className="w-full max-h-[500px] object-contain rounded-lg bg-white dark:bg-neutral-800" />
+            <ZoomableImage src="images/portfolio/remotecollab/figure1.webp" alt="Setup" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-800" />
 
             <div className="aspect-video rounded-lg overflow-hidden">
                 <YoutubeEmbed id="pjlTcweo_lg" />
@@ -442,7 +442,7 @@ export const ArduinoPage = () => (
                 </div>
                 <div className="space-y-4">
                     <ZoomableImage src="images/tuto-arduino-unity/arduino2.webp" alt="Arduino Components" className="rounded-lg shadow-sm aspect-video" />
-                    <ZoomableImage src="images/tuto-arduino-unity/schema.webp" alt="Wiring Schematic" className="rounded-lg shadow-sm bg-white dark:bg-neutral-800 p-2 border border-neutral-100 dark:border-neutral-800 aspect-video" />
+                    <ZoomableImage src="images/tuto-arduino-unity/schema.webp" alt="Wiring Schematic" className="rounded-lg shadow-sm bg-neutral-50 dark:bg-neutral-800 p-2 border border-neutral-100 dark:border-neutral-800 aspect-video" />
                 </div>
             </section>
 

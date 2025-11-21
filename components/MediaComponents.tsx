@@ -33,7 +33,7 @@ export const ZoomableImage: React.FC<{ src: string; alt: string; className?: str
 
             {isOpen && (
                 <div
-                    className="fixed inset-0 z-[100] bg-white/95 dark:bg-neutral-950/95 flex items-center justify-center p-4 cursor-zoom-out backdrop-blur-md"
+                    className="fixed inset-0 z-[100] bg-neutral-50/95 dark:bg-neutral-950/95 flex items-center justify-center p-4 cursor-zoom-out backdrop-blur-md"
                     onClick={() => setIsOpen(false)}
                 >
                     <img
