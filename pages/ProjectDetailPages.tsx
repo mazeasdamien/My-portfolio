@@ -2,10 +2,11 @@
 import React from 'react';
 import ProjectLayout from '../components/ProjectLayout';
 import { ZoomableImage, VideoPlayer, YoutubeEmbed } from '../components/MediaComponents';
+import { GitHubStarButton } from '../components/GitHubStarButton';
 import { FileText, ExternalLink, Github, Monitor } from 'lucide-react';
 
 export const HCICoursePage = () => (
-    <ProjectLayout title="Human-Computer Interaction" subtitle="Course Design • BNBU • 2025">
+    <ProjectLayout title="Human-Computer Interaction" subtitle="Course Design • 2025">
         <div className="lg:col-span-7 flex flex-col gap-8">
             <div className="prose prose-neutral dark:prose-invert max-w-none text-lg text-neutral-600 dark:text-neutral-400">
                 <p>
@@ -19,10 +20,10 @@ export const HCICoursePage = () => (
             </div>
 
             <div className="grid grid-cols-1 gap-4">
-                <ZoomableImage src="images/portfolio/hcicourse/hci1.webp" alt="HCI Course Hero" className="w-full max-h-[500px] aspect-video object-contain rounded-lg shadow-sm" />
+                <img src="images/portfolio/hcicourse/hci1.webp" alt="HCI Course Hero" className="w-full max-h-[650px] aspect-video object-contain rounded-lg shadow-sm" />
                 <div className="grid grid-cols-2 gap-4">
-                    <ZoomableImage src="images/portfolio/hcicourse/hci3.webp" alt="User Studies" className="w-full aspect-square max-h-[300px] object-contain rounded-lg shadow-sm" />
-                    <ZoomableImage src="images/portfolio/hcicourse/hci4.webp" alt="Ergonomics" className="w-full aspect-square max-h-[300px] object-contain rounded-lg shadow-sm" />
+                    <img src="images/portfolio/hcicourse/hci3.webp" alt="User Studies" className="w-full aspect-video max-h-[507px] object-contain rounded-lg shadow-sm" />
+                    <img src="images/portfolio/hcicourse/hci4.webp" alt="Ergonomics" className="w-full aspect-video max-h-[507px] object-contain rounded-lg shadow-sm" />
                 </div>
             </div>
 
@@ -60,7 +61,7 @@ export const HCICoursePage = () => (
             </div>
 
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Projects</h3>
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Lab projects</h3>
                 <div className="space-y-4">
                     {[
                         { name: 'Unity 3D', desc: 'Design eHMI concepts for autonomous shuttles.', color: 'bg-[rgba(9,172,239,0.1)] dark:bg-[rgba(9,172,239,0.2)]' },
@@ -79,7 +80,7 @@ export const HCICoursePage = () => (
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Assessment</h3>
                 <ul className="space-y-4 text-neutral-600 dark:text-neutral-400 text-sm">
                     <li><strong className="text-neutral-900 dark:text-neutral-200">Exams (30%):</strong> Quizzes and a final exam covering lecture content.</li>
-                    <li><strong className="text-neutral-900 dark:text-neutral-200">Labs Submissions (10%):</strong> Individual software learning assignments.</li>
+                    <li><strong className="text-neutral-900 dark:text-neutral-200">Lab Tutorials (10%):</strong> Individual software learning assignments.</li>
                     <li><strong className="text-neutral-900 dark:text-neutral-200">HCI Project Reports (60%):</strong> Three group project reports, one for each lab rotation (20% each).</li>
                 </ul>
             </div>
@@ -88,50 +89,45 @@ export const HCICoursePage = () => (
 );
 
 export const RemoteMaintenancePage = () => (
-    <ProjectLayout title="Telexistence for Remote Maintenance" subtitle="Vision • PhD Research • 2023">
+    <ProjectLayout title="Telexistence for Remote Maintenance" subtitle="Research Vision • 2023">
         <div className="lg:col-span-7 flex flex-col gap-8">
             <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 Maintenance of a vessel's machinery space is critical but often hazardous. Current remote solutions are limited in capability.
-                This project investigates <strong>telexistence</strong> as a high-presence solution, allowing marine engineers to conduct complex inspections
+                This project investigates <strong>telexistence</strong> as a high-presence solution, allowing maintainer to conduct complex inspections
                 and repairs from a safe, remote location as if they were physically present. We propose a scalable framework to evaluate this technology
                 aiming to improve safety, efficiency, and reduce operational costs.
             </p>
 
-            <ZoomableImage src="images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+            <img src="images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
 
-            <div className="grid grid-cols-2 gap-4">
-                <VideoPlayer src="videos/vrteleoperation2.mp4" className="aspect-video rounded-lg" />
-                <VideoPlayer src="videos/ur16e.mp4" className="aspect-video rounded-lg" />
-            </div>
+            <VideoPlayer src="videos/vrteleoperation2.mp4" className="aspect-video rounded-lg" />
 
             <blockquote className="border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 italic text-xl text-neutral-500 dark:text-neutral-400">
-                What are the opportunities and challenges of deploying telexistence capabilities for remote marine maintenance?
+                What are the opportunities and challenges of deploying telexistence capabilities for remote maintenance?
             </blockquote>
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div className="flex flex-wrap gap-4">
                 <a href="pdfs/paper3.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
-                <a href="https://github.com/mazeasdamien/Inverse-Kinematics-Universal-Robot-Unity" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><Github size={16} /> GitHub</a>
+                <GitHubStarButton repo="mazeasdamien/Inverse-Kinematics-Universal-Robot-Unity" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700" />
                 <a href="https://mazeasdamien.github.io/Unity-Universal-Robots-UR8-UR15/" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><Monitor size={16} /> WebGL Demo</a>
             </div>
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Research Method</h3>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
-                    We gathered context from expert marine engineers to understand current challenges. Based on this, we designed a realistic maintenance scenario (engine inspection).
+                    We gathered context from expert maintainer to understand current challenges. Based on this, we designed a realistic maintenance scenario (engine inspection).
                     An experimental protocol compared our telexistence solution (VR HMD + Digital Twin) against traditional direct teleoperation.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                    <ZoomableImage src="images/portfolio/telexistencemaintenance/elements.webp" alt="Elements" className="aspect-video max-h-[300px] rounded-lg bg-white dark:bg-neutral-800 object-contain" />
-                    <ZoomableImage src="images/portfolio/telexistencemaintenance/levels.webp" alt="Maintenance Levels" className="aspect-video max-h-[300px] rounded-lg bg-white dark:bg-neutral-800 object-contain" />
-                </div>
             </div>
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Contributions & Limitations</h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
                     I designed and developed the telexistence framework, integrating a physical UR16e collaborative robot with Unity 3D via DDS.
                     A key component was developing a custom <strong>C# Inverse Kinematics (IK)</strong> solution for the UR16e, enabling intuitive control from the VR HMD.
-                    <br /><br />
-                    <strong>Limitations:</strong> The system relies on reliable high-bandwidth communication, and the digital twin requires accurate calibration to match the physical environment.
+                </p>
+                <VideoPlayer src="videos/ur16e.mp4" className="aspect-video rounded-lg mb-4" />
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    <strong>Limitations:</strong> The system relies on reliable high-bandwidth communication.
                 </p>
             </div>
             <div>
@@ -139,6 +135,7 @@ export const RemoteMaintenancePage = () => (
                 <div className="flex flex-wrap gap-6 items-center">
                     <img src="images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                     <img src="images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="images/logos/gscop.webp" alt="G-SCOP" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             </div>
         </div>
@@ -146,25 +143,23 @@ export const RemoteMaintenancePage = () => (
 );
 
 export const TelexistenceInterfacePage = () => (
-    <ProjectLayout title="VR Interface for Industrial Robotics" subtitle="PhD Research • 2022">
+    <ProjectLayout title="VR Interface for Industrial Robotics" subtitle="Research Vision • 2022">
         <div className="lg:col-span-7 flex flex-col gap-8">
             <p className="text-lg text-neutral-600 dark:text-neutral-400">
                 Current HMI controllers for industrial robots are often complex and non-intuitive.
                 This project proposes a digital-twin-based framework with a VR interface to reduce complexity.
                 Using DDS for real-time sensor data, the system allows for intuitive remote manipulation of a FANUC robot.
             </p>
-            <ZoomableImage src="images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
-
-            <div className="grid grid-cols-2 gap-4">
-                <ZoomableImage src="images/portfolio/telexistence/ui1.webp" alt="UI Elements" className="aspect-square max-h-[300px] object-contain bg-neutral-900 rounded-lg" />
-                <ZoomableImage src="images/portfolio/telexistence/ui2.webp" alt="Interaction Methods" className="aspect-square max-h-[300px] object-contain bg-neutral-900 rounded-lg" />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-                <ZoomableImage src="images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square max-h-[300px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                <ZoomableImage src="images/portfolio/telexistence/ui4.webp" alt="Point Cloud" className="aspect-square max-h-[300px] object-contain bg-neutral-900 rounded-lg" />
-            </div>
-
             <VideoPlayer src="videos/Fanuc industrial robot controlled in VR.mp4" className="aspect-video rounded-lg" />
+
+            <img src="images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+
+            <div className="grid grid-cols-4 gap-4">
+                <img src="images/portfolio/telexistence/ui1.webp" alt="UI Elements" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
+                <img src="images/portfolio/telexistence/ui2.webp" alt="Interaction Methods" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
+                <img src="images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square max-h-[200px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                <img src="images/portfolio/telexistence/ui4.webp" alt="Point Cloud" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
+            </div>
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div className="flex flex-wrap gap-4">
@@ -183,12 +178,7 @@ export const TelexistenceInterfacePage = () => (
                     <li><strong>DDS (RTI Connext):</strong> Real-time data backbone replacing ROS.</li>
                 </ul>
 
-                <h4 className="text-xs font-bold uppercase text-neutral-400 dark:text-neutral-500 mb-4">Data Structure & Coordinates</h4>
-                <div className="grid grid-cols-2 gap-2">
-                    <ZoomableImage src="images/portfolio/telexistence/coor.webp" alt="Coordinates" className="aspect-square max-h-[300px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                    <ZoomableImage src="images/portfolio/telexistence/datastructure.webp" alt="Data Structure" className="aspect-square max-h-[300px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                    <ZoomableImage src="images/portfolio/telexistence/robot.webp" alt="Robot Data" className="col-span-2 aspect-video max-h-[400px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                </div>
+
             </div>
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Contributions & Limitations</h3>
@@ -265,21 +255,17 @@ export const VRPrototypingPage = () => (
                 "ImPro" envisions VR not just as visualization, but as a creation tool.
                 This research investigates how immersive environments enhance early-stage design, improving scale perception compared to desktop CAD.
             </p>
-            <ZoomableImage src="images/portfolio/VRprototyping/method.webp" alt="Method" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
+            <img src="images/portfolio/VRprototyping/method.webp" alt="Method" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
 
             <div className="grid grid-cols-4 gap-2">
-                {['p1', 'p2', 'p3', 'p4'].map(img => (
-                    <ZoomableImage key={img} src={`images/portfolio/VRprototyping/${img}.webp`} alt={img} className="aspect-square rounded-lg object-cover" />
-                ))}
+                {['p1', 'p2', 'p3', 'p4'].map(img =>
+                    <img key={img} src={`images/portfolio/VRprototyping/${img}.webp`} alt={img} className="aspect-square rounded-lg object-cover" />
+                )}
             </div>
 
-            <ZoomableImage src="images/portfolio/VRprototyping/usercreation.webp" alt="User Creation" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
+            <img src="images/portfolio/VRprototyping/usercreation.webp" alt="User Creation" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
 
-            <ZoomableImage src="images/portfolio/VRprototyping/user.webp" alt="User Analysis" className="rounded-lg mb-4 border border-neutral-100 dark:border-neutral-800 max-h-[400px] object-contain" />
-            <div className="grid grid-cols-1 gap-4">
-                <ZoomableImage src="images/portfolio/VRprototyping/table 1.webp" alt="Table 1" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                <ZoomableImage src="images/portfolio/VRprototyping/table 2.webp" alt="Table 2" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
-            </div>
+            <img src="images/portfolio/VRprototyping/user.webp" alt="User Analysis" className="rounded-lg mb-4 border border-neutral-100 dark:border-neutral-800 max-h-[400px] object-contain" />
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div className="flex flex-wrap gap-4">
@@ -293,6 +279,10 @@ export const VRPrototypingPage = () => (
                     ImPro achieved a System Usability Scale (SUS) score of 77.3.
                     Demonstrated improved proportion understanding vs Desktop CAD.
                 </p>
+                <div className="grid grid-cols-1 gap-4">
+                    <img src="images/portfolio/VRprototyping/table 1.webp" alt="Table 1" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                    <img src="images/portfolio/VRprototyping/table 2.webp" alt="Table 2" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                </div>
             </div>
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Contributions & Limitations</h3>
@@ -321,32 +311,34 @@ export const IndustrialRoboticsPage = () => (
                 The core of this training was achieving certification in <strong>Teach Pendant Programming</strong>,
                 which involves using a handheld control unit to manually guide the robot, define waypoints, and write logical sequences.
             </p>
-            <VideoPlayer src="videos/fanucpickandplace.mp4" className="aspect-video rounded-lg" />
-
-            <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                I also co-authored a technical article for <strong>Maintenance and Engineering</strong>, discussing how emerging technologies
-                like Digital Twins, IoT, and Telexistence can be leveraged to support industrial asset management.
-            </p>
-
-            <div className="flex flex-col gap-4">
-                <VideoPlayer src="videos/roboguideunity.mp4" className="aspect-video rounded-lg" />
-                <VideoPlayer src="videos/turtlebot.mp4" className="aspect-video rounded-lg" />
+            <div>
+                <h4 className="text-sm font-bold mb-2 text-neutral-800 dark:text-neutral-200">Pick and Place Training</h4>
+                <VideoPlayer src="videos/fanucpickandplace.mp4" className="aspect-video rounded-lg" />
             </div>
 
+            <div className="flex flex-col gap-8">
+                <div>
+                    <h4 className="text-sm font-bold mb-2 text-neutral-800 dark:text-neutral-200">Link between Fanuc Roboguide and Unity 3D</h4>
+                    <VideoPlayer src="videos/roboguideunity.mp4" className="aspect-video rounded-lg" />
+                </div>
+                <div>
+                    <h4 className="text-sm font-bold mb-2 text-neutral-800 dark:text-neutral-200">Turtlebot 2 Teleoperation Demo</h4>
+                    <VideoPlayer src="videos/turtlebot.mp4" className="aspect-video rounded-lg" />
+                </div>
+            </div>
+
+        </div>
+        <div className="lg:col-span-5 space-y-10">
             <div className="flex flex-wrap gap-4">
                 <a href="pdfs/certificate fanuc.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Certificate</a>
                 <a href="https://www.maintenanceandengineering.com/2021/06/16/emerging-technologies-to-support-asset-management/" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><ExternalLink size={16} /> Technical Article</a>
             </div>
-        </div>
-        <div className="lg:col-span-5 space-y-10">
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Skills Acquired</h3>
-                <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-                    <li>FANUC Teach Pendant Operation (Programming & Operation)</li>
-                    <li>Waypoints & Logic Programming</li>
-                    <li>Digital Twin Integration (Roboguide to Unity)</li>
-                    <li>ROS-based teleoperation (Turtlebot 2 + HoloLens 2)</li>
-                </ul>
+                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Technical Article</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    I co-authored a technical article for <strong>Maintenance and Engineering</strong>, discussing how emerging technologies
+                    like Digital Twins, IoT, and Telexistence can be leveraged to support industrial asset management.
+                </p>
             </div>
 
             <div>
@@ -356,18 +348,13 @@ export const IndustrialRoboticsPage = () => (
                     Further research involved mobile robotics with <strong>Turtlebot 2</strong> and Azure Kinect controlled via HoloLens 2.
                 </p>
             </div>
-            <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Contributions & Limitations</h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                    This project resulted in obtaining the FANUC professional certification and developing a custom Unity-based digital twin for training purposes.
-                    <br /><br />
-                    <strong>Limitations:</strong> The digital twin was a prototype and did not fully replicate all physical robot dynamics. The training was primarily focused on programming logic rather than complex physical manipulation.
-                </p>
-            </div>
+
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Partners</h3>
                 <div className="flex flex-wrap gap-6 items-center">
                     <img src="images/logos/fanuc.webp" alt="Fanuc" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             </div>
         </div>
@@ -404,22 +391,15 @@ export const MasterProjectsPage = () => (
         </div>
         <div className="lg:col-span-7 flex flex-col gap-8">
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Contributions & Limitations</h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                    Developed two distinct VR applications addressing real industrial needs: training for production startup and visualization of complex mould mechanics.
-                    <br /><br />
-                    <strong>Limitations:</strong> The applications were developed as proof-of-concepts and were not fully integrated into the companies' PLM systems. The "Virtual Process Training" scenario was simplified compared to the full real-world procedure.
-                </p>
-            </div>
-        </div>
-        <div className="lg:col-span-5 flex flex-col gap-8">
-            <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Partners</h3>
                 <div className="flex flex-wrap gap-6 items-center">
                     <img src="images/logos/Gerresheimer.webp" alt="Gerresheimer" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                     <img src="images/logos/mmi.webp" alt="MMI" className="h-36 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="h-18 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             </div>
+        </div>
+        <div className="lg:col-span-5 flex flex-col gap-8">
         </div>
     </ProjectLayout>
 );
@@ -627,8 +607,8 @@ export const ArduinoPage = () => (
                 <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">Troubleshooting Checklist ✅</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-neutral-700 dark:text-neutral-300">
                     <div className="space-y-4">
-                         <h4 className="font-bold text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">1. Hardware & Connection</h4>
-                         <ul className="space-y-3">
+                        <h4 className="font-bold text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">1. Hardware & Connection</h4>
+                        <ul className="space-y-3">
                             <li className="flex gap-3 items-start">
                                 <span className="text-green-500 font-bold">✓</span>
                                 <span><strong>Plugged In?</strong> Ensure the Arduino is connected via USB. The green "ON" LED should be lit.</span>
