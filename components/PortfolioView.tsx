@@ -91,7 +91,7 @@ export default function PortfolioView() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.2 }}
-                            className="fixed top-48 md:top-32 left-0 right-0 mx-auto w-full max-w-4xl z-50 px-4 md:px-0"
+                            className="fixed top-40 md:top-24 left-0 right-0 mx-auto w-full max-w-3xl z-50 px-4 md:px-0"
                         >
                             {/* Backdrop blur layer - always visible during animation */}
                             <div className="absolute inset-0 rounded-[2rem] backdrop-blur-xl border border-white/30 shadow-2xl" />
@@ -103,12 +103,12 @@ export default function PortfolioView() {
                                 {/* Lighting effect on the glass panel */}
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
 
-                                <div className="relative px-6 py-6 md:px-16 md:py-12 flex items-center gap-6">
+                                <div className="relative px-4 py-4 md:px-8 md:py-6 flex items-center gap-4">
                                     <div className="flex flex-col items-start text-left">
-                                        <h3 className="text-2xl md:text-4xl font-semibold text-white mb-2 tracking-wide shadow-black/50 drop-shadow-md">
+                                        <h3 className="text-lg md:text-2xl font-semibold text-white mb-2 tracking-wide shadow-black/50 drop-shadow-md">
                                             {app.title}
                                         </h3>
-                                        <p className="text-sm md:text-xl text-white/80 leading-relaxed">
+                                        <p className="text-xs md:text-sm text-white/80 leading-relaxed">
                                             {app.description}
                                         </p>
                                     </div>
@@ -123,7 +123,7 @@ export default function PortfolioView() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed top-48 md:top-32 left-0 right-0 mx-auto w-full max-w-4xl z-50 px-4 md:px-0"
+                        className="fixed top-40 md:top-24 left-0 right-0 mx-auto w-full max-w-3xl z-50 px-4 md:px-0"
                     >
                         {/* Backdrop blur layer */}
                         <div className="absolute inset-0 rounded-[2rem] backdrop-blur-xl border border-white/30 shadow-2xl" />
@@ -135,8 +135,8 @@ export default function PortfolioView() {
                             {/* Lighting effect */}
                             <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
 
-                            <div className="relative px-6 py-6 md:px-16 md:py-12 flex items-center justify-center">
-                                <h3 className="text-2xl md:text-4xl font-semibold text-white tracking-wide shadow-black/50 drop-shadow-md">
+                            <div className="relative px-4 py-4 md:px-8 md:py-6 flex items-center justify-center">
+                                <h3 className="text-lg md:text-2xl font-semibold text-white tracking-wide shadow-black/50 drop-shadow-md">
                                     Selected Projects
                                 </h3>
                             </div>
