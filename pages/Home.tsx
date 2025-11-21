@@ -595,11 +595,11 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
       </div>
 
       {item.thumbnail && (
-        <div className="mb-6 aspect-video overflow-hidden rounded-lg bg-neutral-100 relative">
+        <div className="mb-6 aspect-video overflow-hidden rounded-lg bg-white relative">
           <img
             src={isHovered && item.hoverThumbnail ? item.hoverThumbnail : item.thumbnail}
             alt={item.title}
-            className="w-full h-full object-cover transition-opacity duration-300"
+            className="w-full h-full object-contain transition-opacity duration-300"
           />
         </div>
       )}

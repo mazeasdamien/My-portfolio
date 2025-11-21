@@ -68,7 +68,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Teaching',
     description: 'Comprehensive HCI course covering design principles, usability testing, and interaction paradigms for undergraduate students.',
     url: '/project/hci-course',
-    thumbnail: 'images/portfolio/thumbnails/Human-Computer Interaction Course.webp',
+    thumbnail: 'images/portfolio/thumbnails/Human-Computer-Interaction-Course.webp',
     hoverThumbnail: 'images/portfolio/thumbnails/Human-Computer Interaction Course hover.webp',
     mainProject: true
   },
@@ -96,7 +96,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Research',
     description: 'Immersive tools enabling remote experts to guide on-site workers through complex tasks using AR and VR technologies.',
     url: '/project/remote-collab',
-    thumbnail: 'images/portfolio/thumbnails/Expert and Worker Remote Collaboration.webp',
+    thumbnail: 'images/portfolio/thumbnails/Expert-and-Worker-Remote-Collaboration.webp',
     hoverThumbnail: 'images/portfolio/thumbnails/Expert and Worker Remote Collaboration hover.webp',
     mainProject: true
   },
@@ -155,7 +155,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Research',
     description: 'VR-based telexistence system allowing marine engineers to perform remote inspections and maintenance with spatial presence.',
     url: '/project/remote-maintenance',
-    thumbnail: 'images/portfolio/thumbnails/Telexistence for Remote Marine Maintenance.webp',
+    thumbnail: 'images/portfolio/thumbnails/Telexistence-for-Remote-Marine-Maintenance.webp',
     hoverThumbnail: 'images/portfolio/thumbnails/Telexistence for Remote Marine Maintenance hover.webp',
     mainProject: true
   },
@@ -175,7 +175,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Research',
     description: 'Immersive VR interface for remote control of industrial robots using Data Distribution Service for real-time communication.',
     url: '/project/telexistence-interface',
-    thumbnail: 'images/portfolio/thumbnails/VR Interface for Industrial Robotics.webp',
+    thumbnail: 'images/portfolio/thumbnails/VR-Interface-for-Industrial-Robotics.webp',
     hoverThumbnail: 'images/portfolio/thumbnails/VR Interface for Industrial Robotics hover.webp',
     mainProject: true
   },
@@ -196,7 +196,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Training',
     description: 'Hands-on training program covering FANUC robot programming, automation workflows, and industrial safety protocols.',
     url: '/project/industrial-robotics',
-    thumbnail: 'images/portfolio/thumbnails/Industrial Robotics & Automation.webp',
+    thumbnail: 'images/portfolio/thumbnails/Industrial-Robotics-&-Automation.webp',
     hoverThumbnail: 'images/portfolio/thumbnails/Industrial Robotics & Automation hover.webp',
     mainProject: true
   },
@@ -249,7 +249,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Research',
     description: 'Virtual reality application enabling industrial designers to prototype and evaluate vehicle interiors in immersive environments.',
     url: '/project/vr-prototyping',
-    thumbnail: 'images/portfolio/thumbnails/VR Application for Immersive Prototyping.webp',
+    thumbnail: 'images/portfolio/thumbnails/VR-Application-for-Immersive-Prototyping.webp',
     hoverThumbnail: 'images/portfolio/thumbnails/VR Application for Immersive Prototyping hover.webp',
     mainProject: true
   },
@@ -261,7 +261,7 @@ export const portfolioData: PortfolioItem[] = [
     subtitle: 'Projects',
     description: 'Collection of VR applications developed during master studies, focusing on industrial design and manufacturing use cases.',
     url: '/project/master-projects',
-    thumbnail: 'images/portfolio/thumbnails/Industrial VR Applications.webp',
+    thumbnail: 'images/portfolio/thumbnails/Industrial-VR-Applications.webp',
     hoverThumbnail: 'images/portfolio/thumbnails/Industrial VR Applications hover.webp',
     mainProject: true
   },
