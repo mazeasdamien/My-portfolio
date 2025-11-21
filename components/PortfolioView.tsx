@@ -62,10 +62,13 @@ export default function PortfolioView() {
             </header>
 
             {/* 3. Main Content Area */}
-            <main className="relative z-10 flex flex-col items-center justify-end h-full pb-20">
+            <main className="relative z-10 flex flex-col items-center justify-end h-full pb-20 md:pb-20 overflow-y-auto md:overflow-hidden scrollbar-hide">
+
+                {/* Spacer for fixed header on mobile if needed, or just rely on grid padding */}
+                <div className="h-60 md:hidden shrink-0 w-full" />
 
                 {/* App Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 md:gap-x-8 md:gap-y-10 px-4 md:px-8 pb-8 pt-0 perspective-1000">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 md:gap-x-8 md:gap-y-10 px-4 md:px-8 pb-8 pt-0 perspective-1000 shrink-0">
                     {appsData.map((app) => (
                         <GlassIcon
                             key={app.id}
@@ -91,7 +94,7 @@ export default function PortfolioView() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.2 }}
-                            className="fixed top-40 md:top-24 left-0 right-0 mx-auto w-full max-w-3xl z-50 px-4 md:px-0"
+                            className="fixed top-32 md:top-24 left-0 right-0 mx-auto w-full max-w-3xl z-50 px-4 md:px-0"
                         >
                             {/* Backdrop blur layer - always visible during animation */}
                             <div className="absolute inset-0 rounded-[2rem] backdrop-blur-xl border border-white/30 shadow-2xl" />
@@ -123,7 +126,7 @@ export default function PortfolioView() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed top-40 md:top-24 left-0 right-0 mx-auto w-full max-w-3xl z-50 px-4 md:px-0"
+                        className="fixed top-32 md:top-24 left-0 right-0 mx-auto w-full max-w-3xl z-50 px-4 md:px-0"
                     >
                         {/* Backdrop blur layer */}
                         <div className="absolute inset-0 rounded-[2rem] backdrop-blur-xl border border-white/30 shadow-2xl" />
