@@ -19,10 +19,10 @@ export const HCICoursePage = () => (
             </div>
 
             <div className="grid grid-cols-1 gap-4">
-                <ZoomableImage src="images/portfolio/hcicourse/hci1.webp" alt="HCI Course Hero" className="w-full aspect-video object-cover rounded-lg shadow-sm" />
+                <ZoomableImage src="images/portfolio/hcicourse/hci1.webp" alt="HCI Course Hero" className="w-full max-h-[500px] aspect-video object-cover rounded-lg shadow-sm" />
                 <div className="grid grid-cols-2 gap-4">
-                    <ZoomableImage src="images/portfolio/hcicourse/hci3.webp" alt="User Studies" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
-                    <ZoomableImage src="images/portfolio/hcicourse/hci4.webp" alt="Ergonomics" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
+                    <ZoomableImage src="images/portfolio/hcicourse/hci3.webp" alt="User Studies" className="w-full aspect-square max-h-[300px] object-cover rounded-lg shadow-sm" />
+                    <ZoomableImage src="images/portfolio/hcicourse/hci4.webp" alt="Ergonomics" className="w-full aspect-square max-h-[300px] object-cover rounded-lg shadow-sm" />
                 </div>
             </div>
 
@@ -106,15 +106,15 @@ export const RemoteMaintenancePage = () => (
                 aiming to improve safety, efficiency, and reduce operational costs.
             </p>
 
-            <ZoomableImage src="images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full rounded-lg border border-neutral-100 dark:border-neutral-800" />
+            <ZoomableImage src="images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
 
             <div className="grid grid-cols-2 gap-4">
                 <VideoPlayer src="videos/vrteleoperation2.mp4" className="aspect-video rounded-lg" />
-                <ZoomableImage src="images/portfolio/telexistencemaintenance/elements.webp" alt="Elements" className="aspect-video rounded-lg bg-white dark:bg-neutral-800 object-contain" />
+                <ZoomableImage src="images/portfolio/telexistencemaintenance/elements.webp" alt="Elements" className="aspect-video max-h-[300px] rounded-lg bg-white dark:bg-neutral-800 object-contain" />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-                <ZoomableImage src="images/portfolio/telexistencemaintenance/levels.webp" alt="Maintenance Levels" className="aspect-video rounded-lg bg-white dark:bg-neutral-800 object-contain" />
+                <ZoomableImage src="images/portfolio/telexistencemaintenance/levels.webp" alt="Maintenance Levels" className="aspect-video max-h-[300px] rounded-lg bg-white dark:bg-neutral-800 object-contain" />
                 {/* Fallback/Additional Content if needed, or just span full width if levels is detailed */}
             </div>
 
@@ -164,15 +164,15 @@ export const TelexistenceInterfacePage = () => (
                 This project proposes a digital-twin-based framework with a VR interface to reduce complexity.
                 Using DDS for real-time sensor data, the system allows for intuitive remote manipulation of a FANUC robot.
             </p>
-            <ZoomableImage src="images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
+            <ZoomableImage src="images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="w-full max-h-[500px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
 
             <div className="grid grid-cols-2 gap-4">
-                <ZoomableImage src="images/portfolio/telexistence/ui1.webp" alt="UI Elements" className="aspect-square object-contain bg-neutral-900 rounded-lg" />
-                <ZoomableImage src="images/portfolio/telexistence/ui2.webp" alt="Interaction Methods" className="aspect-square object-contain bg-neutral-900 rounded-lg" />
+                <ZoomableImage src="images/portfolio/telexistence/ui1.webp" alt="UI Elements" className="aspect-square max-h-[300px] object-contain bg-neutral-900 rounded-lg" />
+                <ZoomableImage src="images/portfolio/telexistence/ui2.webp" alt="Interaction Methods" className="aspect-square max-h-[300px] object-contain bg-neutral-900 rounded-lg" />
             </div>
             <div className="grid grid-cols-2 gap-4">
-                <ZoomableImage src="images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                <ZoomableImage src="images/portfolio/telexistence/ui4.webp" alt="Point Cloud" className="aspect-square object-contain bg-neutral-900 rounded-lg" />
+                <ZoomableImage src="images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square max-h-[300px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                <ZoomableImage src="images/portfolio/telexistence/ui4.webp" alt="Point Cloud" className="aspect-square max-h-[300px] object-contain bg-neutral-900 rounded-lg" />
             </div>
 
             <VideoPlayer src="videos/Fanuc industrial robot controlled in VR.mp4" className="aspect-video rounded-lg" />
@@ -196,9 +196,9 @@ export const TelexistenceInterfacePage = () => (
 
                 <h4 className="text-xs font-bold uppercase text-neutral-400 dark:text-neutral-500 mb-4">Data Structure & Coordinates</h4>
                 <div className="grid grid-cols-2 gap-2">
-                    <ZoomableImage src="images/portfolio/telexistence/coor.webp" alt="Coordinates" className="aspect-square object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                    <ZoomableImage src="images/portfolio/telexistence/datastructure.webp" alt="Data Structure" className="aspect-square object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                    <ZoomableImage src="images/portfolio/telexistence/robot.webp" alt="Robot Data" className="col-span-2 aspect-video object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                    <ZoomableImage src="images/portfolio/telexistence/coor.webp" alt="Coordinates" className="aspect-square max-h-[300px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                    <ZoomableImage src="images/portfolio/telexistence/datastructure.webp" alt="Data Structure" className="aspect-square max-h-[300px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                    <ZoomableImage src="images/portfolio/telexistence/robot.webp" alt="Robot Data" className="col-span-2 aspect-video max-h-[400px] object-contain bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
                 </div>
             </div>
             <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-100 dark:border-neutral-800">
@@ -220,7 +220,7 @@ export const RemoteCollabPage = () => (
                 Existing AR solutions often encumber workers with devices. This paper presents a telexistence framework
                 integrating a collaborative robot (cobot), projector, and VR to eliminate worker wearables while enhancing expert presence.
             </p>
-            <ZoomableImage src="images/portfolio/remotecollab/figure1.webp" alt="Setup" className="rounded-lg" />
+            <ZoomableImage src="images/portfolio/remotecollab/figure1.webp" alt="Setup" className="w-full max-h-[500px] object-contain rounded-lg bg-white dark:bg-neutral-800" />
 
             <div className="aspect-video rounded-lg overflow-hidden">
                 <YoutubeEmbed id="pjlTcweo_lg" />
@@ -270,7 +270,7 @@ export const VRPrototypingPage = () => (
                 "ImPro" envisions VR not just as visualization, but as a creation tool.
                 This research investigates how immersive environments enhance early-stage design, improving scale perception compared to desktop CAD.
             </p>
-            <ZoomableImage src="images/portfolio/VRprototyping/method.webp" alt="Method" className="rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
+            <ZoomableImage src="images/portfolio/VRprototyping/method.webp" alt="Method" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
 
             <div className="grid grid-cols-4 gap-2">
                 {['p1', 'p2', 'p3', 'p4'].map(img => (
@@ -278,7 +278,7 @@ export const VRPrototypingPage = () => (
                 ))}
             </div>
 
-            <ZoomableImage src="images/portfolio/VRprototyping/usercreation.webp" alt="User Creation" className="rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
+            <ZoomableImage src="images/portfolio/VRprototyping/usercreation.webp" alt="User Creation" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
 
             <div className="flex flex-wrap gap-4">
                 <a href="pdfs/paper1.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
@@ -293,7 +293,7 @@ export const VRPrototypingPage = () => (
                     ImPro achieved a System Usability Scale (SUS) score of 77.3.
                     Demonstrated improved proportion understanding vs Desktop CAD.
                 </p>
-                <ZoomableImage src="images/portfolio/VRprototyping/user.webp" alt="User Analysis" className="rounded-lg mb-4 border border-neutral-100 dark:border-neutral-800" />
+                <ZoomableImage src="images/portfolio/VRprototyping/user.webp" alt="User Analysis" className="rounded-lg mb-4 border border-neutral-100 dark:border-neutral-800 max-h-[400px] object-contain" />
                 <div className="grid grid-cols-1 gap-4">
                     <ZoomableImage src="images/portfolio/VRprototyping/table 1.webp" alt="Table 1" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
                     <ZoomableImage src="images/portfolio/VRprototyping/table 2.webp" alt="Table 2" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
@@ -327,7 +327,7 @@ export const IndustrialRoboticsPage = () => (
 
             <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2 md:col-span-1">
-                    <ZoomableImage src="images/portfolio/fanuc/fanuc.webp" alt="Fanuc Robot" className="aspect-[3/4] rounded-lg object-contain bg-white dark:bg-neutral-800" />
+                    <ZoomableImage src="images/portfolio/fanuc/fanuc.webp" alt="Fanuc Robot" className="aspect-[3/4] max-h-[500px] rounded-lg object-contain bg-white dark:bg-neutral-800" />
                 </div>
                 <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
                     <VideoPlayer src="videos/roboguideunity.mp4" className="aspect-video rounded-lg" />
@@ -376,8 +376,8 @@ export const MasterProjectsPage = () => (
                 </p>
                 <VideoPlayer src="videos/production-line.mp4" className="aspect-video rounded-lg" />
                 <div className="grid grid-cols-2 gap-2">
-                    <ZoomableImage src="images/portfolio/masterprojects/ligneproduction.webp" alt="Prod Line" className="aspect-square rounded-lg" />
-                    <ZoomableImage src="images/portfolio/masterprojects/flacon.webp" alt="Glass Vial" className="aspect-square rounded-lg" />
+                    <ZoomableImage src="images/portfolio/masterprojects/ligneproduction.webp" alt="Prod Line" className="aspect-square max-h-[250px] object-cover rounded-lg" />
+                    <ZoomableImage src="images/portfolio/masterprojects/flacon.webp" alt="Glass Vial" className="aspect-square max-h-[250px] object-cover rounded-lg" />
                 </div>
             </div>
             <div className="flex flex-col gap-6">
@@ -391,8 +391,8 @@ export const MasterProjectsPage = () => (
                 </p>
                 <VideoPlayer src="videos/moulding.mp4" className="aspect-video rounded-lg" />
                 <div className="grid grid-cols-2 gap-2">
-                    <ZoomableImage src="images/portfolio/masterprojects/moulebis.webp" alt="Mould" className="aspect-square rounded-lg" />
-                    <ZoomableImage src="images/portfolio/masterprojects/moule.webp" alt="Fluid" className="aspect-square rounded-lg" />
+                    <ZoomableImage src="images/portfolio/masterprojects/moulebis.webp" alt="Mould" className="aspect-square max-h-[250px] object-cover rounded-lg" />
+                    <ZoomableImage src="images/portfolio/masterprojects/moule.webp" alt="Fluid" className="aspect-square max-h-[250px] object-cover rounded-lg" />
                 </div>
             </div>
         </div>
@@ -600,16 +600,42 @@ export const ArduinoPage = () => (
             {/* Troubleshooting */}
             <section className="bg-neutral-50 dark:bg-neutral-900 rounded-xl p-8 border border-neutral-200 dark:border-neutral-800">
                 <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">Troubleshooting Checklist ✅</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <ul className="space-y-3 text-neutral-700 dark:text-neutral-300">
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Is the Arduino plugged in?</li>
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Is the <strong>Port Name</strong> correct? (Check Device Manager/Arduino IDE).</li>
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Is <strong>Baud Rate</strong> 9600 in both scripts?</li>
-                    </ul>
-                    <ul className="space-y-3 text-neutral-700 dark:text-neutral-300">
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Did you set <strong>Api Compatibility Level</strong> to .NET Framework?</li>
-                        <li className="flex gap-2 items-start"><span className="text-red-500 font-bold">!</span> Is the serial monitor closed in Arduino IDE? (Unity needs exclusive access).</li>
-                    </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-neutral-700 dark:text-neutral-300">
+                    <div className="space-y-4">
+                         <h4 className="font-bold text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">1. Hardware & Connection</h4>
+                         <ul className="space-y-3">
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Plugged In?</strong> Ensure the Arduino is connected via USB. The green "ON" LED should be lit.</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Correct Port?</strong> Check "Device Manager" (Windows) or Arduino IDE for the correct COM port (e.g., COM3, COM4). Update the Unity script variable <code>portName</code>.</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Wiring Check:</strong> Verify the potentiometer is powered (5V/GND) and the signal pin goes to <strong>A3</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h4 className="font-bold text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">2. Software & Code</h4>
+                        <ul className="space-y-3">
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Api Compatibility:</strong> In Unity <em>Player Settings</em>, set "Api Compatibility Level" to <strong>.NET Framework</strong>.</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Close Serial Monitor:</strong> Unity cannot connect if the Arduino IDE Serial Monitor is open. Close it before pressing Play in Unity.</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span><strong>Baud Rate:</strong> Ensure both Arduino code and Unity script use <strong>9600</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 

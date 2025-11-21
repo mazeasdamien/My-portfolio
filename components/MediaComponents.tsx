@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Maximize2 } from 'lucide-react';
 
 export const ZoomableImage: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className }) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
 
     return (
         <>
@@ -22,16 +33,17 @@ export const ZoomableImage: React.FC<{ src: string; alt: string; className?: str
 
             {isOpen && (
                 <div
-                    className="fixed inset-0 z-[100] bg-white/95 dark:bg-neutral-950/95 flex items-center justify-center p-4 cursor-zoom-out"
+                    className="fixed inset-0 z-[100] bg-white/95 dark:bg-neutral-950/95 flex items-center justify-center p-4 cursor-zoom-out backdrop-blur-sm"
                     onClick={() => setIsOpen(false)}
                 >
                     <img
                         src={src}
                         alt={alt}
-                        className="max-w-5xl max-h-[90vh] w-full h-auto object-contain shadow-2xl rounded-lg"
+                        className="max-w-7xl max-h-[90vh] w-full h-auto object-contain shadow-2xl rounded-lg"
                         onClick={(e) => {
                             e.stopPropagation();
-                            setIsOpen(false);
+                            // Optional: toggle close if clicking image itself
+                            // setIsOpen(false);
                         }}
                     />
                 </div>
