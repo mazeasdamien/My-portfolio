@@ -108,7 +108,7 @@ export default function PortfolioView() {
                             className="relative overflow-hidden rounded-[2rem]"
                         >
                             {/* Lighting effect */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 bg-white/40 dark:bg-neutral-900/40 pointer-events-none" />
 
                             <div className="relative px-4 py-4 md:px-8 md:py-6 flex items-center justify-center">
                                 <h3 className="text-lg md:text-2xl font-semibold text-neutral-900 dark:text-neutral-100 tracking-wide">

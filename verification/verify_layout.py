@@ -1,53 +1,57 @@
-
-from playwright.sync_api import Page, expect, sync_playwright
 import time
+from playwright.sync_api import sync_playwright, expect
 
-def verify_mobile_layout(page: Page):
-    # Set viewport to mobile size (iPhone SE)
-    page.set_viewport_size({"width": 375, "height": 667})
-
-    # Go to home page
-    page.goto("http://localhost:3000")
-
-    # Wait for loading to finish
-    page.wait_for_selector("text=Damien Mazeas, PhD", timeout=10000)
-
-    # 1. Check Header Navigation
-    # Screenshot the header to see if nav is scrollable/aligned
-    nav = page.locator("nav")
-    expect(nav).to_be_visible()
-
-    # Take screenshot of the top part
-    page.screenshot(path="verification/mobile_home.png")
-
-    # 2. Go to Portfolio page
-    # Click on "Portfolio" button in the nav
-    portfolio_btn = page.get_by_role("button", name="Portfolio")
-    portfolio_btn.click()
-
-    # Wait for portfolio view to load
-    # Check for "Selected Projects" banner
-    expect(page.locator("text=Selected Projects")).to_be_visible()
-
-    # Wait a bit for animations
-    time.sleep(1)
-
-    # Take screenshot of Portfolio page on mobile
-    page.screenshot(path="verification/mobile_portfolio.png")
-
-    # Scroll down a bit to check scrolling
-    page.mouse.wheel(0, 200)
-    time.sleep(0.5)
-    page.screenshot(path="verification/mobile_portfolio_scrolled.png")
-
-if __name__ == "__main__":
+def verify_layout():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        try:
-            verify_mobile_layout(page)
-            print("Verification script finished successfully.")
-        except Exception as e:
-            print(f"Verification script failed: {e}")
-        finally:
-            browser.close()
+        # Force dark color scheme preference in context
+        context = browser.new_context(color_scheme="dark")
+        page = context.new_page()
+
+        # Navigate to the app
+        page.goto("http://localhost:5173")
+
+        # Inject a script to force localStorage to "true" for darkMode and reload
+        page.evaluate("""
+            localStorage.setItem('darkMode', 'true');
+        """)
+        page.reload()
+
+        # Wait for the "Selected Projects" element to be visible
+        expect(page.locator("text=Selected Projects")).to_be_visible(timeout=10000)
+
+        # Wait a bit for animations to settle
+        time.sleep(2)
+
+        # Locate the popup container
+        # The "Selected Projects" text is inside a div which is inside the motion.div
+        # The structure is:
+        # motion.div (popup-default)
+        #   div (backdrop)
+        #   motion.div (content layer)
+        #     div (lighting effect - the one we changed)
+        #     div (content)
+        #       h3 (Selected Projects)
+
+        # Let's grab the container that holds "Selected Projects"
+        # Using xpath or css selectors.
+        # We want the outer container to see the full effect (backdrop + overlay)
+
+        # Try to find the container by text and going up
+        popup_text = page.locator("text=Selected Projects")
+
+        # Go up to the motion.div (content layer)
+        content_layer = popup_text.locator("..").locator("..")
+
+        # Go up to the main container
+        main_popup = content_layer.locator("..")
+
+        # Take a screenshot of the popup
+        main_popup.screenshot(path="/tmp/verification/popup_dark_mode.png")
+
+        print("Screenshot taken at /tmp/verification/popup_dark_mode.png")
+
+        browser.close()
+
+if __name__ == "__main__":
+    verify_layout()
