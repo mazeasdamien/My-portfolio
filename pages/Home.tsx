@@ -118,7 +118,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
         {/* Header with Download */}
         <div className="flex justify-between items-end mb-16 border-b border-neutral-200 dark:border-neutral-800 pb-6 animate-fade-in-up opacity-0" style={{ animationDelay: '0ms' }}>
           <h1 className="text-4xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-100">Curriculum Vitae</h1>
-          <a href="pdfs/CV2026.pdf" download className="flex items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-700 px-4 py-2 rounded-full">
+          <a href="/pdfs/CV2026.pdf" download className="flex items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-700 px-4 py-2 rounded-full">
             <Download size={16} />
             <span className="hidden sm:inline">Download PDF</span>
           </a>
@@ -136,7 +136,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           <div className="space-y-12">
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
-                <img src="images/logos/cranfield.webp" alt="Cranfield University" className="max-w-full max-h-full object-contain" />
+                <img src="/images/logos/cranfield.webp" alt="Cranfield University" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -152,7 +152,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             {/* Arts et Metiers */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
-                <img src="images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="max-w-full max-h-full object-contain" />
+                <img src="/images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -168,7 +168,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             {/* Bachelor */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
-                <img src="images/logos/poitiers.webp" alt="University of Poitiers" className="max-w-full max-h-full object-contain" />
+                <img src="/images/logos/poitiers.webp" alt="University of Poitiers" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -190,7 +190,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           </h2>
           <div className="group flex gap-4 sm:gap-6">
             <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
-              <img src="images/logos/fanuc.webp" alt="FANUC" className="max-w-full max-h-full object-contain" />
+              <img src="/images/logos/fanuc.webp" alt="FANUC" className="max-w-full max-h-full object-contain" />
             </div>
             <div className="flex-grow">
               <h3 className="text-base font-bold text-neutral-900 dark:text-neutral-100 mb-1">FANUC Robotics Standard Teach Pendant Programming</h3>
@@ -214,7 +214,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             {/* BNBU */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
-                <img src="images/logos/bnbu.webp" alt="BNBU" className="max-w-full max-h-full object-contain" />
+                <img src="/images/logos/bnbu.webp" alt="BNBU" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -234,7 +234,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             {/* CNRS */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
-                <img src="images/logos/cnrs.webp" alt="CNRS" className="max-w-full max-h-full object-contain" />
+                <img src="/images/logos/cnrs.webp" alt="CNRS" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -252,7 +252,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             {/* G-SCOP */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
-                <img src="images/logos/gscop.webp" alt="G-SCOP" className="max-w-full max-h-full object-contain" />
+                <img src="/images/logos/gscop.webp" alt="G-SCOP" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -271,7 +271,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             {/* Safran */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
-                <img src="images/logos/safran.webp" alt="Safran" className="max-w-full max-h-full object-contain" />
+                <img src="/images/logos/safran.webp" alt="Safran" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -290,7 +290,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
             {/* TUM */}
             <div className="group flex gap-4 sm:gap-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 p-1 sm:p-2 bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-lg flex items-center justify-center">
-                <img src="images/logos/tumcreate.webp" alt="TUMCREATE" className="max-w-full max-h-full object-contain" />
+                <img src="/images/logos/tumcreate.webp" alt="TUMCREATE" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
@@ -316,7 +316,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
           </h2>
           <div className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-xl p-6 shadow-sm w-1/2 mx-auto">
             <img
-              src="images/skills.png"
+              src="/images/skills.png"
               alt="Skills Overview"
               className="w-full h-auto rounded-lg"
             />
@@ -356,14 +356,14 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(98,183,77,0.2)] to-[rgba(9,172,239,0.2)] blur-[60px] -z-10 rounded-full pointer-events-none scale-125 opacity-70 dark:opacity-50" />
 
               <img
-                src="images/profil.webp"
+                src="/images/profil.webp"
                 alt="Damien Mazeas"
                 width="320"
                 height="320"
                 className="absolute inset-0 w-full h-full object-cover rounded-full shadow-xl"
               />
               <img
-                src="images/cat.jpg"
+                src="/images/cat.jpg"
                 alt="Cat"
                 width="320"
                 height="320"

@@ -20,10 +20,10 @@ export const HCICoursePage = () => (
             </div>
 
             <div className="grid grid-cols-1 gap-4">
-                <img src="images/portfolio/hcicourse/hci1.webp" alt="HCI Course Hero" className="w-full max-h-[650px] aspect-video object-contain rounded-lg shadow-sm" />
+                <img src="/images/portfolio/hcicourse/hci1.webp" alt="HCI Course Hero" className="w-full max-h-[650px] aspect-video object-contain rounded-lg shadow-sm" />
                 <div className="grid grid-cols-2 gap-4">
-                    <img src="images/portfolio/hcicourse/hci3.webp" alt="User Studies" className="w-full aspect-video max-h-[507px] object-contain rounded-lg shadow-sm" />
-                    <img src="images/portfolio/hcicourse/hci4.webp" alt="Ergonomics" className="w-full aspect-video max-h-[507px] object-contain rounded-lg shadow-sm" />
+                    <img src="/images/portfolio/hcicourse/hci3.webp" alt="User Studies" className="w-full aspect-video max-h-[507px] object-contain rounded-lg shadow-sm" />
+                    <img src="/images/portfolio/hcicourse/hci4.webp" alt="Ergonomics" className="w-full aspect-video max-h-[507px] object-contain rounded-lg shadow-sm" />
                 </div>
             </div>
 
@@ -35,7 +35,7 @@ export const HCICoursePage = () => (
 
         <div className="lg:col-span-5 space-y-12">
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/HCI.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors">
+                <a href="/pdfs/HCI.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors">
                     <FileText size={18} /> View Full Syllabus
                 </a>
             </div>
@@ -98,9 +98,9 @@ export const RemoteMaintenancePage = () => (
                 aiming to improve safety, efficiency, and reduce operational costs.
             </p>
 
-            <img src="images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full max-h-[500px] object-contain bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+            <img src="/images/portfolio/telexistencemaintenance/framework.webp" alt="Framework" className="w-full max-h-[500px] object-contain bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
 
-            <VideoPlayer src="videos/vrteleoperation2.mp4" className="aspect-video rounded-lg" />
+            <VideoPlayer src="/videos/vrteleoperation2.mp4" className="aspect-video rounded-lg" />
 
             <blockquote className="border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 italic text-xl text-neutral-500 dark:text-neutral-400">
                 What are the opportunities and challenges of deploying telexistence capabilities for remote maintenance?
@@ -108,7 +108,7 @@ export const RemoteMaintenancePage = () => (
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/paper3.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
+                <a href="/pdfs/paper3.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
                 <GitHubStarButton repo="mazeasdamien/Inverse-Kinematics-Universal-Robot-Unity" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700" />
                 <a href="https://mazeasdamien.github.io/Unity-Universal-Robots-UR8-UR15/" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><Monitor size={16} /> WebGL Demo</a>
             </div>
@@ -125,7 +125,7 @@ export const RemoteMaintenancePage = () => (
                     I designed and developed the telexistence framework, integrating a physical UR16e collaborative robot with Unity 3D via DDS.
                     A key component was developing a custom <strong>C# Inverse Kinematics (IK)</strong> solution for the UR16e, enabling intuitive control from the VR HMD.
                 </p>
-                <VideoPlayer src="videos/ur16e.mp4" className="aspect-video rounded-lg mb-4" />
+                <VideoPlayer src="/videos/ur16e.mp4" className="aspect-video rounded-lg mb-4" />
                 <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                     <strong>Limitations:</strong> The system relies on reliable high-bandwidth communication.
                 </p>
@@ -133,9 +133,9 @@ export const RemoteMaintenancePage = () => (
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Partners</h3>
                 <div className="flex flex-wrap gap-6 items-center">
-                    <img src="images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/gscop.webp" alt="G-SCOP" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/gscop.webp" alt="G-SCOP" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             </div>
         </div>
@@ -150,20 +150,20 @@ export const TelexistenceInterfacePage = () => (
                 This project proposes a digital-twin-based framework with a VR interface to reduce complexity.
                 Using DDS for real-time sensor data, the system allows for intuitive remote manipulation of a FANUC robot.
             </p>
-            <VideoPlayer src="videos/Fanuc industrial robot controlled in VR.mp4" className="aspect-video rounded-lg" />
+            <VideoPlayer src="/videos/Fanuc industrial robot controlled in VR.mp4" className="aspect-video rounded-lg" />
 
-            <img src="images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="w-full max-h-[500px] object-contain bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+            <img src="/images/portfolio/telexistence/architecture.webp" alt="System Architecture" className="w-full max-h-[500px] object-contain bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
 
             <div className="grid grid-cols-4 gap-4">
-                <img src="images/portfolio/telexistence/ui1.webp" alt="UI Elements" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
-                <img src="images/portfolio/telexistence/ui2.webp" alt="Interaction Methods" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
-                <img src="images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square max-h-[200px] object-contain bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                <img src="images/portfolio/telexistence/ui4.webp" alt="Point Cloud" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
+                <img src="/images/portfolio/telexistence/ui1.webp" alt="UI Elements" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
+                <img src="/images/portfolio/telexistence/ui2.webp" alt="Interaction Methods" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
+                <img src="/images/portfolio/telexistence/ui3.webp" alt="Fanuc Setup" className="aspect-square max-h-[200px] object-contain bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                <img src="/images/portfolio/telexistence/ui4.webp" alt="Point Cloud" className="aspect-square max-h-[200px] object-contain bg-neutral-900 rounded-lg" />
             </div>
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/paper2.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
+                <a href="/pdfs/paper2.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
             </div>
 
             <div>
@@ -191,8 +191,8 @@ export const TelexistenceInterfacePage = () => (
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Partners</h3>
                 <div className="flex flex-wrap gap-6 items-center">
-                    <img src="images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             </div>
         </div>
@@ -206,7 +206,7 @@ export const RemoteCollabPage = () => (
                 Existing AR solutions often encumber workers with devices. This paper presents a telexistence framework
                 integrating a collaborative robot (cobot), projector, and VR to eliminate worker wearables while enhancing expert presence.
             </p>
-            <ZoomableImage src="images/portfolio/remotecollab/figure1.webp" alt="Setup" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-800" />
+            <img src="/images/portfolio/remotecollab/figure1.webp" alt="Setup" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-800" />
 
             <div className="aspect-video rounded-lg overflow-hidden">
                 <YoutubeEmbed id="pjlTcweo_lg" />
@@ -214,7 +214,7 @@ export const RemoteCollabPage = () => (
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/paper4.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
+                <a href="/pdfs/paper4.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
             </div>
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">System Overview</h3>
@@ -239,9 +239,9 @@ export const RemoteCollabPage = () => (
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Partners</h3>
                 <div className="flex flex-wrap gap-6 items-center">
-                    <img src="images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/gscop.webp" alt="G-SCOP" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/gscop.webp" alt="G-SCOP" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             </div>
         </div>
@@ -255,22 +255,22 @@ export const VRPrototypingPage = () => (
                 "ImPro" envisions VR not just as visualization, but as a creation tool.
                 This research investigates how immersive environments enhance early-stage design, improving scale perception compared to desktop CAD.
             </p>
-            <img src="images/portfolio/VRprototyping/method.webp" alt="Method" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
+            <img src="/images/portfolio/VRprototyping/method.webp" alt="Method" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
 
             <div className="grid grid-cols-4 gap-2">
                 {['p1', 'p2', 'p3', 'p4'].map(img =>
-                    <img key={img} src={`images/portfolio/VRprototyping/${img}.webp`} alt={img} className="aspect-square rounded-lg object-cover" />
+                    <img key={img} src={`/images/portfolio/VRprototyping/${img}.webp`} alt={img} className="aspect-square rounded-lg object-cover" />
                 )}
             </div>
 
-            <img src="images/portfolio/VRprototyping/usercreation.webp" alt="User Creation" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
+            <img src="/images/portfolio/VRprototyping/usercreation.webp" alt="User Creation" className="w-full max-h-[500px] object-contain rounded-lg bg-neutral-50 dark:bg-neutral-900 p-4" />
 
-            <img src="images/portfolio/VRprototyping/user.webp" alt="User Analysis" className="rounded-lg mb-4 border border-neutral-100 dark:border-neutral-800 max-h-[400px] object-contain" />
+            <img src="/images/portfolio/VRprototyping/user.webp" alt="User Analysis" className="rounded-lg mb-4 border border-neutral-100 dark:border-neutral-800 max-h-[400px] object-contain" />
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/paper1.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
-                <a href="pdfs/master thesis damien mazeas.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><FileText size={16} /> Thesis</a>
+                <a href="/pdfs/paper1.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Publication</a>
+                <a href="/pdfs/master thesis damien mazeas.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><FileText size={16} /> Thesis</a>
             </div>
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Research Findings</h3>
@@ -280,8 +280,8 @@ export const VRPrototypingPage = () => (
                     Demonstrated improved proportion understanding vs Desktop CAD.
                 </p>
                 <div className="grid grid-cols-1 gap-4">
-                    <img src="images/portfolio/VRprototyping/table 1.webp" alt="Table 1" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
-                    <img src="images/portfolio/VRprototyping/table 2.webp" alt="Table 2" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                    <img src="/images/portfolio/VRprototyping/table 1.webp" alt="Table 1" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
+                    <img src="/images/portfolio/VRprototyping/table 2.webp" alt="Table 2" className="rounded-lg border border-neutral-100 dark:border-neutral-800" />
                 </div>
             </div>
             <div>
@@ -295,8 +295,8 @@ export const VRPrototypingPage = () => (
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Partners</h3>
                 <div className="flex flex-wrap gap-6 items-center">
-                    <img src="images/logos/tumcreate.webp" alt="TUMCREATE" className="h-6 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="h-6 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/tumcreate.webp" alt="TUMCREATE" className="h-6 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="h-6 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             </div>
         </div>
@@ -313,24 +313,24 @@ export const IndustrialRoboticsPage = () => (
             </p>
             <div>
                 <h4 className="text-sm font-bold mb-2 text-neutral-800 dark:text-neutral-200">Pick and Place Training</h4>
-                <VideoPlayer src="videos/fanucpickandplace.mp4" className="aspect-video rounded-lg" />
+                <VideoPlayer src="/videos/fanucpickandplace.mp4" className="aspect-video rounded-lg" />
             </div>
 
             <div className="flex flex-col gap-8">
                 <div>
                     <h4 className="text-sm font-bold mb-2 text-neutral-800 dark:text-neutral-200">Link between Fanuc Roboguide and Unity 3D</h4>
-                    <VideoPlayer src="videos/roboguideunity.mp4" className="aspect-video rounded-lg" />
+                    <VideoPlayer src="/videos/roboguideunity.mp4" className="aspect-video rounded-lg" />
                 </div>
                 <div>
                     <h4 className="text-sm font-bold mb-2 text-neutral-800 dark:text-neutral-200">Turtlebot 2 Teleoperation Demo</h4>
-                    <VideoPlayer src="videos/turtlebot.mp4" className="aspect-video rounded-lg" />
+                    <VideoPlayer src="/videos/turtlebot.mp4" className="aspect-video rounded-lg" />
                 </div>
             </div>
 
         </div>
         <div className="lg:col-span-5 space-y-10">
             <div className="flex flex-wrap gap-4">
-                <a href="pdfs/certificate fanuc.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Certificate</a>
+                <a href="/pdfs/certificate fanuc.pdf" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200"><FileText size={16} /> Certificate</a>
                 <a href="https://www.maintenanceandengineering.com/2021/06/16/emerging-technologies-to-support-asset-management/" target="_blank" className="flex items-center gap-2 px-5 py-2.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700"><ExternalLink size={16} /> Technical Article</a>
             </div>
             <div>
@@ -352,9 +352,9 @@ export const IndustrialRoboticsPage = () => (
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Partners</h3>
                 <div className="flex flex-wrap gap-6 items-center">
-                    <img src="images/logos/fanuc.webp" alt="Fanuc" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/fanuc.webp" alt="Fanuc" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/cranfield.webp" alt="Cranfield University" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/dstl.webp" alt="DSTL" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             </div>
         </div>
@@ -373,8 +373,8 @@ export const MasterProjectsPage = () => (
                     Enables novice operators to learn complex startup sequences for glass bulb manufacturing without risking real equipment.
                     By digitizing the training, operators practice "muscle memory" in a safe environment.
                 </p>
-                <VideoPlayer src="videos/production-line.mp4" className="aspect-video rounded-lg" />
-                <ZoomableImage src="images/portfolio/masterprojects/ligneproduction.webp" alt="Prod Line" className="aspect-video w-full object-contain rounded-lg" />
+                <VideoPlayer src="/videos/production-line.mp4" className="aspect-video rounded-lg" />
+                <ZoomableImage src="/images/portfolio/masterprojects/ligneproduction.webp" alt="Prod Line" className="aspect-video w-full object-contain rounded-lg" />
             </div>
             <div className="flex flex-col gap-6">
                 <div>
@@ -385,17 +385,17 @@ export const MasterProjectsPage = () => (
                     Visualizes industrial mould mechanics in VR. Interactively open/close moulds, view fluid flows, and perform cross-section cuts.
                     Replaces static technical drawings with immersive validation.
                 </p>
-                <VideoPlayer src="videos/moulding.mp4" className="aspect-video rounded-lg" />
-                <ZoomableImage src="images/portfolio/masterprojects/moule.webp" alt="Fluid" className="aspect-video w-full object-contain rounded-lg" />
+                <VideoPlayer src="/videos/moulding.mp4" className="aspect-video rounded-lg" />
+                <ZoomableImage src="/images/portfolio/masterprojects/moule.webp" alt="Fluid" className="aspect-video w-full object-contain rounded-lg" />
             </div>
         </div>
         <div className="lg:col-span-7 flex flex-col gap-8">
             <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-6 text-neutral-500 dark:text-neutral-400">Partners</h3>
                 <div className="flex flex-wrap gap-6 items-center">
-                    <img src="images/logos/Gerresheimer.webp" alt="Gerresheimer" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/mmi.webp" alt="MMI" className="h-36 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                    <img src="images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="h-18 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/Gerresheimer.webp" alt="Gerresheimer" className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/mmi.webp" alt="MMI" className="h-36 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <img src="/images/logos/artsetmetiers.svg" alt="Arts et Métiers" className="h-18 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             </div>
         </div>
@@ -417,32 +417,38 @@ export const ArduinoPage = () => (
             </div>
 
             {/* Hardware Section */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                <div>
-                    <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6 border-l-4 border-[rgb(98,183,77)] pl-4">1. Hardware Setup</h2>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-bold text-neutral-800 dark:text-neutral-200 mb-2">Components</h4>
-                            <ul className="list-disc pl-5 space-y-1 text-neutral-600 dark:text-neutral-400">
-                                <li><strong>Arduino Uno:</strong> The 'brain' of the operation.</li>
-                                <li><strong>Potentiometer:</strong> Input sensor (variable knob).</li>
-                                <li><strong>LED:</strong> Output (simple light).</li>
-                                <li><strong>220Ω Resistor:</strong> Protects the LED.</li>
-                                <li><strong>Breadboard & Wires</strong></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-neutral-800 dark:text-neutral-200 mb-2">Wiring Diagram</h4>
-                            <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
-                                <p><strong>Potentiometer:</strong><br />Outer Pins → 5V & GND<br />Middle Pin → A3</p>
-                                <p><strong>LED:</strong><br />Long leg → Pin 5<br />Short leg → Resistor → GND</p>
+            <section>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-12">
+                    <div>
+                        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6 border-l-4 border-[rgb(98,183,77)] pl-4">1. Hardware Setup</h2>
+                        <div className="space-y-6">
+                            <div>
+                                <h4 className="font-bold text-neutral-800 dark:text-neutral-200 mb-2">Components</h4>
+                                <ul className="list-disc pl-5 space-y-1 text-neutral-600 dark:text-neutral-400">
+                                    <li><strong>Arduino Uno:</strong> The 'brain' of the operation.</li>
+                                    <li><strong>Potentiometer:</strong> Input sensor (variable knob).</li>
+                                    <li><strong>LED:</strong> Output (simple light).</li>
+                                    <li><strong>220Ω Resistor:</strong> Protects the LED.</li>
+                                    <li><strong>Breadboard & Wires</strong></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-neutral-800 dark:text-neutral-200 mb-2">Wiring Diagram</h4>
+                                <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
+                                    <p><strong>Potentiometer:</strong><br />Outer Pins → 5V & GND<br />Middle Pin → A3</p>
+                                    <p><strong>LED:</strong><br />Long leg → Pin 5<br />Short leg → Resistor → GND</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div className="space-y-2">
+                        <img src="/images/tuto-arduino-unity/arduino2.webp" alt="Arduino Components" className="rounded-lg shadow-sm w-full h-auto object-contain" />
+                        <p className="text-sm text-center text-neutral-500 dark:text-neutral-400 italic">Arduino Components</p>
+                    </div>
                 </div>
-                <div className="space-y-4">
-                    <ZoomableImage src="images/tuto-arduino-unity/arduino2.webp" alt="Arduino Components" className="rounded-lg shadow-sm aspect-video" />
-                    <ZoomableImage src="images/tuto-arduino-unity/schema.webp" alt="Wiring Schematic" className="rounded-lg shadow-sm bg-neutral-50 dark:bg-neutral-800 p-2 border border-neutral-100 dark:border-neutral-800 aspect-video" />
+                <div className="flex flex-col items-center gap-2">
+                    <img src="/images/tuto-arduino-unity/schema.webp" alt="Wiring Schematic" className="rounded-lg shadow-sm bg-neutral-50 dark:bg-neutral-800 p-2 border border-neutral-100 dark:border-neutral-800 max-w-[50%] h-auto object-contain" />
+                    <p className="text-sm text-center text-neutral-500 dark:text-neutral-400 italic">Wiring Schematic</p>
                 </div>
             </section>
 
@@ -523,8 +529,8 @@ export const ArduinoPage = () => (
                         </ul>
                     </div>
                     <div className="space-y-4">
-                        <ZoomableImage src="images/tuto-arduino-unity/unity1.webp" alt="Player Settings" className="rounded-lg shadow-sm aspect-video" />
-                        <ZoomableImage src="images/tuto-arduino-unity/unity2.webp" alt="Scene View" className="rounded-lg shadow-sm aspect-video" />
+                        <img src="/images/tuto-arduino-unity/unity1.webp" alt="Player Settings" className="rounded-lg shadow-sm w-full h-auto object-contain" />
+                        <img src="/images/tuto-arduino-unity/unity2.webp" alt="Scene View" className="rounded-lg shadow-sm w-full h-auto object-contain" />
                     </div>
                 </div>
             </section>
