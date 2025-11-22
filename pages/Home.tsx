@@ -33,7 +33,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
         badge: 'bg-[rgba(98,183,77,0.1)] text-[rgb(98,183,77)] border-[rgba(98,183,77,0.2)]',
         spotlight: 'rgb(98, 183, 77)', // Green (Training)
         arrow: 'text-[rgb(98,183,77)]',
-        border: 'hover:border-2 hover:border-[rgb(98,183,77)] dark:hover:border-[rgb(98,183,77)]'
+        border: 'hover:border-[rgb(98,183,77)] dark:hover:border-[rgb(98,183,77)] hover:ring-1 hover:ring-[rgb(98,183,77)] dark:hover:ring-[rgb(98,183,77)]'
       };
     }
     if (lower.includes('fall') || lower.includes('autumn')) {
@@ -41,14 +41,14 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
         badge: 'bg-[rgba(241,100,32,0.1)] text-[rgb(241,100,32)] border-[rgba(241,100,32,0.2)]',
         spotlight: 'rgb(241, 100, 32)', // Orange (Projects)
         arrow: 'text-[rgb(241,100,32)]',
-        border: 'hover:border-2 hover:border-[rgb(241,100,32)] dark:hover:border-[rgb(241,100,32)]'
+        border: 'hover:border-[rgb(241,100,32)] dark:hover:border-[rgb(241,100,32)] hover:ring-1 hover:ring-[rgb(241,100,32)] dark:hover:ring-[rgb(241,100,32)]'
       };
     }
     return {
       badge: 'bg-neutral-50 text-neutral-700 border-neutral-100',
       spotlight: 'rgba(115, 115, 115, 1)', // neutral-500
       arrow: 'text-neutral-400',
-      border: 'hover:border-2 hover:border-neutral-300 dark:hover:border-neutral-500'
+      border: 'hover:border-neutral-300 dark:hover:border-neutral-500 hover:ring-1 hover:ring-neutral-300 dark:hover:ring-neutral-500'
     };
   };
 
@@ -387,7 +387,7 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
                 href={hasLink ? item.url : undefined}
                 target={hasLink ? "_blank" : undefined}
                 rel={hasLink ? "noreferrer" : undefined}
-                className={`block group animate-fade-in-up opacity-0 ${hasLink ? 'hover:scale-[1.01] cursor-pointer hover:border-2 hover:border-[rgb(9,172,239)] dark:hover:border-[rgb(9,172,239)]' : 'cursor-default hover:shadow-none'}`}
+                className={`block group animate-fade-in-up opacity-0 ${hasLink ? 'hover:scale-[1.01] cursor-pointer hover:border-[rgb(9,172,239)] dark:hover:border-[rgb(9,172,239)] hover:ring-1 hover:ring-[rgb(9,172,239)] dark:hover:ring-[rgb(9,172,239)]' : 'cursor-default hover:shadow-none'}`}
                 innerClassName="flex flex-col sm:flex-row gap-4 p-6"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -469,7 +469,7 @@ const ResearchFocusSection = () => {
       icon: Users,
       color: "text-[rgb(9,172,239)]",
       bg: "bg-[rgba(9,172,239,0.1)]",
-      border: "hover:border-[rgb(9,172,239)] dark:hover:border-[rgb(9,172,239)]"
+      border: "hover:border-[rgb(9,172,239)] dark:hover:border-[rgb(9,172,239)] hover:ring-1 hover:ring-[rgb(9,172,239)] dark:hover:ring-[rgb(9,172,239)]"
     },
     {
       title: "Robotic Embodiment",
@@ -478,7 +478,7 @@ const ResearchFocusSection = () => {
       icon: Bot,
       color: "text-[rgb(154,58,137)]",
       bg: "bg-[rgba(154,58,137,0.1)]",
-      border: "hover:border-[rgb(154,58,137)] dark:hover:border-[rgb(154,58,137)]"
+      border: "hover:border-[rgb(154,58,137)] dark:hover:border-[rgb(154,58,137)] hover:ring-1 hover:ring-[rgb(154,58,137)] dark:hover:ring-[rgb(154,58,137)]"
     },
     {
       title: "Cognitive Augmentation",
@@ -487,7 +487,7 @@ const ResearchFocusSection = () => {
       icon: Brain,
       color: "text-[rgb(98,183,77)]",
       bg: "bg-[rgba(98,183,77,0.1)]",
-      border: "hover:border-[rgb(98,183,77)] dark:hover:border-[rgb(98,183,77)]"
+      border: "hover:border-[rgb(98,183,77)] dark:hover:border-[rgb(98,183,77)] hover:ring-1 hover:ring-[rgb(98,183,77)] dark:hover:ring-[rgb(98,183,77)]"
     }
   ];
 
@@ -498,7 +498,7 @@ const ResearchFocusSection = () => {
         {researchAreas.map((area, index) => (
           <article
             key={area.title}
-            className={`group p-8 bg-gradient-to-br from-neutral-50/90 to-neutral-50/50 dark:from-neutral-900/60 dark:to-neutral-900/20 backdrop-blur-xl border border-white/20 dark:border-neutral-700/30 rounded-2xl hover:border-2 ${area.border} hover:shadow-xl hover:shadow-neutral-200/20 dark:hover:shadow-neutral-900/50 hover:-translate-y-1 transition-all duration-300 flex flex-col animate-fade-in-up opacity-0`}
+            className={`group p-8 bg-gradient-to-br from-neutral-50/90 to-neutral-50/50 dark:from-neutral-900/60 dark:to-neutral-900/20 backdrop-blur-xl border border-white/20 dark:border-neutral-700/30 rounded-2xl ${area.border} hover:shadow-xl hover:shadow-neutral-200/20 dark:hover:shadow-neutral-900/50 hover:-translate-y-1 transition-all duration-300 flex flex-col animate-fade-in-up opacity-0`}
             style={{ animationDelay: `${400 + (index * 100)}ms` }}
           >
             <div className={`w-12 h-12 ${area.bg} rounded-xl flex items-center justify-center mb-6 transition-transform duration-300`}>
@@ -526,11 +526,11 @@ const ResearchFocusSection = () => {
 
 function getSubtitleStyle(subtitle?: string) {
   const lower = subtitle?.toLowerCase() || '';
-  if (lower.includes('teaching')) return { text: 'text-[rgb(9,172,239)]', border: 'hover:border-2 hover:border-[rgb(9,172,239)] dark:hover:border-[rgb(9,172,239)]' };
-  if (lower.includes('research')) return { text: 'text-[rgb(154,58,137)]', border: 'hover:border-2 hover:border-[rgb(154,58,137)] dark:hover:border-[rgb(154,58,137)]' };
-  if (lower.includes('training')) return { text: 'text-[rgb(98,183,77)]', border: 'hover:border-2 hover:border-[rgb(98,183,77)] dark:hover:border-[rgb(98,183,77)]' };
-  if (lower.includes('projects')) return { text: 'text-[rgb(241,100,32)]', border: 'hover:border-2 hover:border-[rgb(241,100,32)] dark:hover:border-[rgb(241,100,32)]' };
-  return { text: 'text-neutral-500', border: 'hover:border-2 hover:border-neutral-300 dark:hover:border-neutral-500' };
+  if (lower.includes('teaching')) return { text: 'text-[rgb(9,172,239)]', border: 'hover:border-[rgb(9,172,239)] dark:hover:border-[rgb(9,172,239)] hover:ring-1 hover:ring-[rgb(9,172,239)] dark:hover:ring-[rgb(9,172,239)]' };
+  if (lower.includes('research')) return { text: 'text-[rgb(154,58,137)]', border: 'hover:border-[rgb(154,58,137)] dark:hover:border-[rgb(154,58,137)] hover:ring-1 hover:ring-[rgb(154,58,137)] dark:hover:ring-[rgb(154,58,137)]' };
+  if (lower.includes('training')) return { text: 'text-[rgb(98,183,77)]', border: 'hover:border-[rgb(98,183,77)] dark:hover:border-[rgb(98,183,77)] hover:ring-1 hover:ring-[rgb(98,183,77)] dark:hover:ring-[rgb(98,183,77)]' };
+  if (lower.includes('projects')) return { text: 'text-[rgb(241,100,32)]', border: 'hover:border-[rgb(241,100,32)] dark:hover:border-[rgb(241,100,32)] hover:ring-1 hover:ring-[rgb(241,100,32)] dark:hover:ring-[rgb(241,100,32)]' };
+  return { text: 'text-neutral-500', border: 'hover:border-neutral-300 dark:hover:border-neutral-500 hover:ring-1 hover:ring-neutral-300 dark:hover:ring-neutral-500' };
 }
 
 const Card: React.FC<{ item: any }> = ({ item }) => {
@@ -575,11 +575,11 @@ const Card: React.FC<{ item: any }> = ({ item }) => {
 
   if (isYoutube) {
     categoryColor = 'text-red-600';
-    borderClass = 'hover:border-2 hover:border-red-600 dark:hover:border-red-600';
+    borderClass = 'hover:border-red-600 dark:hover:border-red-600 hover:ring-1 hover:ring-red-600 dark:hover:ring-red-600';
   }
   if (isArduino) {
     categoryColor = 'text-teal-600';
-    borderClass = 'hover:border-2 hover:border-teal-600 dark:hover:border-teal-600';
+    borderClass = 'hover:border-teal-600 dark:hover:border-teal-600 hover:ring-1 hover:ring-teal-600 dark:hover:ring-teal-600';
   }
 
   // Determine component and props for SpotlightCard
