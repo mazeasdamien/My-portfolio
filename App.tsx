@@ -27,17 +27,6 @@ const ScrollToTop = () => {
 function App() {
   const [filter, setFilter] = useState<FilterType>('all');
   const [isLoading, setIsLoading] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  // Track mouse position globally
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   const handleFilterChange = (newFilter: FilterType) => {
     if (filter === newFilter) return;
@@ -60,21 +49,6 @@ function App() {
           {/* Global Modern Halo Effect */}
           <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
             <div className="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] bg-gradient-to-br from-[rgba(98,183,77,0.15)] via-[rgba(9,172,239,0.15)] to-[rgba(154,58,137,0.15)] blur-[120px] opacity-70 dark:opacity-50" />
-          </div>
-
-          {/* Global Interactive Gradient Blob */}
-          <div
-            className="fixed inset-0 overflow-hidden pointer-events-none"
-            style={{ zIndex: 0 }}
-          >
-            <div
-              className="absolute w-[800px] h-[800px] rounded-full opacity-20 blur-3xl transition-all duration-1000 ease-out"
-              style={{
-                background: 'radial-gradient(circle, rgba(98, 183, 77, 0.3) 0%, rgba(9, 172, 239, 0.25) 40%, rgba(154, 58, 137, 0.15) 70%, transparent 100%)',
-                left: `${mousePos.x - 400}px`,
-                top: `${mousePos.y - 400}px`,
-              }}
-            />
           </div>
 
           <div className="relative z-10">
