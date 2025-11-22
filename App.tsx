@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -7,7 +7,6 @@ import { FilterType } from './types';
 import { DarkModeProvider } from './contexts/DarkModeContext';
 import { Loader2 } from 'lucide-react';
 
-// Lazy load project pages
 const HCICoursePage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.HCICoursePage })));
 const RemoteMaintenancePage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.RemoteMaintenancePage })));
 const TelexistenceInterfacePage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.TelexistenceInterfacePage })));
@@ -42,7 +41,6 @@ function App() {
     setIsLoading(true);
     window.scrollTo(0, 0);
 
-    // Simulate network/fetch delay
     setTimeout(() => {
       setIsLoading(false);
     }, 600);
@@ -50,10 +48,9 @@ function App() {
 
   return (
     <DarkModeProvider>
-      <HashRouter>
+      <BrowserRouter>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen font-sans selection:bg-neutral-900 dark:selection:bg-neutral-100 selection:text-white dark:selection:text-neutral-900 relative bg-neutral-100 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
-          {/* Global Modern Halo Effect */}
           <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
             <div className="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] bg-gradient-to-br from-[rgba(98,183,77,0.15)] via-[rgba(9,172,239,0.15)] to-[rgba(154,58,137,0.15)] blur-[120px] opacity-70 dark:opacity-50" />
           </div>
@@ -66,7 +63,6 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home filter={filter} isLoading={isLoading} />} />
 
-                  {/* Project Routes */}
                   <Route path="/project/hci-course" element={<HCICoursePage />} />
                   <Route path="/project/remote-maintenance" element={<RemoteMaintenancePage />} />
                   <Route path="/project/telexistence-interface" element={<TelexistenceInterfacePage />} />
@@ -82,7 +78,7 @@ function App() {
             <Footer />
           </div>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     </DarkModeProvider>
   );
 }
