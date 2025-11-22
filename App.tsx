@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import {
-  HCICoursePage,
-  RemoteMaintenancePage,
-  TelexistenceInterfacePage,
-  RemoteCollabPage,
-  VRPrototypingPage,
-  IndustrialRoboticsPage,
-  MasterProjectsPage,
-  ArduinoPage
-} from './pages/ProjectDetailPages';
 import { FilterType } from './types';
 import { DarkModeProvider } from './contexts/DarkModeContext';
+import { Loader2 } from 'lucide-react';
+
+// Lazy load project pages
+const HCICoursePage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.HCICoursePage })));
+const RemoteMaintenancePage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.RemoteMaintenancePage })));
+const TelexistenceInterfacePage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.TelexistenceInterfacePage })));
+const RemoteCollabPage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.RemoteCollabPage })));
+const VRPrototypingPage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.VRPrototypingPage })));
+const IndustrialRoboticsPage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.IndustrialRoboticsPage })));
+const MasterProjectsPage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.MasterProjectsPage })));
+const ArduinoPage = lazy(() => import('./pages/ProjectDetailPages').then(module => ({ default: module.ArduinoPage })));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -23,6 +24,12 @@ const ScrollToTop = () => {
   }, [pathname]);
   return null;
 };
+
+const LoadingFallback = () => (
+  <div className="min-h-screen flex flex-col items-center justify-center">
+    <Loader2 className="animate-spin text-neutral-300 mb-4" size={48} strokeWidth={1} />
+  </div>
+);
 
 function App() {
   const [filter, setFilter] = useState<FilterType>('all');
@@ -51,22 +58,26 @@ function App() {
             <div className="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] bg-gradient-to-br from-[rgba(98,183,77,0.15)] via-[rgba(9,172,239,0.15)] to-[rgba(154,58,137,0.15)] blur-[120px] opacity-70 dark:opacity-50" />
           </div>
 
-          <div className="relative z-10">
+          <div className="relative z-10 flex flex-col min-h-screen">
             <Header activeFilter={filter} onFilterChange={handleFilterChange} />
 
-            <Routes>
-              <Route path="/" element={<Home filter={filter} isLoading={isLoading} />} />
+            <div className="flex-grow">
+              <Suspense fallback={<LoadingFallback />}>
+                <Routes>
+                  <Route path="/" element={<Home filter={filter} isLoading={isLoading} />} />
 
-              {/* Project Routes */}
-              <Route path="/project/hci-course" element={<HCICoursePage />} />
-              <Route path="/project/remote-maintenance" element={<RemoteMaintenancePage />} />
-              <Route path="/project/telexistence-interface" element={<TelexistenceInterfacePage />} />
-              <Route path="/project/remote-collab" element={<RemoteCollabPage />} />
-              <Route path="/project/vr-prototyping" element={<VRPrototypingPage />} />
-              <Route path="/project/industrial-robotics" element={<IndustrialRoboticsPage />} />
-              <Route path="/project/master-projects" element={<MasterProjectsPage />} />
-              <Route path="/project/arduino-unity" element={<ArduinoPage />} />
-            </Routes>
+                  {/* Project Routes */}
+                  <Route path="/project/hci-course" element={<HCICoursePage />} />
+                  <Route path="/project/remote-maintenance" element={<RemoteMaintenancePage />} />
+                  <Route path="/project/telexistence-interface" element={<TelexistenceInterfacePage />} />
+                  <Route path="/project/remote-collab" element={<RemoteCollabPage />} />
+                  <Route path="/project/vr-prototyping" element={<VRPrototypingPage />} />
+                  <Route path="/project/industrial-robotics" element={<IndustrialRoboticsPage />} />
+                  <Route path="/project/master-projects" element={<MasterProjectsPage />} />
+                  <Route path="/project/arduino-unity" element={<ArduinoPage />} />
+                </Routes>
+              </Suspense>
+            </div>
 
             <Footer />
           </div>

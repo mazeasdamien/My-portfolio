@@ -54,37 +54,49 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
 
   // Mouse tracking for profile photo avoidance
   React.useEffect(() => {
+    let animationFrameId: number;
+
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
+      // Use requestAnimationFrame to prevent excessive updates
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
 
-      if (filter === 'all') {
-        const photoElement = document.querySelector('.profile-photo-container');
-        if (photoElement) {
-          const rect = photoElement.getBoundingClientRect();
-          const photoCenterX = rect.left + rect.width / 2;
-          const photoCenterY = rect.top + rect.height / 2;
+      animationFrameId = requestAnimationFrame(() => {
+        setMousePos({ x: e.clientX, y: e.clientY });
 
-          const dx = e.clientX - photoCenterX;
-          const dy = e.clientY - photoCenterY;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+        if (filter === 'all') {
+          const photoElement = document.querySelector('.profile-photo-container');
+          if (photoElement) {
+            const rect = photoElement.getBoundingClientRect();
+            const photoCenterX = rect.left + rect.width / 2;
+            const photoCenterY = rect.top + rect.height / 2;
 
-          const maxDistance = 250;
-          const maxOffset = 30;
+            const dx = e.clientX - photoCenterX;
+            const dy = e.clientY - photoCenterY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < maxDistance) {
-            const strength = 1 - (distance / maxDistance);
-            const offsetX = -(dx / distance) * maxOffset * strength;
-            const offsetY = -(dy / distance) * maxOffset * strength;
-            setPhotoOffset({ x: offsetX, y: offsetY });
-          } else {
-            setPhotoOffset({ x: 0, y: 0 });
+            const maxDistance = 250;
+            const maxOffset = 30;
+
+            if (distance < maxDistance) {
+              const strength = 1 - (distance / maxDistance);
+              const offsetX = -(dx / distance) * maxOffset * strength;
+              const offsetY = -(dy / distance) * maxOffset * strength;
+              setPhotoOffset({ x: offsetX, y: offsetY });
+            } else {
+              setPhotoOffset({ x: 0, y: 0 });
+            }
           }
         }
-      }
+      });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
   }, [filter]);
 
   if (isLoading) {
@@ -346,11 +358,16 @@ const Home: React.FC<HomeProps> = ({ filter, isLoading }) => {
               <img
                 src="images/profil.webp"
                 alt="Damien Mazeas"
+                width="320"
+                height="320"
                 className="absolute inset-0 w-full h-full object-cover rounded-full shadow-xl"
               />
               <img
                 src="images/cat.jpg"
                 alt="Cat"
+                width="320"
+                height="320"
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out"
               />
             </div>

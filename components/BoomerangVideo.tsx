@@ -44,6 +44,7 @@ export const BoomerangVideo: React.FC = () => {
         playsInline
         loop
         controls={false}
+        preload="auto"
       />
     </div>
   );
