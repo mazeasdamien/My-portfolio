@@ -24,6 +24,7 @@ export const ZoomableImage: React.FC<{ src: string; alt: string; className?: str
                 <img
                     src={src}
                     alt={alt}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -56,6 +57,7 @@ export const VideoPlayer: React.FC<{ src: string; className?: string }> = ({ src
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 className="w-full h-full object-contain"
             />
         </div>
@@ -69,6 +71,7 @@ export const YoutubeEmbed: React.FC<{ id: string }> = ({ id }) => {
                 className="w-full h-full"
                 src={`https://www.youtube.com/embed/${id}`}
                 title="YouTube video player"
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
             ></iframe>
